@@ -163,7 +163,7 @@
 							    border-radius: none;
 							    z-index: 100;"		 >
 						<button name="test" type="button" onclick="basketProduct('${pr.product_no }' );"></button>
-							<img src="${root }resources/image/${pr.classification }/${pr.product_filename}" >
+							<img src = "/product_img/${pr.product_filename}">
 						</div>
 						<div>
 							<div class="pro-category">${pr.product_no }</div>
