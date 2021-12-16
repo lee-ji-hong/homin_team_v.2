@@ -87,6 +87,7 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 	            	<ul class = "sub_li">
 	            		<li><a href = "${root }index?formpath=memberManagement">회원관리</a></li>
 	            		<li><a href = "${root }index?formpath=productManagement&category=dryer">제품관리</a></li>
+	            		<li><a href = "${root }index?formpath=sales">매출현황</a></li>
 	            	</ul>
             	</li>
             </c:if>

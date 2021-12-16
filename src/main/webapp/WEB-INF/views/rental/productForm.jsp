@@ -119,7 +119,7 @@ prefix="c"%>
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <img
-            src="${root }resources/image/${product.classification }/${product.product_filename}"
+            src = "/product_img/${product.product_filename}"
           />
         </div>
       </div>
