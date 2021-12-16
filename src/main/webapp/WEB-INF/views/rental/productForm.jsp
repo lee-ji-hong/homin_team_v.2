@@ -57,7 +57,7 @@ prefix="c"%>
     display: none;
   }
 </style>
-
+<div class="rental-product-wrap">
 <div class="rental-detail-header">
   <ul>
     <li>
@@ -213,6 +213,8 @@ prefix="c"%>
 	  </div>
 	  
   </div>
+  
+</div>  
   <script>
     var mySwiper = new Swiper(".swiper-container", {
       navigation: {

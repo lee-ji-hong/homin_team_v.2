@@ -1,7 +1,9 @@
 @charset "utf-8";
 
 .lent_option-wrap{
-	padding: 50 0px;
+	width: 1240px;
+    margin: 0 auto;
+	padding: 10 0px;
 	display: flex;
     justify-content: space-around;
     flex: auto;
@@ -12,13 +14,13 @@
 }
 
 .lent_option_box {
-	padding: 30 35 30 35;
+/* 	padding: 30 35 30 35; */
 /*     border: 10px solid #ffe1b2; */
     margin: 4px;
 /*     border: 1px solid #eee; */
-    border-radius: 20px;
-    height: 240px;
-    padding: 42px 50px 0;
+/*     border-radius: 20px; */
+/*     height: 240px; */
+/*     padding: 42px 50px 0; */
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
@@ -27,8 +29,8 @@
 }
 
 .lent_option_box:hover{
-	box-shadow: 0 8px 16px 0 rgb(0 0 0 / 12%);
-    border-color: transparent;
+/* 	box-shadow: 0 8px 16px 0 rgb(0 0 0 / 12%); */
+/*     border-color: transparent; */
 }
 
 .lent_option_box img{
@@ -42,7 +44,48 @@
     line-height: 26px;
     color: #3f474d;
 }
-
+.produce-video{
+	display: flex;
+    width: 1180px;
+    min-height: 370px;
+    margin: 0 auto;
+    padding: 60px 60px 60px 80px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    align-items: center;
+}
+.produce-video-text{
+	flex: auto;
+    padding-right: 60px;
+    align-self: center;
+}
+.produce-video-text-top{
+	display: block;
+    font: 900 32px/1.25 Montserrat,NotoSans,Dotum,Dotumche,돋움,돋움체,Arial,sans-serif;
+}
+.produce-video-text-bottom{
+	margin-top: 30px;
+    font-size: 22px;
+    line-height: 1.36;
+    color: #444;
+}
+.produce-video-on{
+	border-color: #eee;
+}
+.produce-video-on iframe{
+	display: block;
+    vertical-align: middle;
+}
+.container-home-section_home{
+	margin: 50px auto;
+    width: 1240px;
+    box-sizing: border-box;
+    min-height: 1px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: column;
+}
 .container-home-section{
 	margin: 50px auto;
     width: 100%;
@@ -52,6 +95,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
+    
 }
 
 .main-product-title{
