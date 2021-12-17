@@ -88,7 +88,6 @@
 		<tr>
 			<td colspan=2 align='center'><br>
 				<a href="${root }member">회원가입</a> |
-				<a href="${root}/member">회원가입</a> |
 				<a href="">아이디 찾기</a> |
 				<a href="">비밀번호 찾기</a>
 			</td>

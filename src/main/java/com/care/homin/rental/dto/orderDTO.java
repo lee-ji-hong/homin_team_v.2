@@ -13,8 +13,15 @@ public class orderDTO {
 	private String productImg;
 	private String classification;
 	private String product_no;
+	private String order_date;
 	
 	
+	public String getOrder_date() {
+		return order_date;
+	}
+	public void setOrder_date(String order_date) {
+		this.order_date = order_date;
+	}
 	public String getProduct_no() {
 		return product_no;
 	}

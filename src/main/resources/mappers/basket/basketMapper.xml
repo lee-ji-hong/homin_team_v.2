@@ -21,8 +21,4 @@
 		DELETE FROM homin_basket WHERE product_no=#{no} AND id=#{id}
 	</delete>
 	
-	<insert id="tlqkf" parameterType="com.care.homin.basket.dto.BasketDTO">
-		INSERT INTO homin_product VALUES(#{product_no}, #{product_name}, #{product_filename}, #{classification}, #{price},#{hit},#{ordercount})
-	</insert>
-	
 </mapper>

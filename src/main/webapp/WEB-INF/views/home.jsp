@@ -88,7 +88,7 @@
 						<li>
 							<div class="main-product-text " onclick = "location.href='${root}/index?formpath=product&category=${to.classification }&prodNo=${to.product_no }'">
 								<div class="main-product-tex-in ">
-									<img src = "${root }resources/image/${to.classification}/${to.product_filename}"></div>
+									<img src = "/product_img/${to.product_filename}"></div>
 									<c:choose>
 										<c:when test="${to.classification eq 'aircleaner'}">
 											<div class="pro-category" >공기청정기</div>
@@ -128,7 +128,7 @@
 						<li>
 							<div class="main-product-text " onclick = "location.href='${root}/index?formpath=product&category=${oc.classification }&prodNo=${oc.product_no }'">
 								<div class="main-product-tex-in ">
-									<img src = "${root }resources/image/${oc.classification}/${oc.product_filename}"></div>
+									<img src = "/product_img/${oc.product_filename}"></div>
 									<c:choose>
 										<c:when test="${oc.classification eq 'aircleaner'}">
 											<div class="pro-category" >공기청정기</div>

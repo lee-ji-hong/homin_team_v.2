@@ -21,7 +21,7 @@
 <div class = "orderItem">
 	<div class = "item_area">
 		<div class = "itemImg">
-			<img class = "itemImg" src = "${root }resources/image/${productInfo.classification }/${productInfo.product_filename}">
+			<img class = "itemImg" src = "/product_img/${productInfo.product_filename}">
 		</div>
 		<div class = "item_info">
 			<div class = "item_no">${productInfo.product_no }</div>
@@ -43,7 +43,7 @@ function iamport(){
 	    pay_method : 'card',
 	    merchant_uid : 'merchant_' + new Date().getTime(),
 	    name : '${productInfo.product_name }' , 		// 결제창에서 보여질 이름
-	    amount : 100, 									// 실제 결제되는 가격
+	    amount : '${productInfo.price}', 				// 실제 결제되는 가격
 	    buyer_email : '${memberInfo.email}',			// 구매자 이메일
 	    buyer_name : '${memberInfo.nickname}',			// 구매자 이름
 	    buyer_tel : '${memberInfo.phone}',				// 구매자 번호

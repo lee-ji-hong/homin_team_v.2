@@ -10,7 +10,7 @@
 	</select>
 	
 	<insert id="orderHistoryProc" parameterType="com.care.homin.rental.dto.orderDTO">
-		INSERT INTO homin_order VALUES(#{uid},#{name},#{email},#{tell},#{addr},#{postcode},#{productName},#{amount},#{buyer_id},#{productImg},#{classification},#{product_no})
+		INSERT INTO homin_order VALUES(#{uid},#{name},#{email},#{tell},#{addr},#{postcode},#{productName},#{amount},#{buyer_id},#{productImg},#{classification},#{product_no},#{order_date})
 	</insert>
 	
 	<select id="selectOrderHistory" parameterType="String" resultMap="order">
@@ -37,6 +37,7 @@
 		<result property="buyer_id" column="BUYER_ID"/>
 		<result property="productImg" column="PRODUCTIMG"/>
 		<result property="product_no" column="product_no"/>
+		<result property="order_date" column="order_date"/>
 	</resultMap>
 	
 	<update id="productUpHit" parameterType="String" >
@@ -62,5 +63,25 @@
 	<delete id="deleteProduct" parameterType="String">
 		DELETE FROM homin_product WHERE product_no=#{no}
 	</delete>
+	
+	<insert id="productInsert" parameterType="com.care.homin.rental.dto.RentalDTO">
+		INSERT INTO homin_product VALUES(#{product_no}, #{product_name}, #{product_filename}, #{classification}, #{price}, #{hit}, #{orderCount})
+	</insert>
+	
+	<update id="productModify" parameterType="com.care.homin.rental.dto.RentalDTO" >
+		UPDATE homin_product SET product_name=#{product_name}, classification=#{classification}, price=#{price} WHERE product_no=#{product_no}
+	</update>
+	
+	<select id="categorySales" parameterType="String" resultMap = "order">
+		SELECT * FROM homin_order where classification = #{category} 
+	</select>
+	
+	<select id="productPrice" parameterType="String" resultType = "com.care.homin.rental.dto.RentalDTO">
+		SELECT product_name, price, ordercount FROM homin_product where classification = #{category} 
+	</select>
+	
+	<select id="salesByYear" parameterType="String" resultMap = "order">
+		SELECT * FROM homin_order where order_date LIKE '%'||#{year}||'%'
+	</select>
 
 </mapper>

@@ -2,6 +2,7 @@ package com.care.homin.mypage;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -13,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.care.homin.login.dto.LoginDTO;
 import com.care.homin.login.service.ILoginService;
@@ -237,24 +239,70 @@ public class MypageController {
 	}
 	
 	// 관리자 회원관리 회원정보수정
-		@RequestMapping(value = "modifyMember")
-		public String modifyMember(MemberDTO mDto, PostcodeDTO pDto, Model model) {
-			String check = mypageSvc.updateProc(mDto);
-			String check2 = mypageSvc.updateAddrProc(pDto);
-			if(check.equals("t") && check2.equals("t")) {
-				model.addAttribute("msg","수정 완료.");
-			}else {
-				model.addAttribute("msg","문제 발생.");
-			}
-			
-			return "forward:index?formpath=memberManagement";
+	@RequestMapping(value = "modifyMember")
+	public String modifyMember(MemberDTO mDto, PostcodeDTO pDto, Model model) {
+		String check = mypageSvc.updateProc(mDto);
+		String check2 = mypageSvc.updateAddrProc(pDto);
+		if(check.equals("t") && check2.equals("t")) {
+			model.addAttribute("msg","수정 완료.");
+		}else {
+			model.addAttribute("msg","문제 발생.");
 		}
+			
+		return "forward:index?formpath=memberManagement";
+	}
 	
 	// 관리자 제품 삭제
-		@RequestMapping(value = "deleteProduct")
-		public String deleteProduct(String no) {
-			service.deleteProduct(no);
-			return "forward:index?formpath=productManagement&category=dryer";
+	@RequestMapping(value = "deleteProduct")
+	public String deleteProduct(String no) {
+		service.deleteProduct(no);
+		return "forward:index?formpath=productManagement&category=dryer";
+	}
+	
+	// 관리자 제품 등록화면
+	@RequestMapping(value = "productRegistration")
+	public String productRegistration() {
+		return "/mypage/info/admin/productRegistrationForm";
+	}
+	
+	// 관리자 제품등록
+	@RequestMapping(value = "productInsert")
+	public String productInsert(MultipartHttpServletRequest multi, Model model) {
+		String uploadCheck = service.productInsert(multi);
+		if(uploadCheck.equals("t")) {
+			model.addAttribute("msg", "등록완료.");
+		}else {
+			model.addAttribute("msg", "문제발생.");
 		}
+		return "forward:index?formpath=productManagement&category=dryer";
+	}
+	
+	// 관리자 제품수정 화면
+	@RequestMapping(value = "productModify")
+	public String productModify(Model model, String productNo) {
+		model.addAttribute("productInfo",service.selectProduct(productNo));
+		return "/mypage/info/admin/productModifyForm";
+	}
+	
+	// 관리자 제품수정
+	@RequestMapping(value = "productModifyProc")
+	public String productModifyProc(MultipartHttpServletRequest product, Model model) {
+		service.productModify(product);
+		return "forward:index?formpath=productManagement&category="+product.getParameter("classification");
+	}
+	
+	// 관리자 매출화면
+	@RequestMapping(value = "sales")
+	public String sales(Model model, String year) {
+		service.categorySales(model);
+		service.salesByYear(model, year);
+		service.productPrice(model);
+		return "/mypage/info/admin/salesForm";
+	}
+	
+		
+	
+	
+	
 	
 }

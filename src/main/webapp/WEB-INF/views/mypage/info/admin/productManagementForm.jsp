@@ -10,6 +10,11 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/rental.css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/index.css" />
 </head>
+<c:if test="${not empty msg }">
+	<script>
+		alert('${msg}');
+	</script>
+</c:if>
 <script>
 	function deleteProduct(no){
 		if(confirm("정말 삭제하시겠습니까?") == true){
@@ -29,6 +34,9 @@
 	<span><input type = "button" value = "전기레인지" onclick = "location.href='${root }index?formpath=productManagement&category=microwave'"></span>
 	<span><input type = "button" value = "얼음정수기냉장고" onclick = "location.href='${root }index?formpath=productManagement&category=refrigerator'"></span>
 </div>
+<div>
+	<input type = "button" value = "제품등록" onclick = "location.href='${root}index?formpath=productRegistration'">
+</div>
 <%-- <c:import url="/${category }" /> --%>
 <section class="container-home-section">
 <c:forEach var="pr" items="${product }">
@@ -37,7 +45,7 @@
 			<li>
 				<div class="main-product-text ">
 					<div class="main-product-tex-in ">
-						<img src="${root }resources/image/${pr.classification }/${pr.product_filename}" >
+						<img src="/product_img/${pr.product_filename}" >
 					</div>
 					<div>
 						<div class="pro-category">${pr.product_no }</div>
@@ -45,6 +53,7 @@
 						<div class="pro-price">
 							<div>
 								<span>월</span> <span>${pr.price }</span> <span>원</span>
+								<input type = "button" onclick = "location.href='${root}index?formpath=productModify&productNo=${pr.product_no }'" value = "수정">
 								<input type = "button" onclick = "deleteProduct('${pr.product_no}')" value = "삭제">
 							</div>
 						</div>
