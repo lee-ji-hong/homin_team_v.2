@@ -8,8 +8,8 @@
 </c:if>
 <html>
 <body>
-<div align="center" style="background:#fafafa;">
-	<table id="layout">
+<div align="center" >
+	<table id="layout" style=" background: #fafafa;">
 		<tr>
 			<td id="layout_header" style="height:100px;"><%@ include file="common/top.jsp" %></td>
 		</tr>

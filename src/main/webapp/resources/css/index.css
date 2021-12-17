@@ -232,5 +232,82 @@
     opacity: 0.25;
 }
     
-   
+/*로그인 폼*/  
+
+.login-form {
+	display: flex;
+	font-family: 'Noto Sans KR',sans-serif;
+	justify-content: center;
+	align-items: center;
+	height: 650px;
+	background-image: ("images/cat.png") no-repeat center;
+	background-size: cover;
+	border: 0px solid;
+}
+
+.login_container {
+	width: 420px;
+	height:560px;
+	margin: auto;
+	text-align: center;
+	border-radius: 20px;
+	box-shadow: 0px 0px 20px rgb(117, 115, 115);
+	background-color : white;
+}
+
+.form_container {
+	width: 350px;
+	margin: auto;
+}
+
+	
+.form_title_div {
+	margin: auto;
+	text-align: center;
+}
+
+.form_title_p {
+	font-weight: bold;
+	font-size: 45px;
+	display: inline-block;
+	text-align: center;
+	color: rgb(86, 196, 196);
+	padding-top: 8px;
+
+}
+
+.form_input {
+	width : 86%;
+	height : 40px;
+	border: 2px solid rgb(170, 172, 172);
+	background-color :rgba(223, 219, 219, 0.342);
+	border-radius: 6px;
+
+}
+
+ /*name 왼쪽으로 안옮겨지냐!!!....*/
+.form_item_name{
+	color : rgb(86, 196, 196);
+	font-weight: bold;
+}
+
+.form_text_alert{
+    height: 20px;
+}
+
+.form_text_alert_padding{
+    padding-bottom: 10px;
+}
+
+.form_submit_button {
+
+ width: 86%;
+ height : 46px;
+ background-color: rgb(86, 196, 196); 
+ border: 1px; 
+ border-radius: 3px; 
+ color: white; 
+ font-size: 17px; 
+ font-weight: 600;
+}
     
