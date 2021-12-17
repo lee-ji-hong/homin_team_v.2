@@ -178,9 +178,55 @@ public class RentalService {
 		model.addAttribute("waterPrice",waterPrice);
 	}
 
-	public void salesByYear(Model model) {
-		// TODO Auto-generated method stub
+	public void salesByYear(Model model, String ye) {
+		Calendar cal = Calendar.getInstance();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
+		String year = sdf.format(cal.getTime());
+		ArrayList<orderDTO> od = null;
+		if(ye == null || ye == "") {
+			od = dao.salesByYear(year); 
+			model.addAttribute("year",year);
+		}else {
+			od = dao.salesByYear(ye);
+			model.addAttribute("year",ye);
+		}
+		int sales1 = 0; int sales2 = 0; int sales3 = 0; int sales4 = 0;
+		int sales5 = 0; int sales6 = 0; int sales7 = 0; int sales8 = 0;
+		int sales9 = 0; int sales10 = 0; int sales11 = 0; int sales12 = 0;
 		
+		for(orderDTO o : od) {
+			String[] month = null;
+			month = o.getOrder_date().split("-");
+			if(month[1].equals("01")) {
+				sales1 += Integer.parseInt(o.getAmount());
+			}if(month[1].equals("02")) {
+				sales2 += Integer.parseInt(o.getAmount());
+			}if(month[1].equals("03")) {
+				sales3 += Integer.parseInt(o.getAmount());
+			}if(month[1].equals("04")) {
+				sales4 += Integer.parseInt(o.getAmount());
+			}if(month[1].equals("05")) {
+				sales5 += Integer.parseInt(o.getAmount());
+			}if(month[1].equals("06")) {
+				sales6 += Integer.parseInt(o.getAmount());
+			}if(month[1].equals("07")) {
+				sales7 += Integer.parseInt(o.getAmount());
+			}if(month[1].equals("08")) {
+				sales8 += Integer.parseInt(o.getAmount());
+			}if(month[1].equals("09")) {
+				sales9 += Integer.parseInt(o.getAmount());
+			}if(month[1].equals("10")) {
+				sales10 += Integer.parseInt(o.getAmount());
+			}if(month[1].equals("11")) {
+				sales11 += Integer.parseInt(o.getAmount());
+			}if(month[1].equals("12")) {
+				sales12 += Integer.parseInt(o.getAmount());
+			}
+		}
+		model.addAttribute("mon1",sales1); model.addAttribute("mon2",sales2); model.addAttribute("mon3",sales3);
+		model.addAttribute("mon4",sales4); model.addAttribute("mon5",sales5); model.addAttribute("mon6",sales6);
+		model.addAttribute("mon7",sales7); model.addAttribute("mon8",sales8); model.addAttribute("mon9",sales9);
+		model.addAttribute("mon10",sales10); model.addAttribute("mon11",sales11); model.addAttribute("mon12",sales12);
 	}
 
 	public void productPrice(Model model) {
@@ -190,9 +236,7 @@ public class RentalService {
 		ArrayList<RentalDTO> refriPrice = dao.productPrice("refrigerator");
 		ArrayList<RentalDTO> washPrice = dao.productPrice("washmachine");
 		ArrayList<RentalDTO> waterPrice = dao.productPrice("waterpurifier");
-		for(RentalDTO a : airPrice) {
-			System.out.println(a.getOrderCount());
-		}
+		
 		model.addAttribute("dryPr",dryerPrice);
 		model.addAttribute("airPr",airPrice);
 		model.addAttribute("microPr",microPrice);

@@ -2,6 +2,7 @@ package com.care.homin.mypage;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -292,12 +293,13 @@ public class MypageController {
 	
 	// 관리자 매출화면
 	@RequestMapping(value = "sales")
-	public String sales(Model model) {
+	public String sales(Model model, String year) {
 		service.categorySales(model);
-		service.salesByYear(model);
+		service.salesByYear(model, year);
 		service.productPrice(model);
 		return "/mypage/info/admin/salesForm";
 	}
+	
 		
 	
 	
