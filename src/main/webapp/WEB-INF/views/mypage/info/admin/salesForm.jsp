@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
@@ -8,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://www.gstatic.com/charts/loader.js"></script>
   <script>
     google.charts.load('current', {packages: ['corechart']});
@@ -40,18 +40,18 @@
     function drawChart2() {
       var data2 = google.visualization.arrayToDataTable([
         ["Element", "Density", { role: "style" } ],
-        ["1월", 1896600000, "#b87333"],
-        ["2월", 10.49, "silver"],
-        ["3월", 19.30, "gold"],
-        ["4월", 21.45, "green"],
-        ["5월", 21.45, "red"],
-        ["6월", 21.45, "blue"],
-        ["7월", 21.45, "yellow"],
-        ["8월", 21.45, "pupple"],
-        ["9월", 21.45, "black"],
-        ["10월", 21.45, "skyblue"],
-        ["11월", 21.45, "color: #e5e4e2"],
-        ["12월", 21.45, "gray"]
+        ["1월",${mon1}, "#b87333"],
+        ["2월", ${mon2}, "silver"],
+        ["3월", ${mon3}, "gold"],
+        ["4월", ${mon4}, "green"],
+        ["5월", ${mon5}, "red"],
+        ["6월", ${mon6}, "blue"],
+        ["7월", ${mon7}, "yellow"],
+        ["8월", ${mon8}, "pupple"],
+        ["9월", ${mon9}, "black"],
+        ["10월", ${mon10}, "skyblue"],
+        ["11월", ${mon11}, "color: #e5e4e2"],
+        ["12월", ${mon12}, "gray"]
       ]);
 
       var view = new google.visualization.DataView(data2);
@@ -72,8 +72,23 @@
       chart2.draw(view, options2);
   }
   </script>
+  
+  <script>
+	function prevYear(year){
+		var pYear = year - 1;
+		location.replace("${root}index?formpath=sales&year="+pYear);
+	}
+	function nextYear(year){
+		var nYear = year + 1;
+		location.replace("${root}index?formpath=sales&year="+nYear);
+	}
+  </script>
 </head>
 <body>
+<h1>년도별 매출</h1>
+	<input type = "button" value ="<" onclick = "prevYear(${year})"> <span>${year }년</span>
+	<input type = "button" value =">" onclick = "nextYear(${year})">
+  <div id="columnchart_values" style="width: 900px; height: 300px;"></div>
 <div>
 	<h1>카테고리별 판매량</h1>
 </div>
@@ -116,13 +131,9 @@
 		</c:forEach>
 	</ul>
 <div>
-
+</div>
 	<ul>
 	</ul>
 </div>
-	<h1>년도별 매출</h1>
-	<input type = "button" value ="<"><span>2021년</span><input type = "button" value =">" onclick = "nexeYear()">
-</div>
-  <div id="columnchart_values" style="width: 900px; height: 300px;"></div>
 </body>
 </html>

@@ -79,5 +79,9 @@
 	<select id="productPrice" parameterType="String" resultType = "com.care.homin.rental.dto.RentalDTO">
 		SELECT product_name, price, ordercount FROM homin_product where classification = #{category} 
 	</select>
+	
+	<select id="salesByYear" parameterType="String" resultMap = "order">
+		SELECT * FROM homin_order where order_date LIKE '%'||#{year}||'%'
+	</select>
 
 </mapper>

@@ -38,5 +38,7 @@ public interface RentalDAO {
 	ArrayList<orderDTO> categorySales(String category);
 	// 제품가격
 	ArrayList<RentalDTO> productPrice(String category);
+	// 년도별 주문내역
+	ArrayList<orderDTO> salesByYear(String year);
 
 }

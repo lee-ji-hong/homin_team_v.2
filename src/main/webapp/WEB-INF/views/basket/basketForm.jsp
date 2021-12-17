@@ -128,7 +128,7 @@
 								<td>얼음정수기/냉장고</td>
 							</c:otherwise>
 						</c:choose>
-						<td><img src = "${root }resources/image/${bDto.classification}/${bDto.product_img}" style="width: 150px;height: 150px;"
+						<td><img src = "/product_img/${bDto.product_img}" style="width: 150px;height: 150px;"
 								onclick = "location.href='${root}index?formpath=product&category=${bDto.classification }&prodNo=${bDto.product_no }'"></td>
 						<td onclick = "location.href='${root}index?formpath=product&category=${bDto.classification }&prodNo=${bDto.product_no }'">${bDto.product_no }</td>
 						<td onclick = "location.href='${root}index?formpath=product&category=${bDto.classification }&prodNo=${bDto.product_no }'"><strong>${bDto.product_name }</strong></td>

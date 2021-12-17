@@ -50,7 +50,7 @@
       	<c:forEach var="list" items="${boardList }">
           <div>
             <div class="num">${list.no }</div>
-            <div class="photo"><img src = "${root }resources/image/${list.classification}/${list.product_img}" style="width: 150px; height: 150px;"></div>
+            <div class="photo"><img src = "/product_img/${list.product_img}" style="width: 150px; height: 150px;"></div>
             <c:choose>
 			<c:when test="${list.fileName eq null || list.fileName eq ''}">
 				<div id="${list.no }" class="title"><a href = 'viewProc?num=${list.no }'>${list.title }</a></div>
