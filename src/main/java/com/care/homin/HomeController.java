@@ -1,8 +1,7 @@
 package com.care.homin;
 
-
-
-
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -60,8 +59,8 @@ public class HomeController {
 		return "board/boardModifyForm";
 	}
 	@RequestMapping("/mypage")
-	public String mypage(Model model, String category) {
-		model.addAttribute("category", category);
+	public String mypage() {
+		
 		return "mypage/mypageForm";
 	}
 	
@@ -73,9 +72,12 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/product")
-	public String product(Model model,@RequestParam String prodNo, String category) {
+	public String product(Model model,@RequestParam String prodNo, String category, HttpServletResponse res) {
 		model.addAttribute("product",service.selectProduct(prodNo));
 		model.addAttribute("category",category);
+		Cookie cookie = new Cookie(prodNo,prodNo);
+		cookie.setMaxAge(60*60*24); // 24시간
+		res.addCookie(cookie);
 		return "/rental/productForm";
 	}
 }

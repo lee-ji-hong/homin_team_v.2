@@ -145,7 +145,7 @@
 
 <section class="container-home-section">
 <c:forEach var="pr" items="${product }">
-	<div  class="main-product-list" onclick="location.href='${root}index?formpath=product&category=${category }&prodNo=${pr.product_no }'">
+	<div  class="main-product-list" onclick="location.href='${root}product?category=${category }&prodNo=${pr.product_no }'">
 		<div class="main-product-list-in">
 			<ul>
 				<li>

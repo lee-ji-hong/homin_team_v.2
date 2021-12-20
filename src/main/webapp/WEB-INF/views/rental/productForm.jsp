@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%> <%@ taglib uri="http://java.sun.com/jsp/jstl/core"
 prefix="c"%>
+
 <c:url var="root" value="/" />
 
 <link rel="stylesheet" href="${root }resources/swiper/swiper.min.css" />
@@ -57,7 +58,8 @@ prefix="c"%>
     display: none;
   }
 </style>
-
+<div style="width:1240px; margin: 0 auto;">
+<div style="height: 150px;"><%@ include file="../common/top.jsp" %></div>
 <div class="rental-detail-header">
   <ul>
     <li>
@@ -231,3 +233,5 @@ prefix="c"%>
     });
   </script>
 </section>
+<%@ include file="../common/footer.jspf" %>
+</div>
