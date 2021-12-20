@@ -114,36 +114,37 @@
 			</div>
 		
 		</div>	
-		
 
-
-
-<c:choose>
-	<c:when test="${category eq 'dryer' }">	
-		<div class="rental-header-text">건조기</div>
-	</c:when>
-	<c:when test="${category eq 'waterpurifier' }">
-		<div class="rental-header-text">정수기</div>
-	</c:when>
-	<c:when test="${category eq 'aircleaner' }">
-		<div class="rental-header-text">공기청정기</div>
-	</c:when>
-	<c:when test="${category eq 'washmachine' }">
-		<div class="rental-header-text">식기세척기</div>
-	</c:when>
-	<c:when test="${category eq 'microwave' }">
-		<div class="rental-header-text">전기레인지</div>
-	</c:when>
-	<c:otherwise>
-		<div class="rental-header-text">얼음정수기 냉장고</div>
-	</c:otherwise>
-</c:choose>
 </div>
 
 <%-- <c:import url="/${category }" /> --%>
 
+		
 
-<section class="container-home-section">
+<div class="rental-wrap">
+<div class="rental-top-text">
+	<c:choose>
+		<c:when test="${category eq 'dryer' }">	
+			<div class="rental-header-text">건조기</div>
+		</c:when>
+		<c:when test="${category eq 'waterpurifier' }">
+			<div class="rental-header-text">정수기</div>
+		</c:when>
+		<c:when test="${category eq 'aircleaner' }">
+			<div class="rental-header-text">공기청정기</div>
+		</c:when>
+		<c:when test="${category eq 'washmachine' }">
+			<div class="rental-header-text">식기세척기</div>
+		</c:when>
+		<c:when test="${category eq 'microwave' }">
+			<div class="rental-header-text">전기레인지</div>
+		</c:when>
+		<c:otherwise>
+			<div class="rental-header-text">얼음정수기 냉장고</div>
+		</c:otherwise>
+	</c:choose>
+</div>
+<section class="rental-productlist">
 <c:forEach var="pr" items="${product }">
 	<div  class="main-product-list" onclick="location.href='${root}product?category=${category }&prodNo=${pr.product_no }'">
 		<div class="main-product-list-in">
@@ -182,4 +183,4 @@
 	</div>
 </c:forEach>
 </section>
-
+</div>

@@ -1,8 +1,44 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 
-<center>
-<hr/>
+<hr style="width:2500px;"/>
+<center >
+
+<style>
+center {
+/* background:#ddd;  */
+padding: 50px;
+}
+.footer-out{
+line-height: 2;
+width: 1200px;
+flex-direction: column;
+display: flex;
+align-items: flex-start;
+justify-content: flex-start;
+
+}
+.footer-hi{
+    margin-top: 20px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #727272;
+}
+.footer-hi2{
+    
+    font-size: 13px;
+    line-height: 1.5;
+    color: #727272;
+}
+</style>
+
+<div class="footer-out">
+<strong>(주)엘지유플러스</strong>
+<p>대표이사:황현식 사업자등록번호: 220-81-39938 통신판매업신고: 제2015-서울용산-00481호</p>
+<p>주소 : 서울특별시 용산구 한강대로 32 LG유플러스빌딩</p>
+<p class="footer-hi">현 사이트 내 판매 상품 중에는 ㈜엘지유플러스 홈인서비스에 등록한 개별 판매자가 판매하는 상품이 포함되어 있습니다.</p>
+<p class="footer-hi2">해당 상품의 경우 ㈜엘지유플러스는 통신판매 중개자로써 통신판매의 당사자가 아니며 해당상품, 거래정보 및 거래 등에 대하여 책임을 지지 않습니다.</p>
 <h5>
 Copyright ⓒ CARE Lab. All rights reserved.
 </h5>
+</div>
 </center>

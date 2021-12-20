@@ -58,8 +58,12 @@ prefix="c"%>
     display: none;
   }
 </style>
+
 <div style="width:1240px; margin: 0 auto;">
 <div style="height: 150px;"><%@ include file="../common/top.jsp" %></div>
+
+<div class="rental-product-wrap">
+
 <div class="rental-detail-header">
   <ul>
     <li>
@@ -215,6 +219,8 @@ prefix="c"%>
 	  </div>
 	  
   </div>
+  
+</div>  
   <script>
     var mySwiper = new Swiper(".swiper-container", {
       navigation: {

@@ -23,7 +23,60 @@
 			}
 		})
 	}
+$(function(){
+	$("#pw").blur(function() {
+		var pw = $("#pw").val();
+ 		var num = pw.search(/[0-9]/g);
+ 		var eng = pw.search(/[a-z]/ig);
+ 		var spe = pw.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
 
+		 if(pw == "") {
+			$('#msg2').css('display', 'none');
+			$('#msg3').css('display', 'none');
+			$('#msg4').css('display', 'none');
+
+		 }
+ 		else if(pw.length < 8 || pw.length > 20){
+			$('#msg2').css('display', 'block');
+			$('#msg3').css('display', 'none');
+			$('#msg4').css('display', 'none');
+			$('#pw').focus();
+  		
+ 		}else if(pw.search(/\s/) != -1){
+			$('#msg2').css('display', 'none');
+			$('#msg3').css('display', 'block');
+			$('#msg4').css('display', 'none');
+			$('#pw').focus();
+
+ 		}else if(num < 0 || eng < 0 || spe < 0 ){
+			$('#msg2').css('display', 'none');
+			$('#msg3').css('display', 'none');
+			$('#msg4').css('display', 'block');
+			$('#pw').focus();
+
+ 		}else {
+			$('#msg2').css('display', 'none');
+			$('#msg3').css('display', 'none');
+			$('#msg4').css('display', 'none');
+ 		}
+	});
+
+	$("#pwOk").blur(function() {
+		var pw = $("#pw").val();
+		var pwOk = $("#pwOk").val();
+
+		if(pwOk == "") {
+			$('#msg5').css('display', 'none');
+			return;
+		 }else if(pw != pwOk) {
+			 $('#msg5').css('display', 'block');
+			return;
+		 }else {
+			$('#msg5').css('display', 'none');
+		 }
+	});
+
+});
 	function sendAuth() {
 		var e = document.getElementById('email').value;
 		if (e == "") {
@@ -119,13 +172,17 @@
 			</tr>
 			<tr>
 				<td align='right' height=40>패스워드</td>
-				<td><input type="password" name='pw' style="width: 200px;height: 30px;
+				<td><input type="password" id="pw" name='pw' style="width: 200px;height: 30px;
 							font-size:15px;" placeholder='pw 입력' /></td>
+							<span style="display: none;" id = "msg2">비밀번호는 8자리 ~ 20자리 이내로 입력해주세요.</span>
+							<span style="display: none;" id = "msg3">비밀번호는 공백 없이 입력해주세요.</span>
+							<span style="display: none;" id = "msg4">비밀번호는 영문,숫자, 특수문자를 혼합하여 입력해주세요</span>
 			</tr>
 			<tr>
 				<td align='right'>패스워드 확인</td>
-				<td><input type="password" name='pwOk' style="width: 200px;height: 30px;
+				<td><input type="password" id="pwOk" name='pwOk' style="width: 200px;height: 30px;
 							font-size:15px;"placeholder='pw 입력' /></td>
+							<span style="display: none;" id = "msg5">두 패스워드가 맞지 않습니다.</span>
 			</tr>
 			<tr>
 				<td align='right' height=40>E-Mail</td>

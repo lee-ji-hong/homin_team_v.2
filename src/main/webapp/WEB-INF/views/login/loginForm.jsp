@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<link rel="stylesheet" href="${root }resources/css/index.css" />
 <c:url var="root" value="/"/>
 <c:if test="${not empty sessionScope.id }">
 	<script>
@@ -40,7 +41,10 @@
 	}
 </script>
 
-<center style="margin: 50 0px;">
+<center style="
+	width: 1240px;
+    margin: 0 auto;
+    padding: 50 0px;">
 <div style="margin: 10 0px;">
     	<h1>
     		<img style="width: 150" src="https://static.mylgid.com/userweb/1.0.32/images/logo.svg" alt="MY LG ID" />
@@ -88,12 +92,89 @@
 		<tr>
 			<td colspan=2 align='center'><br>
 				<a href="${root }member">회원가입</a> |
-				<a href="${root}/member">회원가입</a> |
 				<a href="">아이디 찾기</a> |
 				<a href="">비밀번호 찾기</a>
 			</td>
 		</tr>
 	</table>
 </form>
-</h3>
+
+
+   <!--로그인 창-->
+
+
+    <section class="login-form">
+        <div class="login_container">
+        <div style="padding:20px;"></div>
+        <div class="form_container">
+            <form name="login_form" action="${root }loginProc" id="f"  method="post">
+
+                <!--로그인 타이틀-->
+                <div class="form_title_div">
+                    <p class="form_title_p">Login</p>
+                </div>
+                <!--아이디-->
+                <div class="int-area">
+                    <div>
+                        <label class= "form_item_name" for="id">ID</label> 
+                    </div>
+                    <div>
+                        <input type="text" name="userid" id="id" placehorder="아이디를 입력하세요"
+                   class="form_input"  required />
+                    </div>
+                   <div class="form_text_alert_padding">
+                    <div id="alert_userid" class="form_text_alert"></div>
+                   </div>
+                </div>
+    
+               <!--비밀번호-->
+    
+                <div class="int-area">
+                    <div>
+                        <label class= "form_item_name" for="pw">Password</label>
+                    </div>
+                    <div>
+                        <input type="password" name="userpw" id="pw" placehorder="비밀번호를 입력하세요"
+                    class="form_input" required/>
+                    </div>
+                    <div class="form_text_alert_padding">
+                        <div id="alert_password" class="form_text_alert"></div>
+                        <div><label id="msg" style="color:red;"></label></div>
+                    </div>
+                    
+                </div>               
+                <div style="height: 10px;"></div>
+    
+                <!--버튼 -->
+                <div class="btn-area">
+                    <button type="button" class="form_submit_button" onclick="login(this.form)">로그인</button>
+                    <!--check(this.~) : js에 있는 함수 form을 불러들인다 는 의미 -->
+                </div>
+                <c:set var="redirectUri" value="http://localhost:8085/homin/kakaoLogin"/>
+	        	<c:set var="restKey" value="6b699a51ed025c4bd6a42e5026901e43"/>
+                <div class="btn-area">
+                    <div align="center"><br>
+                        <a href="https://kauth.kakao.com/oauth/authorize?client_id=${restKey }&redirect_uri=${redirectUri }&response_type=code"> 
+                            <img src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg" width="180"/>
+                        </a>
+                    </div>
+                </div>
+
+                <!--비밀번호 분실-->
+                <div class="caption">
+                    <div>
+                        <a href="${root }member">회원가입</a> |
+				        <a href="">아이디 찾기</a> |
+                        <a href="#">비밀번호 찾기</a>
+                    </div> 
+                </div>
+    
+            </form>
+        </div>
+
+        </div>
+        
+    </section>
+
+
 </center>

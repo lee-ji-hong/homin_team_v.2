@@ -8,10 +8,10 @@
 </c:if>
 <html>
 <body>
-<div align="center">
-	<table style="width:800px;">
+<div align="center" >
+	<table id="layout" style=" background: #fafafa;">
 		<tr>
-			<td style="height:100px;"><%@ include file="common/top.jsp" %></td>
+			<td id="layout_header" style="height:100px;"><%@ include file="common/top.jsp" %></td>
 		</tr>
 		<tr>
 			<td style="height:400px;"><c:import url="/${formpath }" /> </td>

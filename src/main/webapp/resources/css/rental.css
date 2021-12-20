@@ -10,6 +10,7 @@
     padding: 10 5px;
 }
 .rental-header-text{
+	width: 1200px;
 	margin-bottom: 10px;
 	margin-top: 5px;
     border-bottom: 4px solid#ddd;
@@ -17,13 +18,29 @@
     border-radius: 12px;
     box-shadow: 2px 2px 10px 3px rgb(234 235 239 / 80%);
 }
+.rental-productlist{
+	margin: 50px auto;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 1px;
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+    align-items: flex-start;
+}
+.rental-top-text{
+	font-size: 30px;
+    color: #000;
+    font-weight: 700;
+}
 
 .top_img_banner{
 	position: relative;
     height: 300px;
     margin: 0 auto 50px;
     overflow: hidden;
-    border-color: #eee;
+    border-color: #eee;    
+    background: #eee;
 }
 
 .top_img_banner img{
@@ -35,9 +52,27 @@
     left: 50%;
     transform: translateX(-50%);
 }
-
+.rental-wrap{
+	width: 1320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 auto;
+}
 
 /*productform상세페이지*/
+
+.rental-product-wrap{
+	width: 1300px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    border: 1px solid #eee;
+    padding: 50px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
 .rental-detail-header{
 	
     margin-bottom: 50px;
@@ -251,3 +286,5 @@
     align-items: center;
     flex-direction: column;
 }
+
+

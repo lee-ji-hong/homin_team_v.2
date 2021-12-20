@@ -27,9 +27,9 @@
 </style>
 </head>
 <body>
-	<div style="margin-top: 50px;">
-		<div style="width: 1200px; margin: 0 50px;">
-			<div class="swiper-container" style="width: 98%;">
+	<div >
+		<div style="width: 100%; background: #ddd;">
+			<div class="swiper-container" style="width: 1180px;">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide">
 						<img src="${root }resources/image/test1.jpg" style="width: 100%;">
@@ -44,7 +44,7 @@
 			</div>
 			<div class="swiper-button-prev"></div>
 			<div class="swiper-button-next"></div>
-			<div class="swiper-pagination" style="width: 1200px;"></div>
+			<div class="swiper-pagination" style="width: 2500px;"></div>
 			<script src="${root }resources/swiper/swiper.min.js"></script>
 		</div>
 		<br><br>
@@ -79,8 +79,39 @@
 		
 		</div>
 		
-		<section class="container-home-section" >
-			<div class="main-product-title"><strong>조회수 Top4</strong></div>
+		<section class="container-home-section_home" >
+			<div class="main-product-title"><strong>상품 소개영상</strong></div>
+			<div class="produce-video">
+				<div class="produce-video-text">
+					<strong class="produce-video-text-top">LG 퓨리케어 상하좌우 정수기</strong>
+					<p class="produce-video-text-bottom">매일 마시는 물 매일 깨끗하게</p>
+				</div>
+				<divclass="produce-video-on">
+					<div playsinline="1">
+						<iframe 
+						id="youtube-player-1" 
+						frameborder="0" 
+						allowfullscreen="1" 
+						allow="accelerometer; 
+						autoplay; clipboard-write; 
+						encrypted-media; gyroscope; 
+						picture-in-picture" 
+						title="YouTube video player" 
+						width="640" 
+						height="360" 
+						src="https://www.youtube.com/embed/G3QvuJZjIaE?autoplay=0&amp;time=0&amp;enablejsapi=1&amp;origin=https%3A%2F%2Flghomin.com&amp;widgetid=1" 
+						data-gtm-yt-inspected-41569218_1161="true" 
+						data-gtm-yt-inspected-41569218_1259="true" 
+						data-gtm-yt-inspected-35994037_233="true" 
+						data-gtm-yt-inspected-35994037_252="true">
+						</iframe>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<section class="container-home-section_home" >
+			<div class="main-product-title"><strong>지금 가장 핫한 서비스/상품</strong></div>
 			<div class="main-product-list">
 			<c:forEach var="to" items="${top }">
 				<div class="main-product-list-in">
@@ -119,7 +150,7 @@
 			</div>
 		</section>
 		
-		<section class="container-home-section" >
+		<section class="container-home-section_home" >
 			<div class="main-product-title"><strong>판매 Top4</strong></div>
 			<div class="main-product-list">
 			<c:forEach var="oc" items="${orderCount }">
