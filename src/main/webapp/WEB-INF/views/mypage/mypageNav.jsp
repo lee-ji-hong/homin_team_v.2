@@ -13,7 +13,7 @@ span {
 	font-size: 18;
 }
 h2 {
-	font-size: 28;
+	font-size: 36;
 }
 nav ul {
  	list-style: none;
@@ -25,12 +25,14 @@ p {
 
 <aside class="mypage_aside_wrap">
 		<div style="margin-top:20px">
-		<div>
-			<span>MY PAGE</span>
-			<h2>마이페이지</h2>
+		
+		<div class="mypage_main_wrap">
+		<div class="mypage_main_image">
+		<img src="${pageContext.request.contextPath}/resources/image/basket_my.png">	
 		</div>
 		<div>
-		<img src="${pageContext.request.contextPath}/resources/image/basket_my.png">	
+		<h2>${sessionScope.nickname }</h2>
+		</div>
 		</div>
 		
 			

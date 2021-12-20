@@ -4,6 +4,9 @@ package com.care.homin;
 
 
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -73,9 +76,12 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/product")
-	public String product(Model model,@RequestParam String prodNo, String category) {
+	public String product(Model model,@RequestParam String prodNo, String category, HttpServletResponse res) {
 		model.addAttribute("product",service.selectProduct(prodNo));
 		model.addAttribute("category",category);
+		Cookie c = new Cookie("test","test");
+		c.setMaxAge(20);
+		res.addCookie(c);
 		return "/rental/productForm";
 	}
 }

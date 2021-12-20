@@ -2,11 +2,76 @@
 
 /* mypageform*/
 
+.right-wrap-part{
+/* 	margin-top: 50px;     */
+    display: flex;
+	border: 1px solid #ddd;
+	flex-direction: column;
+    width: 900;
+    height: 668.13;
+    border-radius: 4px;
+}
+.right-wrap-part-inside{
+	padding: 20px;
+/*     width: 900px; */
+    height: 160px;
+    background: #eee;
+    border-radius: 4px;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 36px;
+    align-items: center;
+    justify-content: flex-start;
+    /* text-align: center; */
+    display: flex;
+    
+}
+.mypage_wrap{
+	width: 1240px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.recent_product{
+	border-bottom: 1px solid #ddd;
+    margin: 0 20px;
+	line-height: 58px;
+    font-weight: 700;
+    font-size: 18px;
+}
+.warning_view{
+	
+	margin: 0 auto;
+    padding: 50px;
+}
+.warning_view img{
+	height: 70px;
+}
+
+.warning_view__comment{
+	line-height: 1.48;
+    font-weight: 400;
+    font-size: 22px;
+    text-align: center;
+}
+
+/*mypageNav*/
+
+.mypage_main_wrap{
+	text-align: center;
+	
+}
+.mypage_main_image{
+	display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+}
 .bascket_test{
 	margin: 100 0px;
 }
 .mypage_aside_wrap{
-	margin-right: 100px;
+	margin-right: 25px;
 	width: 240px;
     padding: 30px 25px 18px;
     border-radius: 4px;
