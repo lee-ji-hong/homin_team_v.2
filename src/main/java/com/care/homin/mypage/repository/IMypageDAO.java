@@ -1,7 +1,9 @@
 package com.care.homin.mypage.repository;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import com.care.homin.login.dto.LoginDTO;
@@ -33,4 +35,6 @@ public interface IMypageDAO {
 	void deleteInquiry(String inquiryNo);
 	// 모든 회원 조회
 	ArrayList<AllDTO> selectAllMember();
+	int memberCount(HashMap<String, Object> map);
+	ArrayList<MemberDTO> memberProc(@Param("b") int begin, @Param("e")int end, @Param("sel")String sel, @Param("search") String search);
 }

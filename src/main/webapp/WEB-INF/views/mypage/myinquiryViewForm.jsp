@@ -92,6 +92,6 @@
 		</div>
 		<div class="cus_under_btn">
 			<input class="cus_under_btn_input" type="button" id="writeBtn"
-				value="목록">
+				value="목록" onclick = "window.history.back();">
 		</div>
 </div>

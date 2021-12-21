@@ -2,6 +2,8 @@ package com.care.homin.mypage.service;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.ui.Model;
 
 import com.care.homin.login.dto.LoginDTO;
@@ -27,6 +29,6 @@ public interface IMypageService {
 	// 1:1 문의 삭제
 	public void deleteInquiry(String inquiryNo);
 	
-	public ArrayList<AllDTO> allMember();
 	public void memberView(String id, Model model);
+	public void allMember(Model model, int page, String search, String select, HttpServletRequest req);
 }

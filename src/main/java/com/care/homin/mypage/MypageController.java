@@ -2,8 +2,8 @@ package com.care.homin.mypage;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
@@ -32,10 +33,6 @@ public class MypageController {
 	@Autowired ILoginService loginSvc;
 	@Autowired RentalService service;
 	
-	@RequestMapping("mypageProc")
-	public String mypage() {
-		return "forward:index?formpath=mypage";
-	}
 	//정보관리 위한 비밀번호 확인
 	@ResponseBody
 	@RequestMapping("pwCheckProc")
@@ -208,9 +205,8 @@ public class MypageController {
 	
 	// 관리자 회원관리
 	@RequestMapping(value="memberManagement")
-	public String memberManagement(Model model) {
-		ArrayList<AllDTO> dto = mypageSvc.allMember();
-		model.addAttribute("member",dto);
+	public String memberManagement(Model model, @RequestParam(value="page", required=false,defaultValue = "1")int page, String search, String select, HttpServletRequest req) {
+		mypageSvc.allMember(model, page, search, select, req);
 		return "mypage/info/admin/memberManagementForm";
 	}
 	// 회원관리 상세페이지

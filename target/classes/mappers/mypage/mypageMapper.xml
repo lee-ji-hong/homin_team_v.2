@@ -93,5 +93,26 @@
 		SELECT * FROM member_homin
 	</select>
 	
+	<select id="memberCount" resultType="int" parameterType="HashMap">
+		SELECT count(*) FROM member_homin
+		<choose>
+			<when test="select == 'id'">WHERE id LIKE '%'||#{search}||'%'</when>
+			<when test="select == 'nickname'">WHERE nickname LIKE '%'||#{search}||'%'</when>
+		</choose>
+	</select>
+	
+	<select id="memberProc" resultType="com.care.homin.membership.dto.MemberDTO" parameterType="int">
+		SELECT B.* FROM(
+			SELECT rownum rn, A.* FROM(
+				SELECT * FROM member_homin
+				<choose>
+					<when test="sel == 'id'">WHERE id LIKE '%'||#{search}||'%'</when>
+					<when test="sel == 'nickname'">WHERE nickname LIKE '%'||#{search}||'%'</when>
+				</choose>
+				 ORDER BY no DESC 
+			)A
+		)B WHERE rn BETWEEN #{b} and #{e}
+	</select>
+	
 	
 </mapper>

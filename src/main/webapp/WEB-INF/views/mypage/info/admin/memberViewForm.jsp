@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +11,12 @@
 </script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<c:if test = "${sessionScope.id ne 'admin' }">
+	<script>
+		alert('잘못된 접근입니다.');
+		window.history.back();
+	</script>
+</c:if>
 <script>
 	function deleteMember() {
 		if (confirm("정말 삭제하시겠습니까?") == true) {

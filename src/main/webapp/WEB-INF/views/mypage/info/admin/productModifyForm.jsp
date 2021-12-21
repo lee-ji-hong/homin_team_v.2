@@ -7,6 +7,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<c:if test = "${sessionScope.id ne 'admin' }">
+	<script>
+		alert('잘못된 접근입니다.');
+		window.history.back();
+	</script>
+</c:if>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
 	$(function() {

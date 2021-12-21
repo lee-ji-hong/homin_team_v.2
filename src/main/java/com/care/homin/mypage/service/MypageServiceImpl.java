@@ -1,7 +1,9 @@
 package com.care.homin.mypage.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +11,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
+import com.care.homin.config.PageConfig;
 import com.care.homin.login.dto.LoginDTO;
 import com.care.homin.membership.dto.AllDTO;
 import com.care.homin.membership.dto.MemberDTO;
@@ -141,11 +144,6 @@ public class MypageServiceImpl implements IMypageService{
 	public void deleteInquiry(String inquiryNo) {
 		mypageDao.deleteInquiry(inquiryNo);
 	}
-	@Override
-	public ArrayList<AllDTO> allMember() {
-		ArrayList<AllDTO> dto = mypageDao.selectAllMember();
-		return dto;
-	}
 	
 	@Override
 	public void memberView(String id, Model model) {
@@ -153,6 +151,29 @@ public class MypageServiceImpl implements IMypageService{
 		PostcodeDTO pDto = mypageDao.infoAddr(id);
 		model.addAttribute("member",dto);
 		model.addAttribute("addr",pDto);
+	}
+	@Override
+	public void allMember(Model model, int page, String search, String select, HttpServletRequest req) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("search", search);
+		map.put("select", select);
+		
+		int total = mypageDao.memberCount(map);
+		int pageBlock = 5;
+		int end = page * pageBlock;
+		int begin = end + 1 - pageBlock;
+		
+		ArrayList<MemberDTO> memberList = mypageDao.memberProc(begin, end, select, search);
+		model.addAttribute("memberList", memberList);
+		
+		String url = req.getContextPath() + "/index?formpath=memberManagement?";
+		if(select != null) {
+			url+="select="+select+"&";
+			url+="search="+search+"&";
+		}
+		url+="page=";
+		model.addAttribute("page", PageConfig.getNavi(page, pageBlock, total, url));
+		
 	}
 
 	

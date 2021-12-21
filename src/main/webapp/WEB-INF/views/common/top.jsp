@@ -91,6 +91,7 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 	            	</ul>
             	</li>
             </c:if>
+            <c:if test = "${sessionScope.id ne 'admin' }">
             <li>
               <a href="${root }index?formpath=basket">
                 <img style="height:25px"
@@ -98,6 +99,7 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
                 />
               </a>
             </li>
+             </c:if>
           </c:otherwise>
         </c:choose>
       </ul>

@@ -72,6 +72,8 @@ public class RentalService {
 	}
 
 	public void cancleOrder(String uid) {
+		orderDTO dto = dao.selectOrderHistory(uid);
+		dao.cancleOrderCount(dto.getProductName());
 		dao.cancleOrder(uid);
 	}
 

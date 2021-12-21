@@ -42,5 +42,7 @@ public interface RentalDAO {
 	ArrayList<RentalDTO> productPrice(String category);
 	// 년도별 주문내역
 	ArrayList<orderDTO> salesByYear(String year);
+	// 제품 orderCount -1
+	void cancleOrderCount(String productName);
 
 }
