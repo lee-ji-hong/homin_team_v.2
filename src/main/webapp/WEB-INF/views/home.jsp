@@ -117,7 +117,7 @@
 				<div class="main-product-list-in">
 					<ul>
 						<li>
-							<div class="main-product-text " onclick = "location.href='${root}/product?category=${to.classification }&prodNo=${to.product_no }'">
+							<div class="main-product-text " onclick = "location.href='${root}product?category=${to.classification }&prodNo=${to.product_no }'">
 								<div class="main-product-tex-in ">
 									<img src = "/product_img/${to.product_filename}"></div>
 									<c:choose>
@@ -157,7 +157,7 @@
 				<div class="main-product-list-in">
 					<ul>
 						<li>
-							<div class="main-product-text " onclick = "location.href='${root}/product?category=${oc.classification }&prodNo=${oc.product_no }'">
+							<div class="main-product-text " onclick = "location.href='${root}product?category=${oc.classification }&prodNo=${oc.product_no }'">
 								<div class="main-product-tex-in ">
 									<img src = "/product_img/${oc.product_filename}"></div>
 									<c:choose>
