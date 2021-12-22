@@ -9,7 +9,6 @@
 	<c:import url="mypage/mypageNav.jsp"></c:import>
 	
 	<div class="right-wrap-part">
-		<div class="right-wrap-part-inside" >
 			<c:choose>
 				<c:when test="${category eq 'myinquiry' }">
 					<c:import url="${root }myinquiry"></c:import>
@@ -21,18 +20,29 @@
 					<c:import url="${root }orderHistory"></c:import>
 				</c:when>
 				<c:otherwise>
+		<div class="right-wrap-part-inside" >
 					<h3>안녕하세요. ${sessionScope.nickname }님 합리적인 쇼핑을 홈인과 함께해보세요.</h3>
+					<div class="recent_product">
+						<h3>최근 본 상품</h3>
+						<c:forEach var="pr" items="${prod}">
+							<div
+								onclick="javascript:loaction.href = '/homin/product?category=${pr.classification }&prodNo=${pr.product_no }'">
+								<img src="/product_img/${pr.product_filename}"> <span>${pr.product_no }</span>
+								<span>${pr.product_name }</span>
+							</div>
+						</c:forEach>
+		</div>
+					</div>
 				</c:otherwise>
 			</c:choose>
-		</div>
-		<div class="recent_product">
-			<h3>최근 본 상품 </h3>
-		</div>
-		<div class="warning_view">
-			<img src="${pageContext.request.contextPath}/resources/image/warning.png">	
-		</div>
-		<div class="warning_view__comment">
-			<h3>최근 본 상품이 없습니다.</h3>
-		</div>
+		<c:if test = '${prod eq "" || prod eq null }'>
+			<div class="warning_view">
+				<img src="${pageContext.request.contextPath}/resources/image/warning.png">	
+			</div>
+			<div class="recent_product">
+				<h3>최근 본 상품이 없습니다.</h3>
+			</div>
+		</c:if>
+
 	</div>
 </div>

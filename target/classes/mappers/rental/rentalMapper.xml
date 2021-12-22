@@ -83,5 +83,13 @@
 	<select id="salesByYear" parameterType="String" resultMap = "order">
 		SELECT * FROM homin_order where order_date LIKE '%'||#{year}||'%'
 	</select>
+	
+	<update id="productImgModify" parameterType="com.care.homin.rental.dto.RentalDTO" >
+		UPDATE homin_product SET product_filename=#{product_filename} WHERE product_no=#{product_no}
+	</update>
+	
+	<update id="cancleOrderCount" parameterType="String" >
+		UPDATE homin_product SET ordercount=ordercount-1 WHERE product_name=#{productName}
+	</update>
 
 </mapper>

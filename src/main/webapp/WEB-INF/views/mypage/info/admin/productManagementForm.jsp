@@ -10,6 +10,12 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/rental.css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/index.css" />
 </head>
+<c:if test = "${sessionScope.id ne 'admin' }">
+	<script>
+		alert('잘못된 접근입니다.');
+		window.history.back();
+	</script>
+</c:if>
 <c:if test="${not empty msg }">
 	<script>
 		alert('${msg}');

@@ -1,8 +1,10 @@
 package com.care.homin;
 
+import java.util.ArrayList;
 
-
-
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
@@ -13,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.care.homin.rental.dto.RentalDTO;
 import com.care.homin.rental.service.RentalService;
 
 
@@ -27,7 +30,7 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/index")
-	public String index(Model model,@RequestParam String formpath) {
+	public String index(Model model,@RequestParam String formpath, HttpServletRequest request, HttpServletResponse res) {
 		model.addAttribute("formpath", formpath);
 		return "index";
 	}
@@ -63,8 +66,21 @@ public class HomeController {
 		return "board/boardModifyForm";
 	}
 	@RequestMapping("/mypage")
-	public String mypage(Model model, String category) {
+	public String mypage(Model model, HttpServletRequest request, String category) {
 		model.addAttribute("category", category);
+		Cookie[] ck = request.getCookies();
+		if(ck != null) {
+			ArrayList<RentalDTO> prod = new ArrayList<RentalDTO>();
+			for(int i = 0; i < 5; i++) {
+				if(ck[i].getName().equals("JSESSIONID") == false) {
+					if(ck[i] != null) {
+						RentalDTO product = service.selectProduct(ck[i].getName());
+						prod.add(product);
+					}
+				}
+			}
+			model.addAttribute("prod",prod);
+		}
 		return "mypage/mypageForm";
 	}
 	
@@ -79,9 +95,11 @@ public class HomeController {
 	public String product(Model model,@RequestParam String prodNo, String category, HttpServletResponse res) {
 		model.addAttribute("product",service.selectProduct(prodNo));
 		model.addAttribute("category",category);
-		Cookie c = new Cookie("test","test");
-		c.setMaxAge(20);
-		res.addCookie(c);
+
+		Cookie cookie = new Cookie(prodNo,prodNo);
+		cookie.setMaxAge(60*60*24); // 24시간
+		res.addCookie(cookie);
+
 		return "/rental/productForm";
 	}
 }

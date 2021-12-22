@@ -72,6 +72,8 @@ public class RentalService {
 	}
 
 	public void cancleOrder(String uid) {
+		orderDTO dto = dao.selectOrderHistory(uid);
+		dao.cancleOrderCount(dto.getProductName());
 		dao.cancleOrder(uid);
 	}
 
@@ -111,7 +113,6 @@ public class RentalService {
 		}
 	}
 	
-	// 아직 미완
 	public void productModify(MultipartHttpServletRequest product) {
 		RentalDTO check = dao.selectProduct(product.getParameter("product_no"));
 		if(check != null) {
@@ -120,14 +121,25 @@ public class RentalService {
 			String originFileName = file.getOriginalFilename();
 			
 			pr.setProduct_no(product.getParameter("product_no"));
-			// 카테고리 변경시 이미지 경로 수정
 			pr.setClassification(product.getParameter("classification"));
 			pr.setProduct_name(product.getParameter("product_name"));
 			pr.setPrice(product.getParameter("price"));
 			dao.productModify(pr);
 			if(file.isEmpty() == false) {
-				// 파일경로 수정후 기존파일삭제 새로운파일 업로드
+				// 기존 이미지파일 삭제
+				RentalDTO prod = dao.selectProduct(product.getParameter("product_no"));
+				File deleteFile = new File("C:\\java_folder\\product\\"+prod.getProduct_filename());
+				deleteFile.delete();
+				// 새 이미지 등록
+				File save = new File("C:\\java_folder\\product\\"+originFileName);
+				try {
+					file.transferTo(save);
+				} catch (Exception e) {
+					e.printStackTrace();
+				} 
 				pr.setProduct_filename(originFileName);
+				dao.productImgModify(pr);
+				
 			}
 		}else {
 			

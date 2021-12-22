@@ -27,7 +27,7 @@
 <div class = "mainText"><strong>이용해 주셔서 감사합니다.</strong></div>
 <div id = "count_time"></div>
 <div class = "receipt">
-	<div class = "product_img"><img class = "product_img" src = /product_img/${productImg}></div>
+	<div class = "product_img"><img class = "product_img" src = "/product_img/${productImg}"></div>
 	<div class = "buy_info">
 		<table>
 			<tr>

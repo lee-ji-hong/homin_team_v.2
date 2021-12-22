@@ -30,9 +30,9 @@
 		</c:when>
 	</c:choose>
 <c:forEach var="order" items="${myOrder }">
-	<table onclick = "location.href='${root}index?formpath=product&category=${order.classification}&prodNo=${order.product_no}'">
+	<table onclick = "location.href='${root}product?category=${order.classification}&prodNo=${order.product_no}'">
 		<tr>
-			<th><img src = "${root }resources/image/${order.classification}/${order.productImg}" style="width:100px; height: 100px"></th>
+			<th><img src = "/product_img/${order.productImg}" style="width:100px; height: 100px"></th>
 			<td>주문번호:${order.uid }</td>
 			<td>제품명:${order.productName }</td>
 			<td>가격:${order.amount }원</td>

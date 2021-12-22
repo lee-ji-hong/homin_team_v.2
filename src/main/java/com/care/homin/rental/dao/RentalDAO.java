@@ -34,11 +34,15 @@ public interface RentalDAO {
 	void productInsert(RentalDTO product);
 	// 제품수정
 	void productModify(RentalDTO pr);
+	// 제품사진 수정
+	void productImgModify(RentalDTO pr);
 	// 카테고리별 매출
 	ArrayList<orderDTO> categorySales(String category);
 	// 제품가격
 	ArrayList<RentalDTO> productPrice(String category);
 	// 년도별 주문내역
 	ArrayList<orderDTO> salesByYear(String year);
+	// 제품 orderCount -1
+	void cancleOrderCount(String productName);
 
 }
