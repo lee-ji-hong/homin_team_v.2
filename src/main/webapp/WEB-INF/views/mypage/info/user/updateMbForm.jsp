@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/mypage.css"/>
 <script>
 	function check() {
 		var p = document.getElementById('pw').value;
@@ -68,50 +69,58 @@
 	}
 </script>
 
-<div>
+<div class="mypage_wrap">
 	<c:import url="mypage/mypageNav.jsp"></c:import>
 	
-	<div>
-		<h1>회원정보 수정</h1><br>
+	<div class="right-wrap-part" style="align-items: center;">
+		<h1 style="    
+		font-weight: bold;
+    	font-size: 25px;
+   	    display: inline-block;
+    	text-align: center;
+    	color: black;
+    	padding-top: 8px;
+    	line-height: 2.5;">회원정보 수정</h1><br>
 		<h3><font color="red" id="msg">${msg }</font></h3>
 	
 		<form action="mgmt/updateProc" id="f" method="post">
-		<table>
-			<tr>
-				<td height=40 >아이디</td>
-				<td><input type=text name='id' id="id" value="${userInfo.id }" readonly="readonly"/></td>
-			</tr>
-			<tr>
-				<td height=40>패스워드</td>
-				<td><input type="password" name='pw' id="pw" placeholder='pw 입력' /></td>
-				<td>패스워드 확인</td>
-				<td><input type="password" name='pwOk' id="pwOk" placeholder='pw 입력' /></td>
-			</tr>
-			<tr>
-				<td width=120>이름</td>
-				<td colspan="3"><input type=text name='nickname' value="${userInfo.nickname }"/>
-			</tr>
-			<tr>
-				<td height=40>E-Mail</td>
-				<td><input type=text name='email' id="email" value="${userInfo.email }" /></td>
-				<td colspan="2"><input type="button" value="인증번호 전송"	onclick="sendAuth()"></td>
-			</tr>
-			<tr>
-				<td>인증번호</td>
-				<td><input type=text name='authNum' id="inputAuthNum"	placeholder='인증번호 입력' /></td>
-				<td colspan="2"><input type="button" value="인증번호 확인"	onclick="sendAuthConfirm()"></td>
-			</tr>
-			<tr>
-				<td>휴대폰번호</td>
-				<td colspan='3'><input type=text name='phone' value="${userInfo.phone }"/>
-			</tr>
-			<tr>
-				<td align='center' height=40 colspan=4>
-					<input type="button" value='수정' style="width: 120px;" onclick="check()"/> 
-					<input type=reset value='취소'	style="width: 120px;" />
-				</td>
-			</tr>
-		</table>
+		<div>
+			<div class="member_modi_wrap">
+				<div class="member_modi_text">아이디</div>
+				<div ><input class="member_modi_input" type=text name='id' id="id" value="${userInfo.id }" readonly="readonly"/></div>
+			</div>
+			<div class="member_modi_wrap">
+				<div class="member_modi_text">패스워드</div>
+				<div><input class="member_modi_input" type="password" name='pw' id="pw" placeholder='pw 입력' /></div>
+				
+			</div>
+			<div class="member_modi_wrap">
+				<div class="member_modi_text">패스워드 확인</div>
+				<div><input class="member_modi_input"  type="password" name='pwOk' id="pwOk" placeholder='pw 입력' /></div>
+			</div>
+			<div class="member_modi_wrap">
+				<div class="member_modi_text">이름</div>
+				<div><input class="member_modi_input" type=text name='nickname' value="${userInfo.nickname }"/></div>
+			</div>
+			<div class="member_modi_wrap">
+				<div class="member_modi_text">E-Mail</div>
+				<div><input class="member_modi_input" type=text name='email' id="email" value="${userInfo.email }" /></div>
+			</div>
+			<div class="member_modi_wrap">
+				<div class="member_modi_text"> 휴대폰번호</div>
+				<div><input class="member_modi_input" type=text name='phone' value="${userInfo.phone }"/></div>
+			</div>
+			<div>
+				<div style="
+				padding: 30 0;    
+				align-items: center;
+			    justify-content: center;
+			    display: flex;">
+					<input class="member_modi_btn" type="button" value='수정' onclick="check()"/> 
+					<input class="member_modi_btnn" type=reset value='취소'	 />
+				</div>
+			</div>
+		</div>
 	</form>
 	</div>
 </div>

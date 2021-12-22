@@ -9,15 +9,15 @@
 <html>
 <body>
 <div align="center" >
-	<table id="layout" style=" background: #fafafa;">
+	<table id="layout" style=" background: #fafafa; width: 100%;">
 		<tr>
 			<td id="layout_header" style="height:100px;"><%@ include file="common/top.jsp" %></td>
 		</tr>
 		<tr>
-			<td style="height:400px;"><c:import url="/${formpath }" /> </td>
+			<td style="height:400px; border-top: 1px solid #ddd;"><c:import url="/${formpath }" /> </td>
 		</tr>
 		<tr>
-			<td style="height:50px;"><%@ include file="common/footer.jspf" %></td>
+			<td style="height:50px; border-top: 1px solid #ddd;"><%@ include file="common/footer.jspf" %></td>
 		</tr>
 	</table>
 	</div>

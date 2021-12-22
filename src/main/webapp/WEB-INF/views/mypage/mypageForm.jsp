@@ -21,7 +21,7 @@
 					<c:import url="${root }orderHistory"></c:import>
 				</c:when>
 				<c:otherwise>
-					<h3>안녕하세요. ${sessionScope.nickname }님</h3>
+					<h3>안녕하세요. ${sessionScope.nickname }님 합리적인 쇼핑을 홈인과 함께해보세요.</h3>
 				</c:otherwise>
 			</c:choose>
 		</div>
@@ -31,7 +31,7 @@
 		<div class="warning_view">
 			<img src="${pageContext.request.contextPath}/resources/image/warning.png">	
 		</div>
-		<div class="recent_product">
+		<div class="warning_view__comment">
 			<h3>최근 본 상품이 없습니다.</h3>
 		</div>
 	</div>

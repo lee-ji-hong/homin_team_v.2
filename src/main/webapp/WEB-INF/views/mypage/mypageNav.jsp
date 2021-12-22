@@ -39,7 +39,7 @@ p {
 		</div>
 		<nav class="mypage_aside_nav" >
 			<br>
-			<p>나의 정보 관리</p>
+			<p> > 나의 정보관리</p>
 			<ul>
 				<c:choose>
 					<c:when test="${sessionScope.id eq 'ADMIN@CARE.COM'}">
@@ -48,13 +48,13 @@ p {
 					</c:when>
 					<c:otherwise>
 <%-- 						<li><a href="/homin/mypage/info/mgmt?id=${sessionScope.id }">회원 정보 관리</a></li> --%>
-						<li><a href="${root }index?formpath=info/mgmt?id=${sessionScope.id }">>회원 정보 관리</a></li>
-						<li><a href="${root }index?formpath=info/addr?id=${sessionScope.id }">>주소지 관리</a></li>
+						<li><a href="${root }index?formpath=info/mgmt?id=${sessionScope.id }">회원 정보 관리</a></li>
+						<li><a href="${root }index?formpath=info/addr?id=${sessionScope.id }">주소지 관리</a></li>
 					</c:otherwise>
 				</c:choose>
-				<li><a href="${root }index?formpath=mypage&category=myinquiry">>1:1 문의 내역</a></li>
-				<li><a href="${root }index?formpath=mypage&category=orderHistory">>주문 내역</a></li>
-				<li><a href="${root}index?formpath=basket">>장바구니</a></li>
+				<li><a href="${root }index?formpath=mypage&category=myinquiry">1:1 문의 내역</a></li>
+				<li><a href="${root }index?formpath=mypage&category=orderHistory">주문 내역</a></li>
+				<li><a href="${root}index?formpath=basket">장바구니</a></li>
 			</ul>
 		</nav>
 </aside>

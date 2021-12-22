@@ -17,45 +17,54 @@ h3 {
 	margin: 0 0 20 0px;
 	}
 </style>
-<div>
+<div class="mypage_wrap">
 	<c:import url="mypage/mypageNav.jsp"></c:import>
 		
-	<div>
+	<div class="right-wrap-part" style="    
+/* 	border: 1px solid; */
+	justify-content: space-between;
+	">
+	
 		<div>
 			<h3>회원 관리 정보</h3>
 		</div>
 		<section>
+		<hr>
 			<div>
 				<h4>MY LG ID 회원 정보</h4>
 			</div>
 			<div>
 				<p>MY LG ID 홈페이지에서 회원 정보를 변경할 수 있습니다.</p>
 			</div>
-			<table>
-				<tr>
-					<td>아이디</td><td>${allDto.id }</td>
-				</tr>
-				<tr>
-					<td>비밀번호</td><td>******</td>
-				</tr>
-				<tr>
-					<td>이름</td><td>${allDto.nickname }</td>
-				</tr>
-				<tr>
-					<td>휴대폰번호</td><td>${allDto.phone }</td>
-				</tr>
-				<tr>
-					<td>이메일</td><td>${allDto.email }</td>
-				</tr>
-				<tr>
-					<td colspan="2" align="center">
-						<input type="button" style="width: 75; height: 30; font-size: 15; border-radius:10px; color:#FFFFFF; background-color:#B71256;"
+			<div style="line-height: 3;">
+				<div class="text-wrap">
+					<div>아이디</div><div>${allDto.id }</div>
+				</div>
+				<div class="text-wrap">
+					<div>비밀번호</div><div>******</div>
+				</div>
+				<div class="text-wrap">
+					<div>이름</div><div>${allDto.nickname }</div>
+				</div>
+				<div class="text-wrap">
+					<div>휴대폰번호</div><div>${allDto.phone }</div>
+				</div>
+				<div class="text-wrap">
+					<div>이메일</div><div>${allDto.email }</div>
+				</div>
+				<div class="text-wrap" style="justify-content: flex-end;">
+					<div class="member_management_btn" >
+						<input type="button" class="member_management_input"
 								value="수정" onclick="location.href='${root}index?formpath=mgmt/confirmPwForUdMb'">
-					</td>
-				</tr>
-				</table>
+					</div>
+					<div class="member_management_btn" >
+					<input type="button"   class="member_management_input_bot"
+								value="회원탈퇴" onclick="location.href='${root}index?formpath=mgmt/confirmPw'">
+					</div>
+				</div>
+				</div>
 				
-				<table>
+				<table style="color: #ddd; line-height: 1.89;">
 				<tr><td>회원 탈퇴는 본인 확인 절차 후, 진행됩니다.<br></td></tr>
 				<tr><td>회원 탈퇴 후에도 MY LG ID 회원은 유지되며, 계속 이용할 수 있습니다.<br></td></tr>
 				<tr><td>회원 탈퇴 시, 홈인에서 받은 각종 할인 쿠폰 및 이벤트 혜택 등은 자동으로 소멸합니다.<br></td></tr>
@@ -67,10 +76,7 @@ h3 {
 				
 				
 					<tr>
-					<td colspan="2" align="center">
-					<input type="button" style="width: 75; height: 30; font-size: 15; border-radius:10px;" 
-								value="회원탈퇴" onclick="location.href='${root}index?formpath=mgmt/confirmPw'">
-					</td>
+					
 					</tr>
 				</table>
 		</section>

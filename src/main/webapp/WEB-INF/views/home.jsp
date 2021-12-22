@@ -28,23 +28,26 @@
 </head>
 <body>
 	<div >
-		<div style="width: 100%; background: #ddd;">
-			<div class="swiper-container" style="width: 1180px;">
+		<div style="
+		width: 2000px;
+  	    margin: 0 auto; 
+<!--   	    background: #ddd;"> -->
+			<div class="swiper-container" style="width: 2000px;">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide">
-						<img src="${root }resources/image/test1.jpg" style="width: 100%;">
+						<img src="https://pubfiles.lghomin.com/files/images/00/357e5945c65d4fc1abcfea14fd57c607/25756605fb814d97804a38ddfe34c555.jpg" style="width: 100%;">
 					</div>
 					<div class="swiper-slide">
-						<img src="${root }resources/image/test2.jpg" style="width: 100%;">
+						<img src="https://pubfiles.lghomin.com/files/images/00/e298d8eb42f140dfa16f0e71bc2145ef/d34fb1fd63c74e41b6f2968dd56cce56.jpg" style="width: 100%;">
 					</div>
 					<div class="swiper-slide">
-						<img src="${root }resources/image/test3.jpg" style="width: 100%;">
+						<img src="https://pubfiles.lghomin.com/files/images/00/2a491d4b1e054c6b96c0d0c55be42bbd/715bd368f8424039926c9d07373ddbe5.jpg" style="width: 100%;">
 					</div>
 				</div>
 			</div>
 			<div class="swiper-button-prev"></div>
 			<div class="swiper-button-next"></div>
-			<div class="swiper-pagination" style="width: 2500px;"></div>
+			<div class="swiper-pagination" style="width: 2000px;"></div>
 			<script src="${root }resources/swiper/swiper.min.js"></script>
 		</div>
 		<br><br>

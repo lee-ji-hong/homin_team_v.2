@@ -5,7 +5,7 @@
 .right-wrap-part{
 /* 	margin-top: 50px;     */
     display: flex;
-	border: 1px solid #ddd;
+/* 	border: 1px solid #ddd; */
 	flex-direction: column;
     width: 900;
     height: 668.13;
@@ -29,15 +29,18 @@
 .mypage_wrap{
 	width: 1240px;
     margin: 0 auto;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
+    margin-top: 50px;
 }
 
 .recent_product{
-	border-bottom: 1px solid #ddd;
-    margin: 0 20px;
+	border-bottom: 1px solid #ddd; 
 	line-height: 58px;
     font-weight: 700;
     font-size: 18px;
+}
+.recent_product h3{
+	margin: 0 20px;
 }
 .warning_view{
 	
@@ -91,4 +94,127 @@
 .mypage_aside_nav{
 	font-weight: 700;
 	line-height: 40px;
+}
+.mypage_aside_nav p {
+	font-size: 22;
+    line-height: 2.5;
+}
+.mypage_aside_nav ul{
+	margin: 8px 0 34px;
+	font-size: 20;
+	font-weight: 560;
+}
+.mypage_aside_nav li{
+	line-height: 1.5;
+    padding: 6px 0;
+}
+
+/*회원관리정보폼*/
+.text-wrap{
+	width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: grey;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.member_management_btn{
+	display: flex;          
+	margin: 20px 0 20 20px;
+	justify-content: center;
+}
+
+.member_management_input{
+	width: 78;
+    height: 34;
+    font-size: 15;
+    font-weight: 600;
+    border-radius: 4px;
+    color: #FFFFFF;
+    background-color: #00a9b4;
+    border: 2px solid #00a9b4;
+}
+.member_management_search{
+	width: 78;
+    height: 38;
+    font-size: 15;
+    font-weight: 600;
+    border-radius: 4px;
+    margin-left: 5px;
+    color: #FFFFFF;
+    background-color: #00a9b4;
+    border: 2px solid #00a9b4;
+}
+
+.member_management_input_bot{
+	width: 78;
+    height: 34;
+    font-size: 15;
+    font-weight: 600;
+    border-radius: 4px;
+	background-color: white;
+    border: 2px solid #00a9b4;
+    color: #00a9b4;
+}
+
+/*updateMbForm*/
+
+.member_modi_wrap{
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 3;
+}
+
+.member_modi_text{
+	color: rgb(86, 196, 196);
+    font-weight: bold;
+  
+}
+
+.member_modi_input{
+	height: 30px;
+    margin-left: 50px;
+    border: 1.5px solid #ddd;
+    border-radius: 4px;
+    font-family: "Noto Sans KR", "Noto Sans CJK KR", "맑은 고딕", "Malgun Gothic", sans-serif;
+    font-size: 15px;
+    line-height: 21px;
+}
+
+.member_modi_btn{
+	width: 150;
+	margin-right: 15px;
+    color: #FFFFFF;
+    background-color: rgb(86, 196, 196);
+    padding: 12px 0;
+    font-size: 15;
+    height: 30px;
+    border-radius: 4px;
+    border: none;
+    font-weight: 600;
+}
+.member_modi_btnn{
+	width: 150;
+    color: rgb(86, 196, 196);
+    background-color: white;
+    padding: 12px 0;
+    font-size: 15;
+    height: 30px;
+    border-radius: 4px;
+    border: 2px solid rgb(86, 196, 196);
+    font-weight: 600;
+	
+}
+
+/*updateAdForm*/
+
+.addre_modi_input{
+	height: 40px;
+    border: 1.5px solid #ddd;
+    border-radius: 4px;
+    font-family: "Noto Sans KR", "Noto Sans CJK KR", "맑은 고딕", "Malgun Gothic", sans-serif;
+    font-size: 15px;
 }

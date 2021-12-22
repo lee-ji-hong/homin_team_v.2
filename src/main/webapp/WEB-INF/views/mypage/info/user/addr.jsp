@@ -10,38 +10,52 @@ table {
 	width: 400; height: 200;
 }
 </style>
-<div>
+<div class="mypage_wrap" >
 	<c:import url="mypage/mypageNav.jsp"></c:import>
 	
 	<c:choose>
 		<c:when test="${postCode eq null }">
-			<div>
+	<div class="right-wrap-part">
 				<div>
-					<h3>주소지 등록하기</h3>
+					<h3  style=" font-size: 24; margin: 0 0 20 0px;">주소지 등록하기</h3>
+					<hr>
 					<input type="button" value="주소 등록" onclick="location.href='${root}index?formpath=addr/registerAdForm'">
 				</div>
 			</div>
 		</c:when>
 		<c:otherwise>
-			<div>
+			<div class="right-wrap-part">
 				<div>
-					<h3>주소지 관리</h3>
+					<h3 style=" font-size: 24; margin: 0 0 20 0px;">주소지 관리</h3>
 				</div>
 				<section>
-					<table>
-						<tr><td>아이디</td><td>${postCode.id }</td></tr>
-						<tr><td>우편번호</td><td>${postCode.zipcode }</td></tr>
-						<tr><td>주소</td><td>${postCode.addr1 }</td></tr>
-						<tr><td>상세주소</td><td>${postCode.addr2 }</td></tr>
-						<tr>
-							<td colspan="2" align="right">
-								<input type="button" value="수정" onclick="location.href='${root}index?formpath=addr/updateAdForm'">
-								<input type="button" value="주소삭제" onclick="location.href='${root}index?formpath=addr/confirmPw'">
-							</td>
-						</tr>
-					</table>
+				<hr>
+					<div style="line-height: 3;  margin: 30px;">
+						<div class="text-wrap">
+							<div>아이디</div>
+							<div>${postCode.id }</div>
+						</div>
+						<div class="text-wrap">
+							<div>우편번호</div>
+							<div>${postCode.zipcode }</div>
+						</div>
+						<div class="text-wrap">
+							<div>주소</div>
+							<div>${postCode.addr1 }</div>
+						</div>
+						<div class="text-wrap">
+							<div>상세주소</div>
+							<div>${postCode.addr2 }</div>
+						</div>
+						<div style="justify-content: flex-end;">
+							<div class="member_management_btn">
+								<input style="margin-right: 6px;"  class="member_management_input" type="button" value="수정" onclick="location.href='${root}index?formpath=addr/updateAdForm'">
+								<input  class="member_management_input_bot" type="button" value="주소삭제" onclick="location.href='${root}index?formpath=addr/confirmPw'">
+							</div>
+						</div>
+					</div>
 				</section>
-			</div>
+	</div>
 		</c:otherwise>
 	</c:choose>	
 </div>

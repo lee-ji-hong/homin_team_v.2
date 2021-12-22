@@ -14,10 +14,10 @@
 		location.href='${root}index?formpath=rental&category=dryer'
 	</script>
 </c:if>
-<div class="bascket_test">
+<div class="mypage_wrap">
 	<c:import url="mypage/mypageNav.jsp"></c:import>
 
-	<section>
+	<section class="right-wrap-part">
 		<h3>장바구니</h3>
 		<table>
 			<thead>

@@ -126,7 +126,7 @@ prefix="c"%>
     </div>
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
-    <div class="swiper-pagination" style="width: 300px"></div>
+    <div class="swiper-pagination" ></div>
     <script src="${root }resources/swiper/swiper.min.js"></script>
   </div>
 

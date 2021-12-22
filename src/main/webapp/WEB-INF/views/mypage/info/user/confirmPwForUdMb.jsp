@@ -1,12 +1,54 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<c:url var="root" value="/"></c:url>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/mypage.css"/>
+<c:set var="root" value="/"></c:set>
+
 <style>
 div#wrapper {
 	width: 800;
 	margin: 0 auto;
 }
+
+.form-title {
+    color: rgb(86, 196, 196);
+    font-weight: bold;
+    line-height: 2;
+}
+
+.loginform_id_input {
+    width: 350px;
+    height: 50px;
+    font-size: 15px;
+    border: 1.5px solid #ddd;
+    border-radius: 4px;
+    font-family: "Noto Sans KR", "Noto Sans CJK KR", "맑은 고딕", "Malgun Gothic", sans-serif;
+    font-size: 15px;
+    line-height: 21px;
+}
+
+ .loginform_btn_ck {
+    color: #FFFFFF;
+    background-color: rgb(86, 196, 196);
+    padding: 12px 0;
+    font-size: 15;
+    width: 86px;
+    height: 25px;
+    border-radius: 4px;
+    border: none;
+    font-weight: 600;
+}
+.right-wrap-part h3{
+	font-weight: bold;
+    font-size: 25px;
+    display: inline-block;
+    text-align: center;
+    color: rgb(86, 196, 196);
+    padding-top: 8px;
+    line-height: 2.5;
+}
+
 </style>
+
 <c:if test="${empty sessionScope.id }">
 	<script>
 		location.href='/homin/';
@@ -33,8 +75,7 @@ div#wrapper {
 			success : function(result){
 				$('#msg').text(result.msg);
 				if (result.msg == "" || result.msg == null)
-// 					document.getElementById('f').submit();
-					location.href='${root}index?formpath=mgmt/updateMbForm?id=${sessionScope.id }';
+					document.getElementById('f').submit();
 			},
 			error : function(){
 				alert('회원탈퇴 에러발생');
@@ -44,36 +85,35 @@ div#wrapper {
 </script>
 
 <center>
-<div>
+<div class="mypage_wrap">
 	<c:import url="mypage/mypageNav.jsp"></c:import>
-	<div>
+	<div class="right-wrap-part">
 	   	<h3>비밀번호 확인</h3>
-	    <p>개인 정보를 안전하게 보호하기 위해 비밀번호를 한번 더 입력해 주세요.</p>
+	    <p style=" color: grey;">개인 정보를 안전하게 보호하기 위해 비밀번호를 한번 더 입력해 주세요.</p>
 		<form action="mgmt/updateForm" id="f" method="post">
-			<table>
-				<tr>
-					<td><label>MY LG ID (이메일)</label></td>
-				</tr>
-				<tr>
-					<td><input style="width: 350; height: 30; font-size: 15;" type=text id="id" name='id' value="${sessionScope.id }" readonly="readonly"/></td>
-				</tr>
-				<tr>
-					<td><br>비밀번호</td>
-				</tr>
-				<tr>
-					<td><input style="width: 350; height: 30; font-size: 15;" type=password id="pw" name='pw' placeholder="비밀번호"/></td>
+			<div>
+				<div>
+					<div><label class="form-title">MY LG ID (이메일)</label></div>
+				</div>
+				<div>
+					<div><input class="loginform_id_input" type=text id="id" name='id' value="${sessionScope.id }" readonly="readonly"/></div>
+				</div>
+				<div>
+					<div class="form-title">비밀번호</div>
+				</div>
+				<div>
+					<div><input class="loginform_id_input" type=password id="pw" name='pw' placeholder="비밀번호"/></div>
 					
-				</tr>
-				<tr>
-					<td><label id="msg" style="color:red;"></label></td>
-				</tr>
-				<tr>
-					<td colspan=2 align='center'><br>
-						<input type="button" style="color:#FFFFFF; background-color:#B71256; 
-						font-size:15; width: 150px; height: 30px; border-radius: 10px;" value='확인' style="width: 86px;" onclick="pwCheck()"/>
-					</td>
-				</tr>
-			</table>
+				</div>
+				<div>
+					<div><label id="msg" style="color:red;"></label></div>
+				</div>
+				<div>
+					<div align='center'><br>
+						<input type="button" style="width:86px" class=" loginform_btn_ck" value='확인'  onclick="pwCheck()"/>
+					</div>
+				</div>
+			</div>
 		</form>
 	            
 	</div>
