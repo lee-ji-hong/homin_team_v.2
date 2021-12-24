@@ -24,9 +24,20 @@
 		 }
 	}
 </script>
+	<div>
+		<h3 style="font-size: 24; margin: 0 0 20 0px;">주문 내역</h3>
+	</div>
+	
 	<c:choose>
 		<c:when test="${myOrder eq '[]' }">
-			구매한 제품이 없습니다.
+		<div><hr></div>
+		<div class="warning_view">
+				<img src="${pageContext.request.contextPath}/resources/image/warning.png">	
+			</div>
+		<div class="recent_product_no">
+			<h3>구매한 제품이 없습니다.</h3>
+		</div>
+			
 		</c:when>
 	</c:choose>
 <c:forEach var="order" items="${myOrder }">

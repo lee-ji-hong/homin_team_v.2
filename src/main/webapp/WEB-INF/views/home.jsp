@@ -31,7 +31,7 @@
 		<div style="
 		width: 2000px;
   	    margin: 0 auto; 
-<!--   	    background: #ddd;"> -->
+       "> 
 			<div class="swiper-container" style="width: 2000px;">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide">

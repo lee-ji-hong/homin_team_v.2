@@ -8,7 +8,7 @@
 /* 	border: 1px solid #ddd; */
 	flex-direction: column;
     width: 900;
-    height: 668.13;
+    height: 100%;
     border-radius: 4px;
 }
 .right-wrap-part-inside{
@@ -42,6 +42,14 @@
 .recent_product h3{
 	margin: 0 20px;
 }
+
+.recent_product_comment{
+	
+	font-size: 15px;
+    border-top: 1px solid #ddd;
+    background: #f6f6f6;
+    border-bottom: 1px solid #ddd;
+}
 .warning_view{
 	
 	margin: 0 auto;
@@ -56,6 +64,33 @@
     font-weight: 400;
     font-size: 22px;
     text-align: center;
+}
+
+.mypage_recent_productlist{
+	width: 95%;
+    display: flex;
+/*     justify-content: space-between; */
+/*     align-items: center; */
+    border: 2px solid #eee;
+    margin: 0 auto;
+    /* background: #eee; */
+    margin: 20px;
+    border-radius: 10px;
+        box-shadow: 0px 1px 5px 2px rgb(234 235 239 / 80%);
+}
+.mypage_recent_productlist img{
+	
+    /* border: 3px solid #ddd; */
+    margin: 15 20px;
+    border-radius: 10px;
+}
+
+.mypage_recent_productlist_text{
+	display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 30px;
 }
 
 /*mypageNav*/
@@ -217,4 +252,57 @@
     border-radius: 4px;
     font-family: "Noto Sans KR", "Noto Sans CJK KR", "맑은 고딕", "Malgun Gothic", sans-serif;
     font-size: 15px;
+}
+
+/*basketform*/
+
+.basket_navbar{
+	display: flex;
+    font-size: 13px;
+    line-height: 48px;
+    color: #222;
+    border-bottom: 2px solid #ddd;
+    justify-content: space-around;
+    align-items: center;
+    background: #f6f6f6;
+    font-weight: 600;
+}
+.basket_component{
+	width: 900px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 2px solid #ddd;
+    margin: 10 0px;
+}
+
+/*myinquiryform*/
+.recent_product_no{
+	margin: 0 auto;
+	line-height: 58px;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.myinquiry_tr{
+	width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 50;
+}
+
+.myinquiry_td_a {
+	width: 490px;
+    margin: 5px;
+}
+
+.myinquiry_td_b{
+	width: 140px;
+    margin: 5px;
+}
+
+.myinquiry_td_c{
+	width: 140px;
+    margin: 5px;
 }

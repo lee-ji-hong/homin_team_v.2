@@ -107,7 +107,7 @@ prefix="c"%>
         </li>
       </c:when>
       <c:otherwise>
-        <li class="rental-header-text">
+        <li >
           <a href="${root }index?formpath=rental&category=${category}"
             >얼음정수기 냉장고</a
           >
