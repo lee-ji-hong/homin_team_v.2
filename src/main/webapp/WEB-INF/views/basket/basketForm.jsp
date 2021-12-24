@@ -53,7 +53,7 @@
 							</c:otherwise>
 						</c:choose>
 						<td><img src = "/product_img/${bDto.product_img}" style="width: 150px;height: 150px;"
-								onclick = "location.href='${root}index?formpath=product&category=${bDto.classification }&prodNo=${bDto.product_no }'"></td>
+								onclick = "location.href='${root}product?category=${bDto.classification }&prodNo=${bDto.product_no }'"></td>
 						<td>${bDto.product_no }</td>
 						<td><strong>${bDto.product_name }</strong></td>
 						<td>${bDto.price }</td>

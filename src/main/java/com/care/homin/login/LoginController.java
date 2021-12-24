@@ -48,7 +48,7 @@ public class LoginController {
 		return map;
 	}
 	
-	@RequestMapping("loginProc")
+	@RequestMapping("/loginProc")
 	public String loginProc(LoginDTO loginDto, HttpSession session, Model model) {
 //		logger.warn("id : "+loginDto.getId());
 //		logger.warn("pw : "+loginDto.getPw());
@@ -63,7 +63,7 @@ public class LoginController {
 	}
 	
 	@Autowired KakaoConfig kakao;
-	@RequestMapping("kakaoLogin")
+	@RequestMapping("/kakaoLogin")
 	public String kakaoLogin(String code, HttpSession session) {
 		logger.warn("code : " + code);
 		
@@ -72,10 +72,14 @@ public class LoginController {
 		session.setAttribute("nickname", userInfo.get("nickname"));
 		session.setAttribute("id", userInfo.get("email"));
 		session.setAttribute("access_Token", access_Token);
+		
+		// 카카오계정 db저장
+		loginSvc.insertKakaoId((String)userInfo.get("email"));
+		
 		return "login/loginForm";
 	}
 	
-	@RequestMapping("logout")
+	@RequestMapping("/logout")
 	public String logout(HttpServletRequest req, Model model) {
 		String access_Token = (String) req.getSession().getAttribute("access_Token");
 		kakao.logout(access_Token);
@@ -83,6 +87,62 @@ public class LoginController {
 		req.getSession().invalidate();
 		model.addAttribute("formpath", "home");
 		return "index";
+	}
+	
+	@RequestMapping("/idsearch")
+	public String idsearch() {
+		return "login/idsearchForm";
+	}
+	
+	@RequestMapping("/pwsearch")
+	public String pwsearch() {
+		return "login/pwsearchForm";
+	}
+	
+	@RequestMapping("/changePW")
+	public String changePW() {
+		return "login/changepwForm";
+	}
+	
+	@RequestMapping("/idsearchResult")
+	public String idsearchResult() {
+		return "login/idsearchResultForm";
+	}
+	
+	@RequestMapping("/pwChange")
+	public String pwChange(LoginDTO dto, Model model) {
+		String msg = loginSvc.changePw(dto);
+		if(msg.equals("t")) {
+			model.addAttribute("msg", "변경완료.");
+			return "forward:index?formpath=login";
+		}else {
+			model.addAttribute("msg", "문제발생.");
+			return "forward:index?formpath=login";
+		}
+	}
+	
+	@RequestMapping("/memberCheck")
+	public String memberCheck(String id, String email, Model model) {
+		String check = loginSvc.memberCheck(id, email);
+		if(check.equals("t")) {
+			model.addAttribute("idcheck", id);
+			return "forward:index?formpath=changePW";
+		}else {
+			model.addAttribute("msg", "회원정보가 없습니다.");
+			return "forward:index?formpath=login";
+		}
+	}
+	
+	@RequestMapping("/idsearchProc")
+	public String idsearchProc(MemberDTO checkMember, Model model) {
+		String searchId = loginSvc.checkMember(checkMember);
+		if(searchId.equals("f")) {
+			model.addAttribute("msg","등록된 정보가 없습니다.");
+			return "forward:index?formpath=idsearch";
+		}else {
+			model.addAttribute("searchId",searchId);
+			return "forward:index?formpath=idsearchResult";
+		}
 	}
 	
 	

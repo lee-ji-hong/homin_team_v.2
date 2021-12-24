@@ -48,7 +48,7 @@
 	window.history.back();
 </script>
 </c:if>
-<div>
+<div style="margin: 10px auto; width: 1240px; ">
 	<div class = "info">
 		<div>
 			<h1>고객정보</h1>

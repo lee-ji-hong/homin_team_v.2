@@ -81,8 +81,7 @@
 				id="addr2">
 		</div>
 		<div>
-			<input type="button" value="수정" onclick="modifyMember()"> <input
-				type="button" value="삭제" onclick="deleteMember()">
+			<input type="button" value="수정" onclick="modifyMember()"> <input type="button" value="삭제" onclick="deleteMember()">
 		</div>
 	</form>
 </body>

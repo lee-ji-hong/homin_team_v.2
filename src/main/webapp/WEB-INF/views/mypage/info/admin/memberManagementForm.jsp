@@ -19,17 +19,17 @@
 	<c:if test="${not empty msg }">
 		<script>
 			alert('${msg}');
-			location.href = '${root}index?formpath=rental&category=dryer'
 		</script>
 	</c:if>
 	<c:forEach var="list" items="${memberList }">
+	<c:if test = "${list.id ne 'admin' }">
 		<div>
 			<span>번호 ${list.no }</span> <span><a
 				href="${root }index?formpath=memberView&id=${list.id}">Id
 					${list.id }</a></span> <span>nick ${list.nickname }</span> <span>phone
 				${list.phone }</span> <span>email ${list.email }</span>
 		</div>
-
+	</c:if>
 	</c:forEach>
 	${page }
 	<form action="#" method="get">
