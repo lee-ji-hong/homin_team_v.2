@@ -100,7 +100,7 @@
             <div class="date">${list.writeTime }</div>
             <div class="count">${list.hit }</div>
             <c:if test="${sessionScope.id eq 'admin' }">
-            	<input style="width: 60px;" class="delete" type = "button" value = "삭제" onclick = "boardDeleteCheck(${list.no})">
+            	<input style="width: 60px;" class="delete_btn" type = "button" value = "삭제" onclick = "boardDeleteCheck(${list.no})">
             </c:if>
           </div>
           </c:forEach>

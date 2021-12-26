@@ -56,7 +56,7 @@
 			</c:when>
 			<c:when test="${category eq 'waterpurifier' }">
 				<div class="top_img_banner">
-					<img src="https://pubfiles.lghomin.com/files/images/00/6c15fe5489144368885504b7a9a672a8/6d4aa27735544d298ba165d506899a14.jpg">
+					<img src="https://pubfiles.lghomin.com/files/images/00/6c15fe5489144368885504b7a9a672a8/abdd893365da4e288011bb033781e033.jpg">
 				</div>
 			</c:when>
 			<c:when test="${category eq 'aircleaner' }">

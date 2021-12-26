@@ -135,8 +135,13 @@
 
 .board_list .delete{
 	width: 84px;
-	margin-top: 50px;
-    
+    font-family: "Noto Sans KR", "Noto Sans CJK KR", "맑은 고딕", "Malgun Gothic", sans-serif;
+    line-height: 21px;
+}
+
+.board_list .delete_btn{
+	width: 84px;
+
     height: 40px;
     border: 1.5px solid #ddd;
     border-radius: 4px;
