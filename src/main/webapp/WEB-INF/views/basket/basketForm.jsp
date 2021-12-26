@@ -16,31 +16,21 @@
 </c:if>
 <div class="mypage_wrap">
 	<c:import url="mypage/mypageNav.jsp"></c:import>
-	<div class="right-wrap-part" style="    /* 	border: 1px solid; */justify-content: space-between;">
-	<div>
-		<h3 style="font-size: 24; margin: 0 0 20 0px;">장바구니</h3>
-	</div>
-	<section>
-	<hr>
-		<div>
-				<div class="basket_navbar">
-					<div>NO</div>
-					<div>제품이름</div>
-					<div>제품사진</div>
-					<div>제품번호</div>
-					<div>제품명</div>
-					<div>가격</div>
-					<div>구매/삭제</div>
-				</div>
-		</div>
+
+	<section class="right-wrap-part">
+		<h3>장바구니</h3>
 		<table>
-			
+			<thead>
+				<tr>
+					<td>NO</td><td>제품이름</td><td>제품사진</td><td>제품번호</td><td>제품명</td><td>가격</td><td>구매/삭제</td>
+				</tr>
+				
+			</thead>
 				<c:set var="prNo" value="0"></c:set>
 				<c:forEach var="bDto" items="${basket }">
 				<c:set var="prNo" value="${prNo + 1 }"></c:set>
-				
 				<tbody>
-					<tr class="basket_component">
+					<tr>
 						<td>${prNo }</td>
 						<c:choose>
 							<c:when test="${bDto.classification eq 'dryer' }">	
@@ -63,19 +53,14 @@
 							</c:otherwise>
 						</c:choose>
 						<td><img src = "/product_img/${bDto.product_img}" style="width: 150px;height: 150px;"
-								onclick = "location.href='${root}index?formpath=product&category=${bDto.classification }&prodNo=${bDto.product_no }'"></td>
+								onclick = "location.href='${root}product?category=${bDto.classification }&prodNo=${bDto.product_no }'"></td>
 						<td>${bDto.product_no }</td>
 						<td><strong>${bDto.product_name }</strong></td>
 						<td>${bDto.price }</td>
-						<td>
-							<input type="button" value="구매" onclick="location.href='${root}index?formpath=product&category=${bDto.classification }&prodNo=${bDto.product_no }';">
-							<input type="button" value="삭제" onclick="location.href='deleteBasket?no=${bDto.product_no}';">
-						</td>
-						
+						<td><input type="button" value="구매" onclick="location.href='${root}index?formpath=product&category=${bDto.classification }&prodNo=${bDto.product_no }';"></td>
+						<td><input type="button" value="삭제" onclick="location.href='deleteBasket?no=${bDto.product_no}';"></td>
 				</c:forEach>
-					</tr>
 				</tbody>
 		</table>
 	</section>
-</div>
 </div>

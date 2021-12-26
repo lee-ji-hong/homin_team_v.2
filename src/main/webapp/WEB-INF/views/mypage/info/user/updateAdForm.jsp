@@ -23,6 +23,18 @@
 			}
 		}).open();
 	}
+
+	function erchk() {
+        if (document.getElementById("zipcode").value == "") {
+			alert("우편 번호를 검색해서 입력하세요.");
+            return false;
+  		}else if (document.getElementById("addr2").value == ""){
+			alert("상세주소를 입력하세요.");
+            return false;
+		  }else
+		  	alert("주소지가 성공적으로 변경되었습니다.");
+  	 		document.sub1.submit();
+	}
 </script>
 
 <div class="mypage_wrap">
@@ -31,7 +43,7 @@
 	<div class="right-wrap-part">
 		<h3 style=" font-size: 24; margin: 0 0 20 0px;">주소지 수정</h3>
 		
-		<form action="addr/updateProc" method="post">
+		<form action="addr/updateProc" method="post" name="sub1">
 		<hr>
 		
 			<div style="line-height: 3;  margin: 30px;">
@@ -52,7 +64,7 @@
 				</div>
 				<div class="text-wrap" style="justify-content: flex-end;">
 					<div class="member_management_btn">
-					<input style="margin-right: 6px;" type=submit	class="member_management_input"	value='수정'  /> 
+					<input style="margin-right: 6px;" type=button	class="member_management_input"	value='수정' onclick="erchk()" /> 
 					<input  class="member_management_input_bot" type=reset value='취소'	/>
 					</div>
 				</div>

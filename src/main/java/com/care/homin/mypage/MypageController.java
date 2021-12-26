@@ -66,10 +66,11 @@ public class MypageController {
 	public String confirmPwForUdMb() {
 		return "mypage/info/user/confirmPwForUdMb";
 	}
-	@RequestMapping("/mgmt/updateMbForm")
+	@RequestMapping("mgmt/updateMbForm")
 	public String updateMbForm(String id, Model model) {
 		LoginDTO userInfo = mypageSvc.getUserInfo(id);
 		model.addAttribute("userInfo", userInfo);
+
 		return "mypage/info/user/updateMbForm";
 	}
 	@RequestMapping("mgmt/updateProc")
@@ -77,7 +78,7 @@ public class MypageController {
 		String msg = mypageSvc.updateProc(memberDto);
 		if (msg.equals("t")) {
 			session.invalidate();
-			model.addAttribute("msg", "회원정보 수정 완료!");
+			model.addAttribute("msg", "회원정보 수정 완료! 다시 로그인 해주세요.");
 			
 			model.addAttribute("formpath", "home");
 			return "index";
@@ -135,7 +136,7 @@ public class MypageController {
 			model.addAttribute("formpath", "mypage");
 			return "index";
 		} else 
-			model.addAttribute("formpath", "addr/updateAdForm");
+			model.addAttribute("formpath", "mypage");
 			return "index";
 	}
 	

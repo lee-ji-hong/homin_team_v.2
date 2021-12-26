@@ -10,6 +10,10 @@
 		SELECT * FROM login_homin WHERE id=#{id}
 	</select>
 	
+	<insert id="insertKakaoId" parameterType="com.care.homin.membership.dto.MemberDTO">
+		INSERT INTO login_homin VALUES(#{id}, null)		
+	</insert>
+	
 <!-- 	SQL> INSERT INTO login_homin VALUES( -->
 <!--   2  no_login_homin.nextval, -->
 <!--   3  'admin', -->

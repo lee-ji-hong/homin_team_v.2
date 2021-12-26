@@ -23,7 +23,7 @@ public class KakaoConfig {
 		String reqURL = "https://kauth.kakao.com/oauth/token";
 		try {
 			String sendMessage = "grant_type=authorization_code" 
-					+ "&client_id=6b699a51ed025c4bd6a42e5026901e43"
+					+ "&client_id=560f7dc954c6a55108395d3bedeae1b5"
 					+"&redirect_uri=http://localhost:8085/homin/kakaoLogin" 
 					+ "&code=" + code;
 			URL url = new URL(reqURL);//    POST 요청에 필요로 요구하는 파라미터 스트림을 통해 전송
@@ -92,7 +92,7 @@ public class KakaoConfig {
 	        
 	        JsonObject kakao_account = element.getAsJsonObject().get("kakao_account").getAsJsonObject();
 	        String email = kakao_account.getAsJsonObject().get("email").getAsString();
-//	        System.out.println("email : " + email);
+	        System.out.println("email : " + email);
 	        userInfo.put("email", email);
 	    } catch (IOException e) {
 	        e.printStackTrace();

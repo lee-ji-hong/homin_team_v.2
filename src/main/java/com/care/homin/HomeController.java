@@ -71,12 +71,15 @@ public class HomeController {
 		Cookie[] ck = request.getCookies();
 		if(ck != null) {
 			ArrayList<RentalDTO> prod = new ArrayList<RentalDTO>();
-			for(int i = 0; i < 5; i++) {
+			for(int i = 0; i < ck.length; i++) {
 				if(ck[i].getName().equals("JSESSIONID") == false) {
 					if(ck[i] != null) {
 						RentalDTO product = service.selectProduct(ck[i].getName());
 						prod.add(product);
 					}
+				}
+				if(ck.length>4) {
+					break;
 				}
 			}
 			model.addAttribute("prod",prod);

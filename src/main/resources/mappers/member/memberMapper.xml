@@ -30,4 +30,16 @@
 		SELECT * FROM postcode_homin WHERE id = #{id}
 	</select>
 	
+	<select resultType="com.care.homin.membership.dto.MemberDTO" id="idSearch" parameterType="com.care.homin.membership.dto.MemberDTO">
+		SELECT * FROM member_homin WHERE nickname = #{nickname} and email = #{email}
+	</select>
+	
+	<select resultType="com.care.homin.membership.dto.MemberDTO" id="memberCheck" parameterType="string">
+		SELECT * FROM member_homin WHERE id = #{i} and email = #{e}
+	</select>
+	
+	<update id="changePw" parameterType="com.care.homin.login.dto.LoginDTO">
+		UPDATE login_homin SET pw=#{pw} WHERE id=#{id}	
+	</update>
+	
 </mapper>

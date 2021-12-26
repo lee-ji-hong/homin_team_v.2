@@ -1,5 +1,6 @@
 package com.care.homin.membership.dao;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import com.care.homin.login.dto.LoginDTO;
@@ -38,5 +39,12 @@ public interface IMemberDAO {
 	public void insertPost(PostcodeDTO post);
 
 	PostcodeDTO selectPost(String id);
+
+	MemberDTO idSearch(MemberDTO checkMember);
+
+	MemberDTO memberCheck(@Param("i")String id, @Param("e")String email);
+
+	int changePw(LoginDTO dto);
+
 
 }

@@ -16,7 +16,7 @@
 	.item_price{color: #D9418C;}
 	.item_no, .item_name, .item_price{margin-bottom: 15px;}
 </style>
-<div class = "mainText">가입 예정 상품</div>
+<div class = "mainText" style="margin-left: 350px;">가입 예정 상품</div>
 <hr/>
 <div class = "orderItem">
 	<div class = "item_area">

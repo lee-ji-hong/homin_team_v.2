@@ -29,10 +29,10 @@
 <body>
 	<div >
 		<div style="
-		width: 2000px;
+		width: 1475px;
   	    margin: 0 auto; 
-       "> 
-			<div class="swiper-container" style="width: 2000px;">
+  	    background: #ddd;">
+			<div class="swiper-container" style="width: 1475px;">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide">
 						<img src="https://pubfiles.lghomin.com/files/images/00/357e5945c65d4fc1abcfea14fd57c607/25756605fb814d97804a38ddfe34c555.jpg" style="width: 100%;">
@@ -47,7 +47,7 @@
 			</div>
 			<div class="swiper-button-prev"></div>
 			<div class="swiper-button-next"></div>
-			<div class="swiper-pagination" style="width: 2000px;"></div>
+			<div class="swiper-pagination" style="width: 1475px; height: 0px;"></div>
 			<script src="${root }resources/swiper/swiper.min.js"></script>
 		</div>
 		<br><br>
@@ -56,27 +56,27 @@
 		<div class="lent_option-wrap">
 		
 			<div class="lent_option_box">
-				<div><a href = "${root }index?formpath=rental&category=dryer"><img src = "${root }resources/image/1.png"></a></div>
+				<div><a href = "${root }index?formpath=rental&category=dryer"><img src = "/product_img/1.png"></a></div>
 				<div><p>건조기</p></div>
 			</div>
 			<div class="lent_option_box">
-				<div><a href = "${root }index?formpath=rental&category=waterpurifier"><img src = "${root }resources/image/2.png"></a></div>
+				<div><a href = "${root }index?formpath=rental&category=waterpurifier"><img src = "/product_img/2.png"></a></div>
 				<div><p>정수기</p></div>
 			</div>
 			<div class="lent_option_box">
-				<div><a href = "${root }index?formpath=rental&category=aircleaner"><img src = "${root }resources/image/3.png"></a></div>
+				<div><a href = "${root }index?formpath=rental&category=aircleaner"><img src = "/product_img/3.png"></a></div>
 				<div><p>공기청정기</p></div>
 			</div>
 			<div class="lent_option_box">
-				<div><a href = "${root }index?formpath=rental&category=washmachine"><img src = "${root }resources/image/4.png"></a></div>
+				<div><a href = "${root }index?formpath=rental&category=washmachine"><img src = "/product_img/4.png"></a></div>
 				<div><p>식기세척기</p></div>
 			</div>
 			<div class="lent_option_box">
-				<div><a href = "${root }index?formpath=rental&category=microwave"><img src = "${root }resources/image/5.png"></a></div>
+				<div><a href = "${root }index?formpath=rental&category=microwave"><img src = "/product_img/5.png"></a></div>
 				<div><p>전기레인지</p></div>
 			</div>
 			<div class="lent_option_box">
-				<div><a href = "${root }index?formpath=rental&category=refrigerator"><img src = "${root }resources/image/6.png"></a></div>
+				<div><a href = "${root }index?formpath=rental&category=refrigerator"><img src = "/product_img/6.png"></a></div>
 				<div><p>얼음정수기냉장고</p></div>
 			</div>
 		

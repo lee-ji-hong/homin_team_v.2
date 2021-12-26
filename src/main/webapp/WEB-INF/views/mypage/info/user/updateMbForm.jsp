@@ -4,73 +4,71 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/mypage.css"/>
 <script>
+	$(function(){
+	$("#pw").blur(function() {
+		var pw = $("#pw").val();
+ 		var num = pw.search(/[0-9]/g);
+ 		var eng = pw.search(/[a-z]/ig);
+ 		var spe = pw.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+
+		 if(pw == "") {
+			
+
+		}
+		else if(pw.length < 8 || pw.length > 20){
+		   alert('비밀번호는 8자리 ~ 20자리 이내로 입력해주세요.');
+		    return;
+			$('#pw').focus();
+		  
+		 
+		}else if(pw.search(/\s/) != -1){
+		   alert('비밀번호는 공백 없이 입력해주세요.');
+		   return;
+		   $('#pw').focus();
+
+		}else if(num < 0 || eng < 0 || spe < 0 ){
+		   alert('비밀번호는 영문,숫자, 특수문자를 혼합하여 입력해주세요.');
+		   return;
+		   $('#pw').focus();
+
+		}else {
+		   
+		}
+	});
+});
+
 	function check() {
 		var p = document.getElementById('pw').value;
 		var po = document.getElementById('pwOk').value;
 		
+	
 		if (p == "" || p == null){
-			alert('비밀번호를 입력해주세요');
-			return;			
+			alert('비밀번호를 입력해주세요.');
+			return false;			
 		}
 		if (p != po){
-			alert('비밀번호가 일치하지 않습니다');
-			return;			
+			alert('두 비밀번호가 일치하지 않습니다.');
+			return false;			
 		}
-		
-		document.getElementById('f').submit();
+
+		if (document.getElementById("nickname").value == ""){
+			alert('수정하실 이름을 입력해주세요.');
+            return false;
+		}else if (document.getElementById("email").value == ""){
+			alert('수정하실 이메일을 입력해주세요.');
+            return false;
+		}else if (document.getElementById("phone").value == ""){
+			alert('수정하실 전화번호를 입력해주세요.');
+            return false;
+		}else
+			document.getElementById("f").submit();
 	}
 
-	function sendAuth() {
-		var e = document.getElementById('email').value;
-		if (e == "") {
-			$('#msg').text('이메일을 입력하세요.');
-			return;
-		}
-		var s = {
-			email : e
-		}
-		$.ajax({
-			url : "sendAuth",
-			type : "POST",
-			data : JSON.stringify(s),
-			contentType : "application/json;charset=utf-8",
-			dataType : "json",
-			success : function(result) {
-				$('#msg').text(result.msg)
-			},
-			error : function() {
-				$('#msg').text('인증번호 전송 Error')
-			}
-		})
-	}
 	
-	function sendAuthConfirm() {
-		var i = document.getElementById('inputAuthNum').value;
-		if (i == "") {
-			$('#msg').text('인증번호를 입력하세요.');
-			return;
-		}
-		var s = {
-			inputAuthNum : i
-		}
-		$.ajax({
-			url : "authConfirm",
-			type : "POST",
-			data : JSON.stringify(s),
-			contentType : "application/json;charset=utf-8",
-			dataType : "json",
-			success : function(result) {
-				$('#msg').text(result.msg)
-			},
-			error : function() {
-				$('#msg').text('인증번호 확인 Error')
-			}
-		})
-	}
 </script>
 
 <div class="mypage_wrap">
-	<c:import url="mypage/mypageNav.jsp"></c:import>
+	<c:import url="/WEB-INF/views/mypage/mypageNav.jsp"></c:import>
 	
 	<div class="right-wrap-part" style="align-items: center;">
 		<h1 style="    
@@ -92,7 +90,6 @@
 			<div class="member_modi_wrap">
 				<div class="member_modi_text">패스워드</div>
 				<div><input class="member_modi_input" type="password" name='pw' id="pw" placeholder='pw 입력' /></div>
-				
 			</div>
 			<div class="member_modi_wrap">
 				<div class="member_modi_text">패스워드 확인</div>
@@ -100,15 +97,15 @@
 			</div>
 			<div class="member_modi_wrap">
 				<div class="member_modi_text">이름</div>
-				<div><input class="member_modi_input" type=text name='nickname' value="${userInfo.nickname }"/></div>
+				<div><input class="member_modi_input" type=text name='nickname' id="nickname" value="${userInfo.nickname }"/></div>
 			</div>
 			<div class="member_modi_wrap">
 				<div class="member_modi_text">E-Mail</div>
 				<div><input class="member_modi_input" type=text name='email' id="email" value="${userInfo.email }" /></div>
 			</div>
 			<div class="member_modi_wrap">
-				<div class="member_modi_text"> 휴대폰번호</div>
-				<div><input class="member_modi_input" type=text name='phone' value="${userInfo.phone }"/></div>
+				<div class="member_modi_text">휴대폰번호</div>
+				<div><input class="member_modi_input" type=text name='phone' id="phone" value="${userInfo.phone }"/></div>
 			</div>
 			<div>
 				<div style="
@@ -117,7 +114,7 @@
 			    justify-content: center;
 			    display: flex;">
 					<input class="member_modi_btn" type="button" value='수정' onclick="check()"/> 
-					<input class="member_modi_btnn" type=reset value='취소'	 />
+					<input class="member_modi_btnn" type=reset value='취소'	onclick = "javascript:window.history.back()" />
 				</div>
 			</div>
 		</div>
