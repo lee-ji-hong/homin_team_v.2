@@ -14,5 +14,8 @@ PRIMARY KEY(id)
 @Repository
 public interface ILoginDAO {
 	LoginDTO loginProc(String id);
+
+	void insertKakaoId(String id);
+
 	
 }

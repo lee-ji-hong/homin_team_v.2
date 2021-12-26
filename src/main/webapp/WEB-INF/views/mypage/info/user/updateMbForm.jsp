@@ -68,7 +68,7 @@
 			    justify-content: center;
 			    display: flex;">
 					<input class="member_modi_btn" type="button" value='수정' onclick="check()"/> 
-					<input class="member_modi_btnn" type=reset value='취소'	 />
+					<input class="member_modi_btnn" type=reset value='취소'	onclick = "javascript:window.history.back()" />
 				</div>
 			</div>
 		</div>

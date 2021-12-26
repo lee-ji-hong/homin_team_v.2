@@ -35,7 +35,7 @@ public class MemberController {
 		return map;
 	}
 	
-	@RequestMapping(value = "memberProc")
+	@RequestMapping(value = "memberProc", produces = "text/plain;charset=UTF-8")
 	public String memberProc(MemberDTO member, PostcodeDTO post, Model model) {
 		String msg = service.memberProc(member, post);
 		model.addAttribute("msg", msg);

@@ -70,8 +70,9 @@
 								<td style="width:150px">얼음정수기/냉장고</td>
 							</c:otherwise>
 						</c:choose>
+
 						<td ><img src = "/product_img/${bDto.product_img}" style="width: 150px; margin-right: 10px; height: 150px;"
-								onclick = "location.href='${root}index?formpath=product&category=${bDto.classification }&prodNo=${bDto.product_no }'"></td>
+								onclick = "location.href='${root}product?category=${bDto.classification }&prodNo=${bDto.product_no }'"></td>
 						<td style="width: 350px; display: flex; text-align: left; flex-direction: column;" >
 							<p style="line-height:1.5;"> ${bDto.product_no }</p>
 							<strong>${bDto.product_name }</strong>
@@ -82,6 +83,7 @@
 							<input  class="basket_btnbb" type="button" value="삭제" onclick="location.href='deleteBasket?no=${bDto.product_no}';">
 						</td>
 						
+
 				</c:forEach>
 					</tr>
 				</tbody>

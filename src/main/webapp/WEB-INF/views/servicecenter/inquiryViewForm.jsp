@@ -6,29 +6,38 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board.css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/view.css" /> 
 <c:url var="root" value="/" />
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
 <style>
-.board_view_inquiry_top{
-	padding: 20px 15px;
-    font-size: 2rem;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-.board_view_inquiry_bottom{
-	padding: 22px;
-    border-bottom: 1px dashed #ddd;
-    font-size: 0;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding-bottom: 22px;
-    background-color: #f9f9f9;
-    border-top: 1px solid #ddd;
-}
-</style>
-<center>
+	.board_view_inquiry_top{
+		padding: 20px 15px;
+		font-size: 2rem;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+	}
+	.board_view_inquiry_bottom{
+		padding: 22px;
+		border-bottom: 1px dashed #ddd;
+		font-size: 0;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		padding-bottom: 22px;
+		background-color: #f9f9f9;
+		border-top: 1px solid #ddd;
+	}
+	</style>
+<title>Insert title here</title>
+</head>
+<body>
+
+
 <section class="content_section">
-<div class="board_view"> 
+	<div class="board_view"> 
 	<form action="" method="post">
 		<input type="hidden" name="no" value="${view.no }" />
 		<div>
@@ -67,11 +76,12 @@
 	</form>
 	
 	
-	
-	<form class="board-comment-wrap" action = "${root }inquiryAnswerProc" method = "post">
+	<form class="board-comment-wrap" action = "${root }inquiryAnswerProc" method = "post" accept-charset="euc-kr">
+		<input type = "hidden" name = "no" value = "${view.no }">
 		<p>답변</p>
 		<div class= "board-comment-text">
 			<div class="board-comment-text-in">
+
 				<c:choose>
 					<c:when test="${view.answer ne 'null'}">
 						<textarea id="answer" name="answer" cols="50" rows="2" placeholder = "${view.answer }"></textarea>
@@ -85,6 +95,10 @@
 		</div>
 		
 	</form>
+
 </div>	
 </section>	
-</center>
+
+</body>
+</html>
+

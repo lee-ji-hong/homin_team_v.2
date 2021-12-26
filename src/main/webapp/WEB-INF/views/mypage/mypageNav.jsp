@@ -41,17 +41,10 @@ p {
 			<br>
 			<p> 나의 정보관리</p>
 			<ul>
-				<c:choose>
-					<c:when test="${sessionScope.id eq 'ADMIN@CARE.COM'}">
-						<li><a href="${root }index?formpath=info/manage">회원 정보 관리</a></li>
-						<li><a href="${root }index?formpath=info/addrList">주소지 관리</a></li>
-					</c:when>
-					<c:otherwise>
-<%-- 						<li><a href="/homin/mypage/info/mgmt?id=${sessionScope.id }">회원 정보 관리</a></li> --%>
-						<li><a href="${root }index?formpath=info/mgmt?id=${sessionScope.id }">회원 정보 관리</a></li>
-						<li><a href="${root }index?formpath=info/addr?id=${sessionScope.id }">주소지 관리</a></li>
-					</c:otherwise>
-				</c:choose>
+				<c:if test = "${empty sessionScope.access_Token }">
+					<li><a href="${root }index?formpath=info/mgmt?id=${sessionScope.id }">회원 정보 관리</a></li>
+				</c:if>
+				<li><a href="${root }index?formpath=info/addr?id=${sessionScope.id }">주소지 관리</a></li>
 				<li><a href="${root }index?formpath=mypage&category=myinquiry">1:1 문의 내역</a></li>
 				<li><a href="${root }index?formpath=mypage&category=orderHistory">주문 내역</a></li>
 				<li><a href="${root}index?formpath=basket">장바구니</a></li>
