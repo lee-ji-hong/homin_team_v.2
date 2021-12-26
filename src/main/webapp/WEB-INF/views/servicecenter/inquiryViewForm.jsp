@@ -2,7 +2,14 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:url var="root" value="/" />
-<center>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
 	<form action="" method="post">
 		<input type="hidden" name="no" value="${view.no }" />
 		<table style="width: 650px;">
@@ -35,7 +42,7 @@
 		</table>
 	</form>
 	<br><br>
-	<form action = "${root }inquiryAnswerProc" method = "post">
+	<form action = "${root }inquiryAnswerProc" method = "post" accept-charset="euc-kr">
 		<input type = "hidden" name = "no" value = "${view.no }">
 		<div>
 			<div>
@@ -51,4 +58,6 @@
 			</div>
 		</div>
 	</form>
-</center>
+
+</body>
+</html>

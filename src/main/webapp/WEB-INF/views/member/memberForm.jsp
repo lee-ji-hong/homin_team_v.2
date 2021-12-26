@@ -1,4 +1,10 @@
-<%@ page contentType="text/html; charset=UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script
 	src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js">
@@ -144,7 +150,8 @@ $(function(){
 <script>
 	src="https//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js">
 </script>
-<center>
+</head>
+<body>
 <div>
 	<a href="/homin"><img src="https://lghomin.com/_resources/ea91048d/client/img/icon_logo_main.6f114ba.svg"></a>
 </div>
@@ -155,7 +162,7 @@ $(function(){
 	<h3>
 		<font color="red" id="msg">${msg }</font>
 	</h3>
-	<form action="memberProc" method="post">
+	<form action="memberProc" method="post" accept-charset="utf-8">
 		<table>
 			<tr>
 				<td align='right' height=40>아이디</td>
@@ -228,4 +235,5 @@ $(function(){
 			</tr>
 		</table>
 	</form>
-</center>
+	</body>
+</html>
