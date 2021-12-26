@@ -10,6 +10,9 @@
 	
 </script>
 <meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/mypage.css" /> 
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/mypage_admin.css"/>
+
 <title>Insert title here</title>
 <c:if test = "${sessionScope.id ne 'admin' }">
 	<script>
@@ -51,39 +54,69 @@
 </script>
 </head>
 <body>
+<div class="mypage_wrap" style="display: flex; flex-direction: column; align-items: center;">
+	<div style="text-align: center; margin-right: 70;">
+		<h3 style="font-size: 24; margin: 0 0 20 0px;">회원 정보 수정</h3>
+	</div>
 	<form id="f" action="modifyMember" method="post">
+	<div>
+		<div class="form_modify_text">아이디</div>
 		<div>
-			아이디 : <input type="text" value="${member.id}" name="id" readonly>
+			<input class= "form_modify_input" type="text" value="${member.id}" name="id" readonly>
 		</div>
+	</div>
+	
+	<div>
+		<div class="form_modify_text">비밀번호</div>
 		<div>
-			비밀번호 재설정 : <input type="text" value="${member.pw}" name="pw">
+			<input  class= "form_modify_input" type="text" value="${member.pw}" name="pw">
 		</div>
+	</div>
+	<div>
+		<div class="form_modify_text">이름</div>
 		<div>
-			이름 : <input type="text" value="${member.nickname } " name="nickname">
+			<input class= "form_modify_input" type="text" value="${member.nickname } " name="nickname">
 		</div>
+	</div>
+	<div>
+		<div class="form_modify_text">전화번호</div>
 		<div>
-			전화번호 : <input type="text" value="${member.phone } " name="phone">
+			<input class= "form_modify_input" type="text" value="${member.phone } " name="phone">
 		</div>
+	</div>
+	<div>
+		<div class="form_modify_text">이메일</div>
 		<div>
-			이메일 : <input type="text" value="${member.email } " name="email">
+			<input class= "form_modify_input" type="text" value="${member.email } " name="email">
 		</div>
+	</div>
+	<div>
+		<div class="form_modify_text">우편번호</div>
 		<div>
-			우편번호 : <input type="text" value="${addr.zipcode }" name="zipcode"
-				id="zipcode" readonly><input type="button"
-				style="height: 30px;" value="우편번호 검색" onclick="daumPost()">
-		</div>
+			<input class= "form_modify_input" type="text" value="${addr.zipcode }" name="zipcode"
+			id="zipcode" readonly>
+			<input class= "form_modify_btn" type="button" value="검색" onclick="daumPost()">
+		</div>			
+	</div>
+	<div>
+		<div class="form_modify_text">주소</div>
 		<div>
-			주소 : <input type="text" value="${addr.addr1 }" name="addr1"
+			<input class= "form_modify_input" type="text" value="${addr.addr1 }" name="addr1"
 				id="addr1" readonly>
 		</div>
-		<div>
-			상세주소 : <input type="text" value="${addr.addr2 }" name="addr2"
-				id="addr2">
+	</div>
+	<div>
+	<div class="form_modify_text">상세주소</div>
+	<div>
+			<input class= "form_modify_input" type="text" value="${addr.addr2 }" name="addr2" id="addr2">
 		</div>
-		<div>
-			<input type="button" value="수정" onclick="modifyMember()"> <input
-				type="button" value="삭제" onclick="deleteMember()">
+	</div>
+
+		<div class= "form_modify_wrap">
+			<input class= "form_modify_btn" type="button" value="수정" onclick="modifyMember()"> 
+			<input class= "form_modify_btn_delete" type="button" value="삭제" onclick="deleteMember()">
 		</div>
 	</form>
+</div>
 </body>
 </html>

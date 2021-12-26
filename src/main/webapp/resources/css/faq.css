@@ -166,6 +166,16 @@
 	font-weight : bold;
 }
 
+.inquirytype_rightside{
+	    width: 350px;
+    height: 50px;
+    font-size: 15px;
+    border: 1.5px solid #ddd;
+    border-radius: 4px;
+    font-family: "Noto Sans KR", "Noto Sans CJK KR", "맑은 고딕", "Malgun Gothic", sans-serif;
+    font-size: 15px;
+    line-height: 21px;
+}
 
 .main_inquirytype_title{
 	display: flex; 
@@ -179,7 +189,7 @@
 .inquirytype_title_textarea {
 	border : none;
 	border-bottom : 1px solid #666; 
-	width : 450px;
+	width : 900px;
 	height : 30px;
 	font-weight:bold;
 	
@@ -196,8 +206,8 @@
 .inquirytype_text_textarea{
 	border : 1px solid #666;
 	border-radius: 10px; 
-	width : 450px;
-	height : 150px;
+	width : 900px;
+	height : 446px;
 	text-align: center;
 	padding-left : 10px;
 	padding-right : 10px;

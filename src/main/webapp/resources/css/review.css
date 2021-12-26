@@ -66,7 +66,7 @@
   font-size: 0;
   font-weight: bold;
   display: flex;
-  justify-content: center;
+  justify-content: normal;
   align-items: center;
 }
 
@@ -90,15 +90,15 @@
 }
 
 .board_list .num {
-  width: 10%;
+  width: 120px;
 }
 
 .board_list .photo {
-  width: 10%;
+  width: 150px;
 }
 
 .board_list .title {
-  width: 37%;
+  width: 360px;
   text-align: center;
 }
 
@@ -107,7 +107,7 @@
 }
 
 .board_list .star {
-  width: 13%;
+  width: 156px;
   display:flex;
   align-items: center;
   justify-content:center;
@@ -122,15 +122,27 @@
 
 
 .board_list .writer {
-  width: 10%;
+  width: 120px;
 }
 
 .board_list .date {
-  width: 15%;
+  width: 150px;
 }
 
 .board_list .count {
-  width: 5%;
+  width: 60px;
+}
+
+.board_list .delete{
+	width: 84px;
+	margin-top: 50px;
+    
+    height: 40px;
+    border: 1.5px solid #ddd;
+    border-radius: 4px;
+    font-family: "Noto Sans KR", "Noto Sans CJK KR", "맑은 고딕", "Malgun Gothic", sans-serif;
+    font-size: 17px;
+    line-height: 21px;
 }
 
 .board_row {

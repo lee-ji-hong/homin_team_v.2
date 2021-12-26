@@ -6,6 +6,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/mypage.css" /> 
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/mypage_admin.css"/>
+
 <title>Insert title here</title>
 <c:if test = "${sessionScope.id ne 'admin' }">
 	<script>
@@ -68,87 +71,103 @@
 </script>
 <style>
 	#preview{
-	    outline: 2px dashed #92b0b3 ;
+		border-radius: 4px;
+    	box-shadow: 2px 2px 12px 5px rgb(234 235 239 / 80%);
+/* 	    outline: 2px dashed #92b0b3 ; */
 	    text-align: center;
-	    width: 300px;
-	    height: 300px;
+/* 	    width: 300px; */
+	    height: 600px;
 	    background-color: white;
 	}
 
 </style>
 </head>
 	<body>
-	<form action = "${root }productModifyProc" method="post" enctype="multipart/form-data">
+	<div class="mypage_wrap">
+	<form class="modify_form_wrap" action = "${root }productModifyProc" method="post" enctype="multipart/form-data">
 		<div id="preview" >
-			<img src = "/product_img/${productInfo.product_filename}">
+			<img style="  height: 600px;" src = "/product_img/${productInfo.product_filename}">
 		</div>
-		<input type="file" name="product_filename">
-		<div>
-			<span>제품번호 : <input type = "text" name = "product_no" value = "${productInfo.product_no }" readonly="readonly"></span>
-		</div>
-		<div>
-			<span>제품이름 : <input type = "text" name = "product_name" value = "${productInfo.product_name }"></span>
-		</div>
-		<div>
-			<span>카테고리 : 
-				<select name = "classification">
-				<c:choose>
-					<c:when test="${productInfo.classification eq 'dryer' }">
-						<option value = "dryer" selected="selected">건조기</option>
-						<option value = "aircleaner">공기청정기</option>
-						<option value = "microwave">전기레인지</option>
-						<option value = "refrigerator">냉장고</option>
-						<option value = "washmachine">식기세척기</option>
-						<option value = "waterpurifier">정수기</option>
-					</c:when>
-					<c:when test="${productInfo.classification eq 'aircleaner' }">
-						<option value = "dryer">건조기</option>
-						<option value = "aircleaner" selected="selected">공기청정기</option>
-						<option value = "microwave">전기레인지</option>
-						<option value = "refrigerator">냉장고</option>
-						<option value = "washmachine">식기세척기</option>
-						<option value = "waterpurifier">정수기</option>
-					</c:when>
-					<c:when test="${productInfo.classification eq 'microwave' }">
-						<option value = "dryer">건조기</option>
-						<option value = "aircleaner">공기청정기</option>
-						<option value = "microwave" selected="selected">전기레인지</option>
-						<option value = "refrigerator">냉장고</option>
-						<option value = "washmachine">식기세척기</option>
-						<option value = "waterpurifier">정수기</option>
-					</c:when>
-					<c:when test="${productInfo.classification eq 'refrigerator' }">
-						<option value = "dryer">건조기</option>
-						<option value = "aircleaner">공기청정기</option>
-						<option value = "microwave">전기레인지</option>
-						<option value = "refrigerator" selected="selected">냉장고</option>
-						<option value = "washmachine">식기세척기</option>
-						<option value = "waterpurifier">정수기</option>
-					</c:when>
-					<c:when test="${productInfo.classification eq 'washmachine' }">
-						<option value = "dryer">건조기</option>
-						<option value = "aircleaner">공기청정기</option>
-						<option value = "microwave">전기레인지</option>
-						<option value = "refrigerator">냉장고</option>
-						<option value = "washmachine" selected="selected">식기세척기</option>
-						<option value = "waterpurifier">정수기</option>
-					</c:when>
-					<c:when test="${productInfo.classification eq 'waterpurifier' }">
-						<option value = "dryer">건조기</option>
-						<option value = "aircleaner">공기청정기</option>
-						<option value = "microwave">전기레인지</option>
-						<option value = "refrigerator">냉장고</option>
-						<option value = "washmachine">식기세척기</option>
-						<option value = "waterpurifier" selected="selected">정수기</option>
-					</c:when>
-				</c:choose>
-				</select>
-			</span>
-		</div>
-		<div>
-			<span>제품가격 : <input type = "text" name = "price" value = "${productInfo.price }"></span>
-		</div>
-		<input type = "submit" value = "수정">
+		<div class="modify_form_wrap_bottom">
+			
+			<div>
+				<span class="modify_form_text">제품번호 : <input type = "text" name = "product_no" value = "${productInfo.product_no }" readonly="readonly"></span>
+			</div>
+			<div>
+				<span class="modify_form_text">제품이름 : <input type = "text" name = "product_name" value = "${productInfo.product_name }"></span>
+			</div>
+			<div>
+				<span class="modify_form_text">카테고리 : 
+					<div>
+					<select class="classification" name = "classification">
+					<c:choose>
+						<c:when test="${productInfo.classification eq 'dryer' }">
+							<option value = "dryer" selected="selected">건조기</option>
+							<option value = "aircleaner">공기청정기</option>
+							<option value = "microwave">전기레인지</option>
+							<option value = "refrigerator">냉장고</option>
+							<option value = "washmachine">식기세척기</option>
+							<option value = "waterpurifier">정수기</option>
+						</c:when>
+						<c:when test="${productInfo.classification eq 'aircleaner' }">
+							<option value = "dryer">건조기</option>
+							<option value = "aircleaner" selected="selected">공기청정기</option>
+							<option value = "microwave">전기레인지</option>
+							<option value = "refrigerator">냉장고</option>
+							<option value = "washmachine">식기세척기</option>
+							<option value = "waterpurifier">정수기</option>
+						</c:when>
+						<c:when test="${productInfo.classification eq 'microwave' }">
+							<option value = "dryer">건조기</option>
+							<option value = "aircleaner">공기청정기</option>
+							<option value = "microwave" selected="selected">전기레인지</option>
+							<option value = "refrigerator">냉장고</option>
+							<option value = "washmachine">식기세척기</option>
+							<option value = "waterpurifier">정수기</option>
+						</c:when>
+						<c:when test="${productInfo.classification eq 'refrigerator' }">
+							<option value = "dryer">건조기</option>
+							<option value = "aircleaner">공기청정기</option>
+							<option value = "microwave">전기레인지</option>
+							<option value = "refrigerator" selected="selected">냉장고</option>
+							<option value = "washmachine">식기세척기</option>
+							<option value = "waterpurifier">정수기</option>
+						</c:when>
+						<c:when test="${productInfo.classification eq 'washmachine' }">
+							<option value = "dryer">건조기</option>
+							<option value = "aircleaner">공기청정기</option>
+							<option value = "microwave">전기레인지</option>
+							<option value = "refrigerator">냉장고</option>
+							<option value = "washmachine" selected="selected">식기세척기</option>
+							<option value = "waterpurifier">정수기</option>
+						</c:when>
+						<c:when test="${productInfo.classification eq 'waterpurifier' }">
+							<option value = "dryer">건조기</option>
+							<option value = "aircleaner">공기청정기</option>
+							<option value = "microwave">전기레인지</option>
+							<option value = "refrigerator">냉장고</option>
+							<option value = "washmachine">식기세척기</option>
+							<option value = "waterpurifier" selected="selected">정수기</option>
+						</c:when>
+					</c:choose>
+					</select>
+					</div>
+				</span>
+			</div>
+			<div>
+				<span class="modify_form_text">제품가격 : <input type = "text" name = "price" value = "${productInfo.price }"></span>
+			</div>
+			<div>
+			<input type="file" name="product_filename">
+			</div>
+			<div>
+			<input class="submit_modify_btn" style=" display: block;width: 100%;"type = "submit" value = "수정">
+			</div>
+			
+			
+			
+			</div>
 		</form>
+	</div>
 	</body>
 </html>

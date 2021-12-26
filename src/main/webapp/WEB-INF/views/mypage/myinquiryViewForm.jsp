@@ -18,11 +18,17 @@
 	}
 </script>
 
-<div class="inquiry_test" style="width: 800px; margin-left: 200px; margin-top: 15px;">
+<div class="inquiry_test" style="width: 800px;  margin-top: 15px;">
 	<div class="inquiry_test_head">
-		<div>
+		<div style="
+		    display: flex;
+		    justify-content: space-between;
+		    width: 800;">
 			<h3>문의 내용</h3>
-			<input type = button value = "X" style="width: 50px; height: 20px;" onclick = "deleteInquiry();">
+			<input style="width: 50px;
+		    height: 35px;
+		    border-radius: 6px;
+		    border: 2px solid #ddd;"type = button value = "삭제" style="width: 50px; height: 20px;" onclick = "deleteInquiry();">
 		</div>
 	</div>
 	<hr>

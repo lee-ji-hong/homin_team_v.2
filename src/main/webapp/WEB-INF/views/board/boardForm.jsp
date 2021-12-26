@@ -42,13 +42,13 @@
             <div class="date">작성일</div>
             <div class="count">조회</div>
             <c:if test="${sessionScope.id eq 'admin' }">
-            	<div>삭제</div>
+            	<div class="delete">삭제</div>
             </c:if>
           </div>
           
           
       	<c:forEach var="list" items="${boardList }">
-          <div>
+          <div style="justify-content: normal;">
             <div class="num">${list.no }</div>
             <div class="photo"><img src = "/product_img/${list.product_img}" style="width: 150px; height: 150px;"></div>
             <c:choose>
@@ -78,29 +78,29 @@
 			</c:choose>
 			<c:choose>
 				<c:when test="${list.classification eq 'dryer' }">
-           			<div class="writer">건조기</div>
+           			<div style="width: 120px;"class="writer">건조기</div>
            		</c:when>
            		<c:when test="${list.classification eq 'aircleaner' }">
-           			<div class="writer">공기청정기</div>
+           			<div style="width: 120px;" class="writer">공기청정기</div>
            		</c:when>
            		<c:when test="${list.classification eq 'refrigerator' }">
-           			<div class="writer">얼음정수기/냉장고</div>
+           			<div style="width: 120px;" class="writer">얼음정수기/냉장고</div>
            		</c:when>
            		<c:when test="${list.classification eq 'washmachine' }">
-           			<div class="writer">식기세척기</div>
+           			<div style="width: 120px;" class="writer">식기세척기</div>
            		</c:when>
            		<c:when test="${list.classification eq 'waterpurifier' }">
-           			<div class="writer">정수기</div>
+           			<div style="width: 120px;" class="writer">정수기</div>
            		</c:when>
            		<c:when test="${list.classification eq 'microwave' }">
-           			<div class="writer">전기레인지</div>
+           			<div style="width: 120px;" class="writer">전기레인지</div>
            		</c:when>
            		
             </c:choose>
             <div class="date">${list.writeTime }</div>
             <div class="count">${list.hit }</div>
             <c:if test="${sessionScope.id eq 'admin' }">
-            	<input type = "button" value = "삭제" onclick = "boardDeleteCheck(${list.no})">
+            	<input style="width: 60px;" class="delete" type = "button" value = "삭제" onclick = "boardDeleteCheck(${list.no})">
             </c:if>
           </div>
           </c:forEach>

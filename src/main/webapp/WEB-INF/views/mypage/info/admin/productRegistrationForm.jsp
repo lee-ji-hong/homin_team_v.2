@@ -6,6 +6,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/mypage.css" /> 
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/mypage_admin.css"/>
+
 <title>Insert title here</title>
 <c:if test = "${sessionScope.id ne 'admin' }">
 	<script>
@@ -74,42 +77,52 @@
 </script>
 <style>
 	#preview{
-	    outline: 2px dashed #92b0b3 ;
+	    border-radius: 4px;
+    	box-shadow: 2px 2px 12px 5px rgb(234 235 239 / 80%);
+/* 	    outline: 2px dashed #92b0b3 ; */
 	    text-align: center;
-	    width: 300px;
-	    height: 300px;
+/* 	    width: 300px; */
+	    height: 600px;
 	    background-color: white;
 	}
 
 </style>
 </head>
 <body>
-	<form action = "${root }productInsert" method="post" enctype="multipart/form-data">
-		<div id="preview" >
+<div class="mypage_wrap">
+	<form class="modify_form_wrap" action = "${root }productInsert" method="post" enctype="multipart/form-data">
+		<div id="preview" style="  height: 600px;">
 		</div>
-		<input type="file" name="product_filename">
-		<div>
-			<span>제품번호 : <input type = "text" name = "product_no"></span>
-		</div>
-		<div>
-			<span>제품이름 : <input type = "text" name = "product_name"></span>
-		</div>
-		<div>
-			<span>카테고리 : 
-				<select name = "classification">
-					<option value = "dryer">건조기</option>
-					<option value = "aircleaner">공기청정기</option>
-					<option value = "microwave">전기레인지</option>
-					<option value = "refrigerator">냉장고</option>
-					<option value = "washmachine">식기세척기</option>
-					<option value = "waterpurifier">정수기</option>
-				</select>
-			</span>
-		</div>
-		<div>
-			<span>제품가격 : <input type = "text" name = "price"></span>
-		</div>
-		<input type = "submit" value = "등록">
+		<div class="modify_form_wrap_bottom">
+			<div>
+				<span class="modify_form_text">제품번호 : <input type = "text" name = "product_no"></span>
+			</div>
+			<div>
+				<span class="modify_form_text">제품이름 : <input type = "text" name = "product_name"></span>
+			</div>
+			<div>
+				<span class="modify_form_text">카테고리 : 
+					<select class="classification" name = "classification">
+						<option value = "dryer">건조기</option>
+						<option value = "aircleaner">공기청정기</option>
+						<option value = "microwave">전기레인지</option>
+						<option value = "refrigerator">냉장고</option>
+						<option value = "washmachine">식기세척기</option>
+						<option value = "waterpurifier">정수기</option>
+					</select>
+				</span>
+			</div>
+			<div>
+				<span class="modify_form_text">제품가격 : <input type = "text" name = "price"></span>
+			</div>
+				<div>
+					<input type="file" name="product_filename">
+				</div>
+				<div>
+					<input class="submit_modify_btn" style=" display: block;width: 100%;"type = "submit" value = "등록">
+				</div>
+		</div>	
 	</form>
+</div>
 </body>
 </html>

@@ -6,6 +6,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/mypage.css" /> 
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/mypage_admin.css"/>
+
 <title>Insert title here</title>
 <c:if test = "${sessionScope.id ne 'admin' }">
 	<script>
@@ -89,57 +92,171 @@
 		location.replace("${root}index?formpath=sales&year="+nYear);
 	}
   </script>
+<style>
+.inin{
+	margin: 0 20px;
+    border: none;
+    background: none;
+    font-size: 20px;
+    }</style>
 </head>
 <body>
-<h1>년도별 매출</h1>
-	<input type = "button" value ="<" onclick = "prevYear(${year})"> <span>${year }년</span>
-	<input type = "button" value =">" onclick = "nextYear(${year})">
-  <div id="columnchart_values" style="width: 900px; height: 300px;"></div>
-<div>
-	<h1>카테고리별 판매량</h1>
-</div>
-  <div id="myPieChart"></div>
-<div>
-	<ul>
-		<li>건조기 - ${dryPrice }</li>
-		<c:forEach var="dp" items="${dryPr }">
-			<li>제품명 : ${dp.product_name } - ${dp.price * dp.orderCount } </li>
-		</c:forEach>
-	</ul>
-	<ul>
-		<li>공기청정기 - ${airPrice }</li>
-		<c:forEach var="ap" items="${airPr }">
-			<li>제품명 : ${ap.product_name } - ${ap.price * ap.orderCount}</li>
-		</c:forEach>
-	</ul>
-	<ul>
-		<li>전기레인지 - ${microPrice }</li>
-		<c:forEach var="mp" items="${microPr }">
-			<li>제품명 : ${mp.product_name } - ${mp.price * mp.orderCount }</li>
-		</c:forEach>
-	</ul>
-	<ul>
-		<li>냉장고 - ${refriPrice }</li>
-		<c:forEach var="rp" items="${refriPr }">
-			<li>제품명 : ${rp.product_name } - ${rp.price * rp.orderCount }</li>
-		</c:forEach>
-	</ul>
-	<ul>
-		<li>식기세척기 - ${washPrice }</li>
-		<c:forEach var="washP" items="${washPr }">
-			<li>제품명 : ${washP.product_name } - ${washP.price * washP.orderCount }</li>
-		</c:forEach>
-	</ul>
-	<ul>
-		<li>정수기 - ${waterPrice }</li>
-		<c:forEach var="waterP" items="${waterPr }">
-			<li>제품명 : ${waterP.product_name } - ${waterP.price * waterP.orderCount }</li>
-		</c:forEach>
-	</ul>
-<div>
-</div>
-	<ul>
-	</ul>
-</div>
+	<div class="mypage_wrap">
+	<div>
+		<h3 style="font-size: 24; margin: 0 0 20 0px;">년도별 매출</h3>
+		<hr>
+	</div>
+	<div style="    
+	text-align: center;
+    font-size: 20px;
+    margin: 20px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    padding: 10px;">
+		<input class="inin" type = "button" value ="<" onclick = "prevYear(${year})"> <span>${year }년</span>
+		<input class="inin" type = "button" value =">" onclick = "nextYear(${year})">
+	</div>
+	<div id="columnchart_values" style="width: 900px; height: 300px;"></div>
+	<div>
+		<h1>카테고리별 판매량</h1>
+	</div>
+	  <div id="myPieChart"></div>
+	  <div>
+		<h1>카테고리별 판매량</h1>
+	</div>
+	<div>
+		<div class="sale_search_form">
+			<div>
+			
+					<span class="modify_form_text">카테고리 : 
+						<select class="classification" name = "classification">
+							<option value = "dryer">건조기</option>
+							<option value = "aircleaner">공기청정기</option>
+							<option value = "microwave">전기레인지</option>
+							<option value = "refrigerator">냉장고</option>
+							<option value = "washmachine">식기세척기</option>
+							<option value = "waterpurifier">정수기</option>
+						</select>
+					</span>
+			</div>
+			<div style="    display: flex; align-items: center;">
+				 <input class="review_underbar_2" type=text name='search'/>
+				 <input class="submit_modify_btn" style=" display: block;width: 80px;"type = "submit"  name='searchBtn' value = "검색">
+			</div>
+		</div>
+		<div>
+<!-- 		<ul> -->
+<%-- 			<li>건조기 - ${dryPrice }</li> --%>
+<%-- 			<li>공기청정기 - ${airPrice }</li> --%>
+<%-- 			<li>전기레인지 - ${microPrice }</li> --%>
+<%-- 			<li>냉장고 - ${refriPrice }</li> --%>
+<%-- 			<li>식기세척기 - ${washPrice }</li> --%>
+<%-- 			<li>정수기 - ${waterPrice }</li> --%>
+<!-- 		</ul> -->
+		<div class="membermanage_navbar">
+					<div style=" width: 200px; text-align: center;">번호</div>
+					<div style=" width: 310px; text-align: center;">카테고리</div>
+					<div style=" width: 410px; text-align: center;">상품명</div>
+					<div style=" width: 310px; text-align: center;">주문수</div>
+					
+					
+		</div>
+			<ul class="membermanage_component-main">
+				<li>건조기 총 주문 수 : ${dryPrice }</li>
+
+			</ul>
+			<ul>
+				<c:forEach var="dp" items="${dryPr }">
+				<div class="membermanage_component">
+					<li class="membermanage_component_no">${list.no }</li>
+					<li class="membermanage_component_category">건조기</li>
+					<li class="membermanage_component_product">${dp.product_name }</li>
+					<li class="membermanage_component_price">${dp.price * dp.orderCount } </li>
+				</div>	
+				</c:forEach>
+			</ul>
+		
+			<ul class="membermanage_component-main">
+				<li>공기청정기 총 주문 수 : ${dryPrice }</li>
+				
+			</ul>
+			<ul>
+				<c:forEach var="ap" items="${airPr }">
+				<div class="membermanage_component">
+					<li class="membermanage_component_no">${list.no }</li>
+					<li class="membermanage_component_category">공기청정기</li>
+					<li class="membermanage_component_product">${ap.product_name }</li>
+					<li class="membermanage_component_price">${ap.price * ap.orderCount} </li>
+				</div>	
+				</c:forEach>
+			</ul>
+		
+		
+			<ul class="membermanage_component-main">
+				<li>전기레인지 총 주문 수 : ${dryPrice }</li>
+			
+			</ul>
+			<ul>
+				<c:forEach var="mp" items="${microPr }">
+				<div class="membermanage_component">
+					<li class="membermanage_component_no">${list.no }</li>
+					<li class="membermanage_component_category">전기레인지</li>
+					<li class="membermanage_component_product">${mp.product_name }</li>
+					<li class="membermanage_component_price">${mp.price * mp.orderCount }</li>
+				</div>	
+				</c:forEach>
+			</ul>
+			
+			<ul class="membermanage_component-main">
+				<li>냉장고 총 주문 수 : ${dryPrice }</li>
+				
+			</ul>
+			<ul>
+				<c:forEach var="rp" items="${refriPr }">
+				<div class="membermanage_component">
+					<li class="membermanage_component_no">${list.no }</li>
+					<li class="membermanage_component_category">냉장고</li>
+					<li class="membermanage_component_product">${rp.product_name }</li>
+					<li class="membermanage_component_price">${rp.price * rp.orderCount }</li>
+				</div>	
+				</c:forEach>
+			</ul>
+			
+			<ul class="membermanage_component-main">
+				<li>식기세척기 총 주문 수 : ${dryPrice }</li>
+				
+			</ul>
+			<ul>
+				<c:forEach var="washP" items="${washPr }">
+				<div class="membermanage_component">
+					<li class="membermanage_component_no">${list.no }</li>
+					<li class="membermanage_component_category">식기세척기</li>
+					<li class="membermanage_component_product">${washP.product_name }</li>
+					<li class="membermanage_component_price">${washP.price * washP.orderCount }</li>
+				</div>	
+				</c:forEach>
+			</ul>
+
+			<ul class="membermanage_component-main">
+				<li>정수기 총 주문 수 : ${dryPrice }</li>
+				
+			</ul>
+			<ul>
+				<c:forEach var="waterP" items="${waterPr }">
+				<div class="membermanage_component">
+					<li class="membermanage_component_no">${list.no }</li>
+					<li class="membermanage_component_category">정수기</li>
+					<li class="membermanage_component_product">${waterP.product_name }</li>
+					<li class="membermanage_component_price">${waterP.price * waterP.orderCount }</li>
+				</div>	
+				</c:forEach>
+			</ul>
+
+		
+	</div>
+	
+	</div>
+	</div>
 </body>
 </html>

@@ -1,0 +1,284 @@
+@charset "utf-8";
+
+/* mypageManagementform*/
+
+
+.membermanage_wrap{
+    max-width: 1240px;
+    padding: 50px;
+/*     margin: 0 auto; */
+    /* display: flex; */
+    /* justify-content: space-between; */
+    background: #eee;
+    border-radius: 4px;
+}
+.membermanage_table{
+	display: flex;
+/*     justify-content: space-around; */
+    width: 100%;
+    align-items: center;
+    
+}
+.membermanage_navbar{
+	display: flex;
+    font-size: 13px;
+    line-height: 48px;
+    color: #222;
+    border-bottom: 2px solid #ddd;
+    justify-content: space-around;
+    align-items: center;
+    background: #f6f6f6;
+    font-weight: 600;
+    margin-top: 40px;
+}
+
+.membermanage_component{
+	display: flex;
+    font-size: 13px;
+    line-height: 48px;
+    color: #222;
+    border-bottom: 2px solid #ddd;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: 600;
+}
+
+.membermanage_component span{
+width:225px;
+text-align:center;
+}
+
+.review_underbar_1{
+	width: 200px;
+    height: 50px;
+    border: 1.5px solid #ddd;
+    border-radius: 4px;
+    font-family: "Noto Sans KR", "Noto Sans CJK KR", "맑은 고딕", "Malgun Gothic", sans-serif;
+    font-size: 15px;
+    line-height: 21px;
+}
+.review_underbar_2{
+    width: 350px;
+    height: 50px;
+    font-size: 15px;
+    border: 1.5px solid #ddd;
+    border-radius: 4px;
+    font-family: "Noto Sans KR", "Noto Sans CJK KR", "맑은 고딕", "Malgun Gothic", sans-serif;
+    font-size: 15px;
+    line-height: 21px;
+}
+.review_underbar_3{
+	width: 80px;
+    color: #FFFFFF;
+    background-color: rgb(86, 196, 196);
+    padding: 12px 0;
+    font-size: 15;
+    /* width: 350px; */
+    height: 26px;
+    border-radius: 4px;
+    border: none;
+    font-weight: 600;
+}
+    
+ .membermanage_table_wrap{
+ 	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1150px;
+}
+
+
+/* mypageManagementViewform*/
+
+.form_modify_text{
+	color: rgb(86, 196, 196);
+    font-weight: bold;
+    line-height: 2;
+}
+.form_modify_input{
+	width: 300px;
+    height: 40px;
+    font-size: 15px;
+    border: 1.5px solid #ddd;
+    border-radius: 4px;
+    font-family: "Noto Sans KR", "Noto Sans CJK KR", "맑은 고딕", "Malgun Gothic", sans-serif;
+    line-height: 21px;
+}
+
+.form_modify_btn{
+	margin-right: 10px;
+	color: #FFFFFF;
+    background-color: rgb(86, 196, 196);
+    padding: 6px 0;
+    font-size: 15;
+    width: 70px;
+    height: 30px;
+    border-radius: 4px;
+    border: none;
+    font-weight: 600;
+}
+
+.form_modify_btn_delete{
+	color: rgb(86, 196, 196);
+    background-color: #ffffff;
+    padding: 6px 0;
+    font-size: 15;
+    width: 70px;
+    height: 26px;
+    border-radius: 4px;
+    border: 2px solid;
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.form_modify_wrap{
+	display: flex;
+    margin: 20 10px;
+    justify-content: flex-end;
+    max-width: 300px;
+}
+
+/*productManagementform*/
+
+.pro_navbar{
+	display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 50px;
+    background: #f6f6f6;
+    border-bottom: 1px solid #ddd;
+}
+
+.pro_navbar_btn{
+ margin-left: 7px;
+    height: 25px;
+    width: 100%;
+    border-radius: 12px;
+    height: 55px;
+    background-color: #f6f6f6;
+    border: 0px solid #00a9b4;
+    color: #00a9b4;
+    border-style: solid;
+    font-weight: bold;
+    font-size: 22px;
+    box-sizing: border-box;
+}
+
+.pro_navbar_btn_product{
+	color: #FFFFFF;
+    background-color: rgb(86, 196, 196);
+    padding: 12px 0;
+    font-size: 22;
+    width: 150px;
+    height: 30px;
+    border-radius: 4px;
+    border: none;
+    font-weight: 500;
+}
+
+.pro-price_modify_btn{
+	padding: 5 10px;
+    border-radius: 4px;
+}
+
+/*productModify*/
+
+.modify_form_wrap{
+	width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.modify_form_wrap_bottom{
+	margin: 50px;
+    width: 400;
+    line-height: 3;
+}
+.modify_form_text{
+	color: rgb(86, 196, 196);
+    font-weight: bold;
+    line-height: 3.5;
+    font-size: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modify_form_wrap_bottom input{
+	display: flex;
+    align-items: center;
+    border: none;
+    width: 300;
+}
+
+.classification{
+	width: 300px;
+    height: 50px;
+/*     font-size: 15px; */
+    border: 1.5px solid #ddd;
+    border-radius: 4px;
+    font-family: "Noto Sans KR", "Noto Sans CJK KR", "맑은 고딕", "Malgun Gothic", sans-serif;
+    font-size: 15px;
+    line-height: 21px;
+}
+
+.submit_modify_btn{
+	    width: 100%;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: rgb(86, 196, 196);
+    padding: 6px 0;
+    font-size: 15;
+    height: 40px;
+    border-radius: 4px;
+    border: none;
+    font-weight: 600;
+    margin: 40 0px;
+    display: block;
+}
+
+
+/*salesform*/
+
+.sale_search_form{
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 1240px;
+    justify-content: space-between;
+}
+
+ .membermanage_component_no{
+    width: 200px;
+    text-align: center
+  }
+
+   .membermanage_component_category{
+    width: 310px;
+    text-align: center;
+  }
+   .membermanage_component_product{
+    width: 410px;
+    text-align: center;
+  }
+   .membermanage_component_price{
+    width: 310px;
+    text-align: center;
+  }
+  
+  .membermanage_component-main{
+  	display: flex;
+    font-size: 13px;
+    line-height: 48px;
+    color: #222;
+    border-bottom: 2px solid #ddd;
+    align-items: center;
+    font-weight: 600;
+    justify-content: flex-start;
+    padding: 0 50;
+    background: #ddd;
+  }

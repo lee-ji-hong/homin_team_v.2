@@ -10,6 +10,18 @@
 		alert('${msg}');
 	</script>
 </c:if>
+<style>
+.noticeform_btn_ck{
+    margin-top: 50px;
+    width: 80px;
+    height: 50px;
+    border: 1.5px solid #ddd;
+    border-radius: 4px;
+    font-family: "Noto Sans KR", "Noto Sans CJK KR", "맑은 고딕", "Malgun Gothic", sans-serif;
+    font-size: 17px;
+    line-height: 21px;
+}
+</style>
  <section class="content_section" style="padding: 20 0px;">
         <div class="content_row_1" style="width: auto;">
           <table class="board_table">
@@ -50,7 +62,7 @@
             </tbody>
           </table>
           <c:if test = "${sessionScope.id eq 'admin' }">
-          	<input type = "button" value = "등록" onclick = "location.href='${root}index?formpath=servicecenter&list=noticeWrite'">
+          	<input class="noticeform_btn_ck" type = "button" value = "등록" onclick = "location.href='${root}index?formpath=servicecenter&list=noticeWrite'">
           </c:if>
         </div>
         

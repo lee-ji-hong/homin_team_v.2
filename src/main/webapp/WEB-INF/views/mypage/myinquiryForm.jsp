@@ -21,6 +21,7 @@
     font-weight: 600;
     font-size: 19;
     border-bottom: 1px solid #ddd;
+    margin: 0;
 }
 
 .myinquiry_td_a {
@@ -38,10 +39,20 @@
     margin: 5px;
 }
 </style>
+
 <c:set var="root" value="/"></c:set>
 	<div>
 		<h3 style="font-size: 24; margin: 0 0 20 0px;">문의 내역</h3>
 	</div>
+	<div>
+				<div style=" padding: 0 50;" class="basket_navbar">
+					<div class="myinquiry_td_a">문의제목</div>
+					<div class="myinquiry_td_b">날짜</div>
+					<div class="myinquiry_td_c">답변유무</div>
+					
+					
+				</div>
+		</div>
 <table>
 	<c:choose>
 		<c:when test="${myinquiry eq '[]' }">
@@ -70,13 +81,14 @@
 			<td class="myinquiry_td_b">${list.writeDate }</td>
 			<c:choose>
 				<c:when test = "${list.state eq 'waiting'}">
-					<td class="myinquiry_td_c">답변 대기중</td>
+					<td class="myinquiry_td_c">대기중</td>
 				</c:when>
 				<c:otherwise>
-					<td class="myinquiry_td_c">답변 완료</td>
+					<td class="myinquiry_td_c">완료</td>
 				</c:otherwise>
 			</c:choose>
 		</tr>
 		</tbody>
 	</c:forEach>
 </table>
+

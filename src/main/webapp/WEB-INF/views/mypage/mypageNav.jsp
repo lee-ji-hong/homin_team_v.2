@@ -39,7 +39,7 @@ p {
 		</div>
 		<nav class="mypage_aside_nav" >
 			<br>
-			<p> > 나의 정보관리</p>
+			<p> 나의 정보관리</p>
 			<ul>
 				<c:choose>
 					<c:when test="${sessionScope.id eq 'ADMIN@CARE.COM'}">

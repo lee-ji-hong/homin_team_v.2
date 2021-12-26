@@ -19,58 +19,9 @@
 		
 		document.getElementById('f').submit();
 	}
-
-	function sendAuth() {
-		var e = document.getElementById('email').value;
-		if (e == "") {
-			$('#msg').text('이메일을 입력하세요.');
-			return;
-		}
-		var s = {
-			email : e
-		}
-		$.ajax({
-			url : "sendAuth",
-			type : "POST",
-			data : JSON.stringify(s),
-			contentType : "application/json;charset=utf-8",
-			dataType : "json",
-			success : function(result) {
-				$('#msg').text(result.msg)
-			},
-			error : function() {
-				$('#msg').text('인증번호 전송 Error')
-			}
-		})
-	}
-	
-	function sendAuthConfirm() {
-		var i = document.getElementById('inputAuthNum').value;
-		if (i == "") {
-			$('#msg').text('인증번호를 입력하세요.');
-			return;
-		}
-		var s = {
-			inputAuthNum : i
-		}
-		$.ajax({
-			url : "authConfirm",
-			type : "POST",
-			data : JSON.stringify(s),
-			contentType : "application/json;charset=utf-8",
-			dataType : "json",
-			success : function(result) {
-				$('#msg').text(result.msg)
-			},
-			error : function() {
-				$('#msg').text('인증번호 확인 Error')
-			}
-		})
-	}
 </script>
-
 <div class="mypage_wrap">
-	<c:import url="mypage/mypageNav.jsp"></c:import>
+	<c:import url="${root }mypage/mypageNav"></c:import>
 	
 	<div class="right-wrap-part" style="align-items: center;">
 		<h1 style="    
@@ -83,7 +34,7 @@
     	line-height: 2.5;">회원정보 수정</h1><br>
 		<h3><font color="red" id="msg">${msg }</font></h3>
 	
-		<form action="mgmt/updateProc" id="f" method="post">
+		<form action="updateProc" id="f" method="post">
 		<div>
 			<div class="member_modi_wrap">
 				<div class="member_modi_text">아이디</div>
