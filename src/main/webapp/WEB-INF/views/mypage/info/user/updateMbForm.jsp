@@ -84,7 +84,7 @@
     	line-height: 2.5;">회원정보 수정</h1><br>
 		<h3><font color="red" id="msg">${msg }</font></h3>
 	
-		<form action="updateProc" id="f" method="post">
+		<form action="/homin/updateMemberProc" id="f" method="post">
 		<div>
 			<div class="member_modi_wrap">
 				<div class="member_modi_text">아이디</div>

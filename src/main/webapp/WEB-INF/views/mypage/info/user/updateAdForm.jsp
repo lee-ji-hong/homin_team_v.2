@@ -37,7 +37,7 @@
             return false;
 		  }else
 		  	alert("주소지가 성공적으로 변경되었습니다.");
-  	 		document.sub1.submit();
+  	 		document.getElementById('f').submit();
 	}
 </script>
 
@@ -48,7 +48,7 @@
 		<h3 style=" font-size: 24; margin: 0 0 20 0px;">주소지 수정</h3>
 		
 
-		<form action="/homin/updateAddrProc" method="post">
+		<form action="/homin/updateAddrProc" method="post" id = "f">
 
 		<hr>
 		
