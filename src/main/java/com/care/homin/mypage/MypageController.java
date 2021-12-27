@@ -124,18 +124,17 @@ public class MypageController {
 	public String updateAdForm() {
 		return "mypage/info/user/updateAdForm";
 	}
-	@RequestMapping("addr/updateProc")
+	@RequestMapping("/updateAddrProc")
 	public String updateAddrProc(PostcodeDTO postCode, HttpSession session, Model model) {
 //		logger.warn("session.getAttribute(\"id\") : " + session.getAttribute("id"));
 		String id = (String) session.getAttribute("id");
 		postCode.setId(id);
 		String msg = mypageSvc.updateAddrProc(postCode);
-		if (msg.equals("주소지가 변경되었습니다")) {
-			model.addAttribute("msg", msg);
-			model.addAttribute("formpath", "mypage");
-			return "index";
+		if (msg.equals("t")) {
+			System.out.println("일단은 성공");
+			model.addAttribute("msg", "수정완료");
+			return "forward:index?formpath=mypage";
 		} else 
-			model.addAttribute("formpath", "addr/updateAdForm");
 			return "index";
 	}
 	
@@ -144,13 +143,13 @@ public class MypageController {
 	public String confirmPwForAddr() {
 		return "mypage/info/user/confirmPwAddr";
 	}
-	@RequestMapping("addr/deleteProc")
+	@RequestMapping("/deleteAddrProc")
 	public String deleteProcAddr(LoginDTO loginDto, Model model) {
 		String msg = mypageSvc.deleteProcAddr(loginDto.getId());
 		
 		model.addAttribute("msg", msg);
 		model.addAttribute("formpath", "info/addr");
-		return "index";
+		return "forward:index?formpath=mypage";
 	}
 	//사용자, 주소 추가
 	@RequestMapping("/addr/registerAdForm")

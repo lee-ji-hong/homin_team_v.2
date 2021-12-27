@@ -35,7 +35,7 @@
 	<div class="right-wrap-part">
 		<h3 style=" font-size: 24; margin: 0 0 20 0px;">주소지 수정</h3>
 		
-		<form action="addr/updateProc" method="post">
+		<form action="/homin/updateAddrProc" method="post">
 		<hr>
 		
 			<div style="line-height: 3;  margin: 30px;">
