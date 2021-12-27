@@ -31,7 +31,7 @@
 						</div>
 						<c:forEach var="pr" items="${prod}">
 							<div class="mypage_recent_productlist"
-								onclick="javascript:loaction.href = '/homin/product?category=${pr.classification }&prodNo=${pr.product_no }'">
+								onclick="location.href='/homin/product?category=${pr.classification }&prodNo=${pr.product_no }'" style="cursor: pointer;">
 								<img style="height:250px;" src="/product_img/${pr.product_filename}"> 
 								<div class="mypage_recent_productlist_text">
 									<span>제품코드 : ${pr.product_no }</span>

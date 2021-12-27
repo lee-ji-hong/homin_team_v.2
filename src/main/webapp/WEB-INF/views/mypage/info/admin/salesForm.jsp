@@ -127,7 +127,7 @@
 	</div>
 	<div>
 		<div class="sale_search_form">
-			<div>
+		<!-- 	<div>
 			
 					<span class="modify_form_text">카테고리 : 
 						<select class="classification" name = "classification">
@@ -139,11 +139,11 @@
 							<option value = "waterpurifier">정수기</option>
 						</select>
 					</span>
-			</div>
-			<div style="    display: flex; align-items: center;">
+			</div> -->
+			<!-- <div style="    display: flex; align-items: center;">
 				 <input class="review_underbar_2" type=text name='search'/>
 				 <input class="submit_modify_btn" style=" display: block;width: 80px;"type = "submit"  name='searchBtn' value = "검색">
-			</div>
+			</div> -->
 		</div>
 		<div>
 <!-- 		<ul> -->
@@ -155,7 +155,6 @@
 <%-- 			<li>정수기 - ${waterPrice }</li> --%>
 <!-- 		</ul> -->
 		<div class="membermanage_navbar">
-					<div style=" width: 200px; text-align: center;">번호</div>
 					<div style=" width: 310px; text-align: center;">카테고리</div>
 					<div style=" width: 410px; text-align: center;">상품명</div>
 					<div style=" width: 310px; text-align: center;">주문수</div>
@@ -163,13 +162,12 @@
 					
 		</div>
 			<ul class="membermanage_component-main">
-				<li>건조기 총 주문 수 : ${dryPrice }</li>
+				<li>건조기 총 주문 수 : ${dryer }</li>
 
 			</ul>
 			<ul>
 				<c:forEach var="dp" items="${dryPr }">
 				<div class="membermanage_component">
-					<li class="membermanage_component_no">${list.no }</li>
 					<li class="membermanage_component_category">건조기</li>
 					<li class="membermanage_component_product">${dp.product_name }</li>
 					<li class="membermanage_component_price">${dp.price * dp.orderCount } </li>
@@ -178,13 +176,12 @@
 			</ul>
 		
 			<ul class="membermanage_component-main">
-				<li>공기청정기 총 주문 수 : ${dryPrice }</li>
+				<li>공기청정기 총 주문 수 : ${aircleaner }</li>
 				
 			</ul>
 			<ul>
 				<c:forEach var="ap" items="${airPr }">
 				<div class="membermanage_component">
-					<li class="membermanage_component_no">${list.no }</li>
 					<li class="membermanage_component_category">공기청정기</li>
 					<li class="membermanage_component_product">${ap.product_name }</li>
 					<li class="membermanage_component_price">${ap.price * ap.orderCount} </li>
@@ -194,13 +191,12 @@
 		
 		
 			<ul class="membermanage_component-main">
-				<li>전기레인지 총 주문 수 : ${dryPrice }</li>
+				<li>전기레인지 총 주문 수 : ${microwave }</li>
 			
 			</ul>
 			<ul>
 				<c:forEach var="mp" items="${microPr }">
 				<div class="membermanage_component">
-					<li class="membermanage_component_no">${list.no }</li>
 					<li class="membermanage_component_category">전기레인지</li>
 					<li class="membermanage_component_product">${mp.product_name }</li>
 					<li class="membermanage_component_price">${mp.price * mp.orderCount }</li>
@@ -209,13 +205,12 @@
 			</ul>
 			
 			<ul class="membermanage_component-main">
-				<li>냉장고 총 주문 수 : ${dryPrice }</li>
+				<li>냉장고 총 주문 수 : ${refrigerator }</li>
 				
 			</ul>
 			<ul>
 				<c:forEach var="rp" items="${refriPr }">
 				<div class="membermanage_component">
-					<li class="membermanage_component_no">${list.no }</li>
 					<li class="membermanage_component_category">냉장고</li>
 					<li class="membermanage_component_product">${rp.product_name }</li>
 					<li class="membermanage_component_price">${rp.price * rp.orderCount }</li>
@@ -224,13 +219,12 @@
 			</ul>
 			
 			<ul class="membermanage_component-main">
-				<li>식기세척기 총 주문 수 : ${dryPrice }</li>
+				<li>식기세척기 총 주문 수 : ${washmachine }</li>
 				
 			</ul>
 			<ul>
 				<c:forEach var="washP" items="${washPr }">
 				<div class="membermanage_component">
-					<li class="membermanage_component_no">${list.no }</li>
 					<li class="membermanage_component_category">식기세척기</li>
 					<li class="membermanage_component_product">${washP.product_name }</li>
 					<li class="membermanage_component_price">${washP.price * washP.orderCount }</li>
@@ -239,13 +233,12 @@
 			</ul>
 
 			<ul class="membermanage_component-main">
-				<li>정수기 총 주문 수 : ${dryPrice }</li>
+				<li>정수기 총 주문 수 : ${waterpurifier }</li>
 				
 			</ul>
 			<ul>
 				<c:forEach var="waterP" items="${waterPr }">
 				<div class="membermanage_component">
-					<li class="membermanage_component_no">${list.no }</li>
 					<li class="membermanage_component_category">정수기</li>
 					<li class="membermanage_component_product">${waterP.product_name }</li>
 					<li class="membermanage_component_price">${waterP.price * waterP.orderCount }</li>

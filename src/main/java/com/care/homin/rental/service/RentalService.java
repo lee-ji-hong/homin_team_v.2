@@ -163,31 +163,6 @@ public class RentalService {
 		model.addAttribute("washmachine",washmachine.size());
 		model.addAttribute("waterpurifier",waterpurifier.size());
 		
-		// 카테고리별 매출
-		int dryPrice = 0;		int airPrice = 0; 
-		int microPrice = 0; 	int refriPrice = 0; 
-		int washPrice = 0; 		int waterPrice = 0; 
-		
-		for(orderDTO d : dryer) {
-			dryPrice += Integer.parseInt(d.getAmount());
-		}for(orderDTO a : aircleaner) {
-			airPrice += Integer.parseInt(a.getAmount());
-		}for(orderDTO m : microwave) {
-			microPrice += Integer.parseInt(m.getAmount());
-		}for(orderDTO r : refrigerator) {
-			refriPrice += Integer.parseInt(r.getAmount());
-		}for(orderDTO wash : washmachine) {
-			washPrice += Integer.parseInt(wash.getAmount());
-		}for(orderDTO water : waterpurifier) {
-			waterPrice += Integer.parseInt(water.getAmount());
-		}
-		
-		model.addAttribute("dryPrice",dryPrice);
-		model.addAttribute("airPrice",airPrice);
-		model.addAttribute("microPrice",microPrice);
-		model.addAttribute("refriPrice",refriPrice);
-		model.addAttribute("washPrice",washPrice);
-		model.addAttribute("waterPrice",waterPrice);
 	}
 
 	public void salesByYear(Model model, String ye) {

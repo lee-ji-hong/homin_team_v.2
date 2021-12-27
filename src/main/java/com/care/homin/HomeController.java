@@ -66,7 +66,7 @@ public class HomeController {
 		return "board/boardModifyForm";
 	}
 	@RequestMapping("/mypage")
-	public String mypage(Model model, HttpServletRequest request, String category) {
+	public String mypage(Model model, HttpServletRequest request, String category,HttpServletResponse res) {
 		model.addAttribute("category", category);
 		Cookie[] ck = request.getCookies();
 		if(ck != null) {
@@ -74,11 +74,13 @@ public class HomeController {
 			for(int i = 0; i < ck.length; i++) {
 				if(ck[i].getName().equals("JSESSIONID") == false) {
 					if(ck[i] != null) {
+						System.out.println(ck[i].getName());
 						RentalDTO product = service.selectProduct(ck[i].getName());
+						System.out.println(product.getProduct_name());
 						prod.add(product);
 					}
 				}
-				if(ck.length>4) {
+				if(i>4) {
 					break;
 				}
 			}
