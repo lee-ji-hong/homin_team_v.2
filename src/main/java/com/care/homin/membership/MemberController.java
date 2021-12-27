@@ -39,6 +39,6 @@ public class MemberController {
 	public String memberProc(MemberDTO member, PostcodeDTO post, Model model) {
 		String msg = service.memberProc(member, post);
 		model.addAttribute("msg", msg);
-		return "member/memberForm";
+		return "forward:index?formpath=home";
 	}
 }

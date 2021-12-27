@@ -24,6 +24,7 @@
 </c:if>
 <div class="mypage_wrap">
 	<c:import url="mypage/mypageNav.jsp"></c:import>
+
 	<div class="right-wrap-part" style="    /* 	border: 1px solid; */justify-content: space-between;">
 	<div>
 		<h3 style="font-size: 24; margin: 0 0 20 0px;">장바구니</h3>
@@ -41,15 +42,22 @@
 					<div style="width:100px">구매/삭제</div>
 				</div>
 		</div>
+
 		<table>
-			
+			<thead>
+				<tr>
+					<td>NO</td><td>제품이름</td><td>제품사진</td><td>제품번호</td><td>제품명</td><td>가격</td><td>구매/삭제</td>
+				</tr>
+				
+			</thead>
 				<c:set var="prNo" value="0"></c:set>
 				<c:forEach var="bDto" items="${basket }">
 				<c:set var="prNo" value="${prNo + 1 }"></c:set>
-				
 				<tbody>
+
 					<tr style="text-align: center;" class="basket_component">
 						<td style="width:50px">${prNo }</td>
+
 						<c:choose>
 							<c:when test="${bDto.classification eq 'dryer' }">	
 								<td style="width:150px">건조기</td>
@@ -83,11 +91,8 @@
 							<input  class="basket_btnbb" type="button" value="삭제" onclick="location.href='deleteBasket?no=${bDto.product_no}';">
 						</td>
 						
-
 				</c:forEach>
-					</tr>
 				</tbody>
 		</table>
 	</section>
-</div>
 </div>

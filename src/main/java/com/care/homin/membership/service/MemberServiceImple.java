@@ -48,7 +48,7 @@ public class MemberServiceImple implements IMemberService{
 		if(!"".equals(post.getZipcode())) {
 			dao.insertPost(post);
 		}
-		return "가입 완료.";
+		return "회원 가입 완료!";
 	}
 	
 	final static Logger logger = LoggerFactory.getLogger(MemberServiceImple.class);

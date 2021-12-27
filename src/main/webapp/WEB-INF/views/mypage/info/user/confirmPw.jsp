@@ -90,7 +90,7 @@ div#wrapper {
 	<div class="right-wrap-part">
 	   	<h3>비밀번호 확인</h3>
 	    <p style=" color: grey;">개인 정보를 안전하게 보호하기 위해 비밀번호를 한번 더 입력해 주세요.</p>
-		<form action="mgmt/updateForm" id="f" method="post">
+		<form action="mgmt/deleteProc" id="f" method="post">
 			<div>
 				<div>
 					<div><label class="form-title">MY LG ID (이메일)</label></div>
