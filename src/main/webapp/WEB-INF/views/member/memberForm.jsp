@@ -5,6 +5,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link
+      rel="stylesheet"
+      type="text/css"
+      href="${pageContext.request.contextPath}/resources/css/mypage.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="${pageContext.request.contextPath}/resources/css/mypage_admin.css"
+    />
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script
 	src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js">
@@ -154,78 +164,80 @@ $(function(){
 </head>
 <body>
 <div>
-	<a href="/homin"><img src="https://lghomin.com/_resources/ea91048d/client/img/icon_logo_main.6f114ba.svg"></a>
+	<a href="/homin"><img src="/resources/image/logo2.png" style="height:100px"></a>
+
 </div>
 <hr>
-	<h3>회원가입 정보 입력</h3>
-	<p>MY LG ID 가입을 위해 정보를 입력해주세요.</p>
+ <div
+      class="mypage_wrap"
+      style="display: flex; flex-direction: column; align-items: center"
+    >
+
+	<div style="text-align: center; margin-right: 70">
+        <h3 style="font-size: 24; margin: 0 0 20 0px">회원가입</h3>
+        <p>MY LG ID 가입을 위해 정보를 입력해주세요.</p>
 	<p>모두 필수 항목 입니다.</p>
+      </div>
+	
 	<h3>
 		<font color="red" id="msg">${msg }</font>
 	</h3>
 	<form action="memberProc" method="post" accept-charset="utf-8">
-		<table>
+		<table style="line-height: 3; margin: 0 auto;">
 			<tr>
-				<td align='right' height=40>아이디</td>
-				<td><input type=text name='id' id="id" style="width: 325px;height: 30px;
-							font-size:15px;"placeholder='이메일주소를 입력해주세요'
+				<td class="form_modify_text" align='right' >아이디</td>
+				<td><input class="form_modify_input" type=text name='id' id="id" placeholder='아이디를 입력해주세요'
 							required data-valid="false" /></td>
-				<td colspan="2"><input type="button" style="height:30px;" value="중복 확인"
+				<td colspan="2"><input style="height:40px;" class="form_modify_btn" type="button"  value="중복 확인"
 					onclick="ajaxIsExist()"></td>
 			</tr>
 			<tr>
-				<td align='right' width=120>이름</td>
-				<td colspan="3"><input type=text name='nickname' style="width: 100px;height: 30px;
-							font-size:15px;" />
+				<td class="form_modify_text" align='right' width=120>이름</td>
+				<td colspan="3"><input class="form_modify_input" type=text name='nickname' />
 			</tr>
 			<tr>
-				<td align='right' height=40>패스워드</td>
-				<td><input type="password" id="pw" name='pw' style="width: 200px;height: 30px;
-							font-size:15px;" placeholder='pw 입력' /></td>
+				<td class="form_modify_text" align='right' height=40>패스워드</td>
+				<td><input class="form_modify_input" type="password" id="pw" name='pw' placeholder='pw 입력' /></td>
 							<span style="display: none;" id = "msg2">비밀번호는 8자리 ~ 20자리 이내로 입력해주세요.</span>
 							<span style="display: none;" id = "msg3">비밀번호는 공백 없이 입력해주세요.</span>
 							<span style="display: none;" id = "msg4">비밀번호는 영문,숫자, 특수문자를 혼합하여 입력해주세요</span>
 			</tr>
 			<tr>
-				<td align='right'>패스워드 확인</td>
-				<td><input type="password" id="pwOk" name='pwOk' style="width: 200px;height: 30px;
-							font-size:15px;"placeholder='pw 입력' /></td>
+				<td class="form_modify_text" align='right'>패스워드 확인</td>
+				<td><input class="form_modify_input" type="password" id="pwOk" name='pwOk' placeholder='pw 입력' /></td>
 							<span style="display: none;" id = "msg5">두 패스워드가 맞지 않습니다.</span>
 			</tr>
 			<tr>
-				<td align='right' height=40>E-Mail</td>
-				<td><input type=text name='email' id="email" style="width: 250px;height: 30px;
-							font-size:15px;"placeholder='E-Mail 입력' /></td>
-				<td colspan="2"><input type="button" style="height:30px;" value="인증번호 전송"	onclick="sendAuth()"></td>
+				<td class="form_modify_text" align='right' height=40>E-Mail</td>
+				<td><input type=text name='email' id="email" class="form_modify_input" placeholder='E-Mail 입력' /></td>
+				<td colspan="2"><input type="button" style="height:40px; width:100px;" class="form_modify_btn" value="인증번호 전송"	onclick="sendAuth()"></td>
 			</tr>
 			<tr>
-				<td align='right'>인증번호</td>
-				<td><input type=text name='authNum' id="inputAuthNum" style="width: 150px;height: 30px;
-							font-size:15px;" placeholder='인증번호 입력' /></td>
-				<td colspan="2"><input type="button" style="height:30px;" value="인증번호 확인"	onclick="sendAuthConfirm()"></td>
+				<td  class="form_modify_text" align='right'>인증번호</td>
+				<td><input type=text name='authNum' id="inputAuthNum" class="form_modify_input" placeholder='인증번호 입력' /></td>
+				<td colspan="2"><input class="form_modify_btn" style="height:40px; width:100px;" type="button"  value="인증번호 확인"	onclick="sendAuthConfirm()"></td>
 			</tr>
 			<tr>
-				<td align='right'>우편번호</td>
-				<td><input type=text name='zipcode' id="zipcode" style="width: 75px;height: 30px;
-							font-size:15px;"readonly="readonly" /></td>
-				<td colspan="2"><input type="button" style="height:30px;" value="우편번호 검색"		onclick="daumPost()"></td>
+				<td class="form_modify_text"  align='right'>우편번호</td>
+				<td><input type=text name='zipcode' id="zipcode" class="form_modify_input" readonly="readonly" /></td>
+				<td colspan="2"><input type="button" style="height:40px; width:100px;" class="form_modify_btn" value="우편번호 검색"		onclick="daumPost()"></td>
 			</tr>
 			<tr>
-				<td align='right'>주소</td>
-				<td colspan="3"><input type=text name='addr1' id="addr1" readonly="readonly" style="width: 475px; height: 30px; font-size:20px;" /></td>
+				<td class="form_modify_text" align='right'>주소</td>
+				<td colspan="3"><input type=text name='addr1' id="addr1" readonly="readonly" class="form_modify_input" /></td>
 			</tr>
 			<tr>
-				<td align='right'>상세주소</td>
-				<td colspan="3"><input type=text name='addr2' id="addr2" style="width: 475px; height: 30px; font-size:15px;" /></td>
+				<td class="form_modify_text" align='right'>상세주소</td>
+				<td colspan="3"><input type=text name='addr2' id="addr2" class="form_modify_input" /></td>
 			</tr>
 			<tr>
-				<td align='right'>휴대폰번호</td>
-				<td colspan='3'><input type=text name='phone' style="width: 175px; height: 30px; font-size:15px;"
+				<td class="form_modify_text" align='right'>휴대폰번호</td>
+				<td colspan='3'><input type=text name='phone' class="form_modify_input"
 										placeholder='-는 생략하고 입력' />
 			</tr>
-			<tr>
+			<tr style="max-width: 300px;">
 				<td align='center' height=40 colspan=4>
-				<input type=submit	value='가입하기' style="border-radius:10px; color:#FFFFFF; width: 120px; height: 40px; background-color:#B71256" /> 
+				<input   class="form_modify_btn" type=submit	value='가입하기' style="width: 300px; height: 45px;margin-left: 20px; margin-top: 20px;" /> 
 			</td>
 			</tr>
 			
@@ -236,5 +248,6 @@ $(function(){
 			</tr>
 		</table>
 	</form>
+	</div>
 	</body>
 </html>
