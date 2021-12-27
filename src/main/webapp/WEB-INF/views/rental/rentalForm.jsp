@@ -146,7 +146,7 @@
 </div>
 <section class="rental-productlist">
 <c:forEach var="pr" items="${product }">
-	<div  class="main-product-list" onclick="location.href='${root}product?category=${category }&prodNo=${pr.product_no }'">
+	<div  class="main-product-list" onclick="location.href='${root}product?category=${category }&prodNo=${pr.product_no }'"style="cursor: pointer;">
 		<div class="main-product-list-in">
 			<ul>
 				<li>

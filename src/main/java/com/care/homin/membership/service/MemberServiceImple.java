@@ -62,7 +62,7 @@ public class MemberServiceImple implements IMemberService{
 			Random r = new Random();
 			String randNum = String.format("%06d", r.nextInt(1000000));
 			session.setAttribute("authNum", randNum);
-			session.setMaxInactiveInterval(180);
+			session.setMaxInactiveInterval(60);
 			mailService.sendMail(email, "[인증번호]", randNum);
 			logger.warn(randNum);
 		}else

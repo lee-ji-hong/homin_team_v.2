@@ -5,8 +5,11 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 import java.util.HashMap;
 
 import org.springframework.context.annotation.Configuration;
@@ -26,6 +29,7 @@ public class KakaoConfig {
 					+ "&client_id=560f7dc954c6a55108395d3bedeae1b5"
 					+"&redirect_uri=http://52.78.168.150:8080/homin/kakaoLogin" 
 					+ "&code=" + code;
+
 			URL url = new URL(reqURL);//    POST 요청에 필요로 요구하는 파라미터 스트림을 통해 전송
 			HttpURLConnection conn = (HttpURLConnection)url.openConnection();
 			conn.setRequestMethod("POST");//    POST 요청을 위해 기본값이 false인 setDoOutput을 true로
@@ -75,11 +79,11 @@ public class KakaoConfig {
 	        conn.setRequestProperty("Authorization", "Bearer " + access_Token);
 	        int responseCode = conn.getResponseCode();
 	        System.out.println("responseCode : " + responseCode);
-	        BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+	        BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), "utf-8"), 8);
 	        String line = "";
 	        String result = "";
 	        while ((line = br.readLine()) != null) {
-	            result += line;
+	            result += new String(URLDecoder.decode(line, "UTF-8"));
 	        }
 	        System.out.println("response body : " + result);
 	        
@@ -89,10 +93,8 @@ public class KakaoConfig {
 	        JsonObject properties = element.getAsJsonObject().get("properties").getAsJsonObject();
 	        String nickname = properties.getAsJsonObject().get("nickname").getAsString();
 	        userInfo.put("nickname", nickname);
-	        
 	        JsonObject kakao_account = element.getAsJsonObject().get("kakao_account").getAsJsonObject();
 	        String email = kakao_account.getAsJsonObject().get("email").getAsString();
-	        System.out.println("email : " + email);
 	        userInfo.put("email", email);
 	    } catch (IOException e) {
 	        e.printStackTrace();
