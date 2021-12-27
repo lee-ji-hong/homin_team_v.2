@@ -39,7 +39,6 @@
 			}
 		})
 	}
-
 $(function(){
 	$("#pw").blur(function() {
 		var pw = $("#pw").val();

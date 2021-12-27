@@ -24,6 +24,7 @@
 		 }
 	}
 </script>
+
 <style>
 .orderhistory-btn-wrap{
 	display: flex;
@@ -47,16 +48,10 @@
 	<div class="recent_product_comment">
 		<h2 style="font-size:15px; margin-left: 15px; line-height: 3;">최근 2주 이내에 구매한 상품입니다.</h2>
 	</div>
+
 	<c:choose>
 		<c:when test="${myOrder eq '[]' }">
-		<div><hr></div>
-		<div class="warning_view">
-				<img src="${pageContext.request.contextPath}/resources/image/warning.png">	
-			</div>
-		<div class="recent_product_no">
-			<h3>구매한 제품이 없습니다.</h3>
-		</div>
-			
+			구매한 제품이 없습니다.
 		</c:when>
 	</c:choose>
 <c:forEach var="order" items="${myOrder }">
