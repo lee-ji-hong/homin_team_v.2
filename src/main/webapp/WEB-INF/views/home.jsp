@@ -27,6 +27,7 @@
 </style>
 </head>
 <body>
+
    <div >
       <div style="
       width: 1475px;
@@ -196,6 +197,7 @@
       </section>
       
 </div>      
+
 </body>
 
 <script>

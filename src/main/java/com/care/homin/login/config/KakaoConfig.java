@@ -27,7 +27,9 @@ public class KakaoConfig {
 		try {
 			String sendMessage = "grant_type=authorization_code" 
 					+ "&client_id=560f7dc954c6a55108395d3bedeae1b5"
+
 					+"&redirect_uri=http://52.78.168.150:8080/homin/kakaoLogin" 
+
 					+ "&code=" + code;
 
 			URL url = new URL(reqURL);//    POST 요청에 필요로 요구하는 파라미터 스트림을 통해 전송
@@ -95,6 +97,7 @@ public class KakaoConfig {
 	        userInfo.put("nickname", nickname);
 	        JsonObject kakao_account = element.getAsJsonObject().get("kakao_account").getAsJsonObject();
 	        String email = kakao_account.getAsJsonObject().get("email").getAsString();
+
 	        userInfo.put("email", email);
 	    } catch (IOException e) {
 	        e.printStackTrace();

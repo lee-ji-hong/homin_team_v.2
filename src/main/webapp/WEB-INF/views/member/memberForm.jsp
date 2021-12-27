@@ -20,6 +20,7 @@
    src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js">
 </script>
 <script>
+
    function ajaxIsExist() {
       var i = document.getElementById('id').value;
       var d = {
@@ -39,6 +40,7 @@
          }
       })
    }
+
 $(function(){
    $("#pw").blur(function() {
       var pw = $("#pw").val();

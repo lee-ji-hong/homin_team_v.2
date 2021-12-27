@@ -80,7 +80,9 @@
 				<span style="padding: 0 16px;">또는</span>
 			</td>
 		</tr>
+
 		<c:set var="redirectUri" value="http://52.78.168.150:8080/homin/kakaoLogin"/>
+
 		<%-- <c:set var="restKey" value="6b699a51ed025c4bd6a42e5026901e43"/> --%>
 		<c:set var="restKey" value="560f7dc954c6a55108395d3bedeae1b5"/>
 		<tr>

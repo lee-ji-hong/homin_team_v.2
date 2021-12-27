@@ -18,6 +18,7 @@ prefix="c"%>
       href="${pageContext.request.contextPath}/resources/css/mypage_admin.css"
     />
 
+
     <title>Insert title here</title>
     <c:if test="${sessionScope.id ne 'admin' }">
       <script>
@@ -187,4 +188,5 @@ prefix="c"%>
       </form>
     </div>
   </body>
+
 </html>
