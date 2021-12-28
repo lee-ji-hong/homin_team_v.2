@@ -20,7 +20,6 @@
    src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js">
 </script>
 <script>
-
    function ajaxIsExist() {
       var i = document.getElementById('id').value;
       var d = {
@@ -40,8 +39,7 @@
          }
       })
    }
-
-$(function(){
+  $(function(){
    $("#pw").blur(function() {
       var pw = $("#pw").val();
        var num = pw.search(/[0-9]/g);
@@ -165,7 +163,7 @@ $(function(){
 </head>
 <body>
 <div>
-   <a href="/homin"><img src="/product_img/logo2.png" style="height:100px"></a>
+   <a href="/homin"><img src="/resources/image/logo2.png" style="height:100px"></a>
 
 </div>
 <hr>

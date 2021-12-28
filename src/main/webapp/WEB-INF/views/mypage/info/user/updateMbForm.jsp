@@ -3,7 +3,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/mypage.css"/>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/mypage_admin.css"/>
 <script>
+
 	$(function(){
 	$("#pw").blur(function() {
 		var pw = $("#pw").val();
@@ -68,24 +70,23 @@
 	
 
 </script>
-<div class="mypage_wrap">
+
+<div class="mypage_wrap" >
 
 	<c:import url="/WEB-INF/views/mypage/mypageNav.jsp"></c:import>
 
 	
-	<div class="right-wrap-part" style="align-items: center;">
-		<h1 style="    
-		font-weight: bold;
-    	font-size: 25px;
-   	    display: inline-block;
-    	text-align: center;
-    	color: black;
-    	padding-top: 8px;
-    	line-height: 2.5;">회원정보 수정</h1><br>
+	<div class="right-wrap-part" >
+		<div>
+			<h3  style=" font-size: 24; margin: 0 0 20 0px;">회원정보 수정</h3>
+			<hr>
+					
+		</div>
+		
 		<h3><font color="red" id="msg">${msg }</font></h3>
 	
 		<form action="/homin/updateMemberProc" id="f" method="post">
-		<div>
+		<div style="width: 400px; margin: 20px;" >
 			<div class="member_modi_wrap">
 				<div class="member_modi_text">아이디</div>
 				<div ><input class="member_modi_input" type=text name='id' id="id" value="${userInfo.id }" readonly="readonly"/></div>
@@ -116,11 +117,12 @@
 				align-items: center;
 			    justify-content: center;
 			    display: flex;">
-					<input class="member_modi_btn" type="button" value='수정' onclick="check()"/> 
-					<input class="member_modi_btnn" type=reset value='취소'	onclick = "javascript:window.history.back()" />
+					<input class="member_modi_btn" type="button" value='수정' onclick="check()" /> 
+					<input class="member_modi_btnn" type=reset value='취소'	onclick = "javascript:window.history.back()"/>
 				</div>
 			</div>
 		</div>
+		
 	</form>
 	</div>
 </div>

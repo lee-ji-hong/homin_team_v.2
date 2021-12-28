@@ -16,11 +16,20 @@ table {
 	<c:choose>
 		<c:when test="${postCode eq null }">
 	<div class="right-wrap-part">
+				
 				<div>
 					<h3  style=" font-size: 24; margin: 0 0 20 0px;">주소지 등록하기</h3>
 					<hr>
-					<input type="button" value="주소 등록" onclick="location.href='${root}index?formpath=addr/registerAdForm'">
+					
 				</div>
+				<div class="warning_view">
+				<img src="${pageContext.request.contextPath}/resources/image/warning.png">	
+				</div>
+				<div class="recent_product_no">
+					<h3>등록된 주소지가 없습니다.</h3>
+					
+				</div>
+				<div style="text-align:right;"><input style="width: 80px; height: 35px; border-radius: 6px;border: 2px solid #ddd;" type="button" value="주소 등록" onclick="location.href='${root}index?formpath=addr/registerAdForm'"></div>
 			</div>
 		</c:when>
 		<c:otherwise>
