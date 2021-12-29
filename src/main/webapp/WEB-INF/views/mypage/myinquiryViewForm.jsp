@@ -66,17 +66,20 @@
 					${inquiryView.title }
 				</div>
 			</div>
-			<div style="display: flex; flex-direction: row;">
-				<div class="inquiry_test_type_p">
+			<div style="display: flex; flex-direction: row; height: 600px;">
+				<div class="inquiry_test_type_p ">
 					<p>문의 내용</p>
 				</div>
-				<c:forEach var="img" items="${inquiryImg }">
-					<div>
-						<img src = "/img/${img }" style="width: 300px; height: 300px;">
+				<div class="nn">
+					
+					<div class="inquirytype_text" style="margin-bottom: 20px;">
+						${inquiryView.content }
 					</div>
-				</c:forEach>
-				<div class="inquirytype_text">
-					${inquiryView.content }
+					<c:forEach var="img" items="${inquiryImg }">
+						<div >
+							<img src = "/img/${img }" style="width: 300px; max-width: 500px; height: 300px; max-height: 300px;">
+						</div>
+					</c:forEach>
 				</div>
 			</div>
 			<hr/>

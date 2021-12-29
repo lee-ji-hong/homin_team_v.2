@@ -184,10 +184,14 @@
 				<div class="inquiry_test_type_p" >
 					<p>사진 첨부</p>
 				</div>
-				<div >
-					<input  class="inquirytype_photo_input" type="file" name="uploadFile" id="uploadFile" multiple>
+				
+				<div>
+				<div>
+					<input  class="inquirytype_photo_input"  style="width: 900px;" type="file" name="uploadFile" id="uploadFile" multiple>
 				</div>
-				<div id="preview"></div>
+				<div style="width: 900px;" id="preview"></div>
+				
+				</div>
 			</div>
 			<div class="cus_under_box">
 				<p>문의 내용과 관련된 사진이 있다면 첨부해 주세요.</p>

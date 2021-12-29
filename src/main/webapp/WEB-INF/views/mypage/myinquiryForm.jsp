@@ -55,6 +55,7 @@ prefix="c" %>
 </style>
 
 <c:set var="root" value="/"></c:set>
+<<<<<<< HEAD
 <div>
   <h3 style="font-size: 24; margin: 0 0 20 0px">문의 내역</h3>
 </div>
@@ -91,3 +92,59 @@ prefix="c" %>
   </c:forEach>
 
 </table>
+=======
+	<div>
+		<h3 style="font-size: 24; margin: 0 0 20 0px;">문의 내역</h3>
+	</div>
+	<div>
+				<div style=" padding: 0 50;" class="basket_navbar">
+					<div class="myinquiry_td_a">문의제목</div>
+					<div class="myinquiry_td_b">날짜</div>
+					<div class="myinquiry_td_c">답변유무</div>
+					
+					
+				</div>
+		</div>
+<table>
+	<c:choose>
+		<c:when test="${myinquiry eq '[]' }">
+		<div><hr></div>
+		<div class="warning_view">
+				<img src="${pageContext.request.contextPath}/resources/image/warning.png">	
+		</div>
+		<div class="recent_product_no">
+			<h3>문의 내역이 없습니다.</h3>
+		</div>	
+		</c:when>
+	</c:choose>
+	
+	<c:forEach var="list" items="${myinquiry }">
+	<div><hr></div>
+	<tbody style="  
+    height: 100%;
+/*     min-height: 668px; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    margin: 0 auto;
+    flex-direction: column;
+    width: 900px;">
+		<tr class="myinquiry_tr">
+			<td class="myinquiry_td_a"><a href = "/homin/index?formpath=mypage&category=myinquiryView&no=${list.no }">${list.title }</a></td>
+			<td class="myinquiry_td_b">${list.writeDate }</td>
+			<c:choose>
+				<c:when test = "${list.state eq 'waiting'}">
+					<td class="myinquiry_td_c">대기중</td>
+				</c:when>
+				<c:otherwise>
+					<td class="myinquiry_td_c">완료</td>
+				</c:otherwise>
+			</c:choose>
+		</tr>
+		</tbody>
+	</c:forEach>
+</table>
+
+
+
+>>>>>>> 799e668e70b2afaa9dbb5238018cee5134f972a5

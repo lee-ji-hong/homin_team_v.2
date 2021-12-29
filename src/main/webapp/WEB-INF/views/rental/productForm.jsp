@@ -59,10 +59,11 @@ prefix="c"%>
   }
 </style>
 
-<div style="width:1240px; margin: 0 auto;">
+<div style=" margin: 0 auto;">
+
 <div style="height: 150px;"><%@ include file="../common/top.jsp" %></div>
 
-<div class="rental-product-wrap" style="width: 1100px;">
+<div class="rental-product-wrap" style="width: 1240px;">
 
 <div class="rental-detail-header">
   <ul>
@@ -107,7 +108,7 @@ prefix="c"%>
         </li>
       </c:when>
       <c:otherwise>
-        <li class="rental-header-text">
+        <li >
           <a href="${root }index?formpath=rental&category=${category}"
             >얼음정수기 냉장고</a
           >

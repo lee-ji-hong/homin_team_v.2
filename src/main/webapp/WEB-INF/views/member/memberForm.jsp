@@ -20,6 +20,7 @@
 	src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js">
 </script>
 <script>
+<<<<<<< HEAD
 
 	function ajaxIsExist() {
 		var i = document.getElementById('id').value;
@@ -47,6 +48,33 @@ $(function(){
  		var num = pw.search(/[0-9]/g);
  		var eng = pw.search(/[a-z]/ig);
  		var spe = pw.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+=======
+   function ajaxIsExist() {
+      var i = document.getElementById('id').value;
+      var d = {
+         id : i
+      }
+      $.ajax({
+         url : "isExistId",
+         type : "POST",
+         data : JSON.stringify(d), //문자열을 json타입으로 변환
+         contentType : "application/json; charset=utf-8", //보낼 데이터 유형
+         dataType : 'json', //return 타입 json으로 지정
+         success : function(result) {
+            $('#msg').text(result.msg)
+         },
+         error : function() {
+            alert("문제 발생")
+         }
+      })
+   }
+  $(function(){
+   $("#pw").blur(function() {
+      var pw = $("#pw").val();
+       var num = pw.search(/[0-9]/g);
+       var eng = pw.search(/[a-z]/ig);
+       var spe = pw.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+>>>>>>> 799e668e70b2afaa9dbb5238018cee5134f972a5
 
 		 if(pw == "") {
 			$('#msg2').css('display', 'none');
@@ -165,7 +193,11 @@ $(function(){
 </head>
 <body>
 <div>
+<<<<<<< HEAD
 	<a href="/homin"><img src="/resources/image/logo2.png" style="height:100px"></a>
+=======
+   <a href="/homin"><img src="/resources/image/logo2.png" style="height:100px"></a>
+>>>>>>> 799e668e70b2afaa9dbb5238018cee5134f972a5
 
 </div>
 <hr>
