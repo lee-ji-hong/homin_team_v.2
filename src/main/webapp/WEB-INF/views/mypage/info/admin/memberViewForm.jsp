@@ -19,6 +19,7 @@ prefix="c"%>
     />
 
 
+
     <title>Insert title here</title>
     <c:if test="${sessionScope.id ne 'admin' }">
       <script>
@@ -188,5 +189,7 @@ prefix="c"%>
       </form>
     </div>
   </body>
+
+
 
 </html>

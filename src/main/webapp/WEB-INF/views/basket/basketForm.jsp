@@ -80,6 +80,7 @@
 						</c:choose>
 
 
+
 						<td ><img src = "/product_img/${bDto.product_img}" style="width: 150px; margin-right: 10px; height: 150px;"
 								onclick = "location.href='${root}product?category=${bDto.classification }&prodNo=${bDto.product_no }'"></td>
 						<td style="width: 350px; display: flex; text-align: left; flex-direction: column;" >

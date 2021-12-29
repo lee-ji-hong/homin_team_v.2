@@ -97,7 +97,6 @@ public class KakaoConfig {
 	        userInfo.put("nickname", nickname);
 	        JsonObject kakao_account = element.getAsJsonObject().get("kakao_account").getAsJsonObject();
 	        String email = kakao_account.getAsJsonObject().get("email").getAsString();
-
 	        userInfo.put("email", email);
 	    } catch (IOException e) {
 	        e.printStackTrace();
