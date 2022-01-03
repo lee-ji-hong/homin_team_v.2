@@ -55,44 +55,6 @@ prefix="c" %>
 </style>
 
 <c:set var="root" value="/"></c:set>
-<<<<<<< HEAD
-<div>
-  <h3 style="font-size: 24; margin: 0 0 20 0px">문의 내역</h3>
-</div>
-<div>
-  <div style="padding: 0 50" class="basket_navbar">
-    <div class="myinquiry_td_a">문의제목</div>
-    <div class="myinquiry_td_b">날짜</div>
-    <div class="myinquiry_td_c">답변유무</div>
-  </div>
-</div>
-
-<table>
-  <c:choose>
-    <c:when test="${myinquiry eq '[]' }"> 문의 내역이 없습니다. </c:when>
-  </c:choose>
-  <c:forEach var="list" items="${myinquiry }">
-    <tr>
-      <td>
-        <a
-          href="/homin/index?formpath=mypage&category=myinquiryView&no=${list.no }"
-          >${list.title }</a
-        >
-      </td>
-      <td>${list.writeDate }</td>
-      <c:choose>
-        <c:when test="${list.state eq 'waiting'}">
-          <td class="myinquiry_td_c">대기중</td>
-        </c:when>
-        <c:otherwise>
-          <td class="myinquiry_td_c">완료</td>
-        </c:otherwise>
-      </c:choose>
-    </tr>
-  </c:forEach>
-
-</table>
-=======
 	<div>
 		<h3 style="font-size: 24; margin: 0 0 20 0px;">문의 내역</h3>
 	</div>
@@ -147,4 +109,4 @@ prefix="c" %>
 
 
 
->>>>>>> 799e668e70b2afaa9dbb5238018cee5134f972a5
+

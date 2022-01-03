@@ -71,11 +71,6 @@
 							</c:otherwise>
 						</c:choose>
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 799e668e70b2afaa9dbb5238018cee5134f972a5
 						<td ><img src = "/product_img/${bDto.product_img}" style="width: 150px; margin-right: 10px; height: 150px;"
 								onclick = "location.href='${root}product?category=${bDto.classification }&prodNo=${bDto.product_no }'"></td>
 						<td style="width: 350px; display: flex; text-align: left; flex-direction: column;" >
