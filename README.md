@@ -15,3 +15,6 @@
   
   사용API : 아임포트결제 API, 카카오 소셜계정 연동 API
   
+  관리자계정 : ID : admin, PW : rhksflwk123^^
+  
+  http://52.78.168.150:8080/homin/
