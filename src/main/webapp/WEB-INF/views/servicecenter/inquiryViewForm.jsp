@@ -76,7 +76,7 @@
 	</form>
 	
 	
-	<form class="board-comment-wrap" action = "${root }inquiryAnswerProc" method = "post" accept-charset="euc-kr">
+	<form class="board-comment-wrap" action = "${root }inquiryAnswerProc" method = "post" accept-charset="utf-8">
 		<input type = "hidden" name = "no" value = "${view.no }">
 		<p>답변</p>
 		<div class= "board-comment-text">

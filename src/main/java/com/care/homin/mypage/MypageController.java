@@ -73,7 +73,7 @@ public class MypageController {
 
 		return "mypage/info/user/updateMbForm";
 	}
-	@RequestMapping("/updateMemberProc")
+	@RequestMapping("/updateProc")
 	public String updateProc(MemberDTO memberDto, Model model, HttpSession session) {
 		String msg = mypageSvc.updateProc(memberDto);
 		if (msg.equals("t")) {

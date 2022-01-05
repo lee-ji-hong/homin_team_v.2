@@ -62,12 +62,12 @@
 	</c:choose>
 <c:forEach var="order" items="${myOrder }">
 <div><hr></div>
-	<div onclick = "location.href='${root}product?category=${order.classification}&prodNo=${order.product_no}'">
+	<div>
 		<div style="display: flex; margin: 20px; border-bottom: 1px solid #ddd; justify-content: space-between;">
-			<div style="    margin: 15px"><img src = "/product_img/${order.productImg}" style="width:144px; height: 144px"></div>
+			<div style="    margin: 15px" onclick = "location.href='${root}product?category=${order.classification}&prodNo=${order.product_no}'" style="cursor: pointer;"><img src = "/product_img/${order.productImg}" style="width:144px; height: 144px"></div>
 			<div style=" line-height: 3; ">
-				<div>주문번호:${order.uid }</div>
-				<div>제품명:${order.productName }</div>
+				<div >주문번호:${order.uid }</div>
+				<div onclick = "location.href='${root}product?category=${order.classification}&prodNo=${order.product_no}'"style="cursor: pointer;">제품명:${order.productName }</div>
 				<div>가격:${order.amount }원</div>
 			</div>
 			<div class="orderhistory-btn-wrap">

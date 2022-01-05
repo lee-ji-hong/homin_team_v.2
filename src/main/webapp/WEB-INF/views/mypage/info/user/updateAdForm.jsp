@@ -71,7 +71,7 @@
 				<div class="text-wrap" style="justify-content: flex-end;">
 					<div class="member_management_btn">
 					<input style="margin-right: 6px;" type=button	class="member_management_input"	value='수정' onclick="erchk()" /> 
-					<input  class="member_management_input_bot" type=reset value='취소'	/>
+					<input  class="member_management_input_bot" type="button" value='취소'	onclick = "javascript:window.history.back()"/>
 					</div>
 				</div>
 			</div>
