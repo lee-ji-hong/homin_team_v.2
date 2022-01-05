@@ -79,7 +79,7 @@
 						</td>
 						<td style="width:100px">${bDto.price }</td>
 						<td style="width:100px">
-							<input class="basket_btnbb" type="button" value="구매" onclick="location.href='${root}index?formpath=product&category=${bDto.classification }&prodNo=${bDto.product_no }';">
+							<input class="basket_btnbb" type="button" value="구매" onclick="location.href='${root}product?category=${bDto.classification }&prodNo=${bDto.product_no }';">
 							<input  class="basket_btnbb" type="button" value="삭제" onclick="location.href='deleteBasket?no=${bDto.product_no}';">
 						</td>
 						

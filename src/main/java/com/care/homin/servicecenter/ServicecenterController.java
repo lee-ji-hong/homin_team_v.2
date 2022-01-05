@@ -85,7 +85,7 @@ public class ServicecenterController {
 	@RequestMapping(value = "/inquiryAnswerProc", produces = "text/plain;charset=UTF-8")
 	public String inquiryAnswerProc(InquiryDTO dto) {
 		service.inquiryAnswerProc(dto);
-		return "forward:index?formpath=home";
+		return "forward:index?formpath=servicecenter&list=inquiryAnswer";
 	}
 	
 	@RequestMapping(value = "/noticeView")
