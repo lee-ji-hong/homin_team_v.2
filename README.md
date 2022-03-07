@@ -5,6 +5,10 @@
 
 </div>
 
+  ### 프로젝트 소개
+ 
+   [전자제품 프로젝트 notion ](https://www.notion.so/749828754b3b4275a88cf9b8acf9bf25)
+   
   ### :running:개발인원 
   - 3명
   
